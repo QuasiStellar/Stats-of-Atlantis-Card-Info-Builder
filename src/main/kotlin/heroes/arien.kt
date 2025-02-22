@@ -235,7 +235,7 @@ val arien = setOf(
         """.trimIndent(),
         Color.RED,
         level = 3,
-        variant = 2 to 2,
+        variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 7,
