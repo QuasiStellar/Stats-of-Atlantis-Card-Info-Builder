@@ -12,14 +12,14 @@ val tigerclaw = setOf(
         "Blink Strike",
         """
             Before the attack: Move 2 spaces in a straight
-            line through an enemy unit; Target that unit.
-            ~(If you cannot make this move, you cannot attack). 
+            line through an enemy unit; target that unit.
+            ~(If you cannot make this move, you cannot attack).
         """.trimIndent(),
         Color.GOLD,
         initiative = 13,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
-        secondaryMovement = 2,
+        primaryValue = 3,
+        secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
@@ -32,20 +32,19 @@ val tigerclaw = setOf(
         handicapped = true,
         initiative = 12,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
+        primaryValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
         "Blend Into Shadows",
         """
-            If adjacent to an obstacle, place yourself into
-            a space in radius not adjacent to an enemy
-            unit. If you do, **Next turn:** You are immune,
-            and may move through units.
+            If adjacent to terrain, place yourself
+            into a space in radius; if you do, **Next turn:**
+            You are immune to enemy attack actions.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 3,
+        initiative = 6,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 2,
@@ -54,10 +53,9 @@ val tigerclaw = setOf(
     Card(
         "Cloak and Daggers",
         """
-            If you are immune: Before you perform
-            (or repeat) any action, move up to 2 spaces;
-            after you perform a basic attack, you may
-            repeat it once on a different target.
+            After you perform a basic action, you may
+            repeat it once; if you repeat an attack
+            action, you cannot target the same unit.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -77,35 +75,36 @@ val tigerclaw = setOf(
     Card(
         "Hit and Run",
         """
-            After the attack: Move up to 1 space.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 3,
-        secondaryMovement = 5,
+        secondaryMovement = 4,
         secondaryDefense = 3,
     ),
     Card(
         "Light-Fingered",
         """
-            Move up to 2 spaces, then take up to 1 coin
-            from an enemy hero adjacent to you.
-            Then move 2 spaces in a straight line, if able.
+            You may move 1 space.
+            Take 1 coin from an enemy hero adjacent
+            to you; if you do, you may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 2,
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
-        secondaryDefense = 2,
+        secondaryDefense = 1,
     ),
     Card(
         "Sidestep",
         """
-            Block a ranged attack. If you do, you may
-            move 2 spaces in a straight line.
+            Block a ranged attack.
+            You may move 1 space.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -114,13 +113,15 @@ val tigerclaw = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
-        item = Item.DEFENSE,
+        item = Item.ATTACK,
     ),
     Card(
         "Combat Reflexes",
         """
-            Before or After the attack:
-            Move up to 1 space.
+            Before the attack: You may move 1 space.
+            Target a unit adjacent to you.
+            After the attack: If you did not move before
+            the attack, you may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -128,16 +129,16 @@ val tigerclaw = setOf(
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
-        secondaryMovement = 5,
-        secondaryDefense = 4,
+        secondaryMovement = 4,
+        secondaryDefense = 3,
         item = Item.INITIATIVE,
     ),
     Card(
         "Pick Pocket",
         """
-            Move up to 2 spaces, then take up to 2 coins
-            from an enemy hero adjacent to you.
-            Then move 2 spaces in a straight line, if able.
+            Move up to 2 spaces.
+            Take 1 coin from an enemy hero adjacent to
+            you; if you do, you may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -145,7 +146,7 @@ val tigerclaw = setOf(
         initiative = 2,
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
-        secondaryDefense = 2,
+        secondaryDefense = 1,
         item = Item.ATTACK,
     ),
     Card(
@@ -161,33 +162,32 @@ val tigerclaw = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
-        item = Item.ATTACK,
+        item = Item.DEFENSE,
     ),
     Card(
         "Backstab",
         """
-            Target a unit adjacent to you. +2 ::attack_red:: Attack
-            if a friendly unit is adjacent to the target.
-            ~(A "friendly unit" is another hero or a minion on your team).
+            Target a unit adjacent to you; if a friendly
+            unit is adjacent to the target, +2 ::attack_red:: Attack.
+            ~(A "friendly unit" is another hero or a minion on your team.)
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 5,
-        secondaryDefense = 6,
+        secondaryDefense = 5,
         item = Item.DEFENSE,
     ),
     Card(
         "Poisoned Dagger",
         """
             Give a hero in range a ::marker_poison:: poison marker.
-            Each ::initiative:: Initiative and ::attack_silver:: Attack item of a
-            hero with a poison marker reduces that
-            value by 1, instead of increasing it by 1.
+            The hero with a poison marker has
+            -1 ::initiative:: Initiative, -1 ::attack_silver:: Attack, and -1 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -197,15 +197,15 @@ val tigerclaw = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 3,
-        secondaryDefense = 2,
+        secondaryDefense = 1,
         item = Item.INITIATIVE,
     ),
     Card(
         "Evade",
         """
-            Block a ranged attack. If you do, you may
-            move 2 spaces in a straight line and you
-            may swap this card with a card in your hand.
+            Block a ranged attack.
+            You may move 1 space. You may retrieve
+            your resolved or discarded basic skill card.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -219,8 +219,9 @@ val tigerclaw = setOf(
     Card(
         "Leaping Strike",
         """
-            Before the attack: Move up to 1 space.
-            After the attack: Move up to 1 space.
+            Before the attack: You may move 1 space.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -228,16 +229,16 @@ val tigerclaw = setOf(
         initiative = 10,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
-        secondaryMovement = 5,
+        secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.AREA,
     ),
     Card(
         "Master Thief",
         """
-            Move up to 2 spaces, then take up to 3 coins
-            from an enemy hero adjacent to you.
-            Then move 2 spaces in a straight line, if able.
+            Move up to 2 spaces.  Take 1 or 2 coins
+            from an enemy hero adjacent to you;
+            if you do, you may move up to 2 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -245,11 +246,11 @@ val tigerclaw = setOf(
         initiative = 1,
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
-        secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        secondaryDefense = 2,
+        item = Item.MOVEMENT,
     ),
     Card(
-        "Reposte",
+        "Riposte",
         """
             Block a non-ranged attack. The attacker
             discards a card, or is defeated.
@@ -266,17 +267,17 @@ val tigerclaw = setOf(
     Card(
         "Backstab with a Ballista",
         """
-            Target a unit in range. +3 ::attack_red:: Attack
-            and this attack cannot be blocked,
-            if a friendly unit is adjacent to the target.
-            ~("Block" is a keyword - the target hero can still defend!)
+            Target a unit in range;
+            if a friendly unit is adjacent to the target
+            +2 ::attack_red:: Attack, and the target cannot
+            perform a primary action to defend.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         primaryValueSign = Sign.PLUS,
         modifier = Modifier.RANGE,
         modifierValue = 1,
@@ -288,9 +289,8 @@ val tigerclaw = setOf(
         "Poisoned Dart",
         """
             Give a hero in range a ::marker_poison:: poison marker.
-            Each ::initiative:: Initiative, ::item_attack:: Attack, and ::item_defense:: Defense
-            item of a hero with a poison marker reduce
-            that value by 1, instead of increasing it by 1.
+            The hero with a poison marker has
+            -2 ::initiative:: Initiative, -2 ::attack_silver:: Attack, and -2 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -300,7 +300,7 @@ val tigerclaw = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 3,
-        secondaryDefense = 3,
-        item = Item.MOVEMENT,
+        secondaryDefense = 2,
+        item = Item.INITIATIVE,
     ),
 )
