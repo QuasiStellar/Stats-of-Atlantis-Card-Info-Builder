@@ -11,26 +11,27 @@ val dodger = setOf(
     Card(
         "Dread Razor",
         """
-            +1 ::range_gold:: Range if you are adjacent to
-            an empty minion spawn point in the
-            battle zone. Target a unit in range.
+            **Choose one —**
+            >>Target a unit adjacent to you.
+            >>If you are adjacent to an empty spawn point
+            >in the battle zone, target a unit in range.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
+        primaryValue = 2,
         modifier = Modifier.RANGE,
-        modifierValue = 1,
-        modifierValueSign = Sign.PLUS,
+        modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
         "Rusty Razor",
         """
-            Cannot target minions.
-            +1 ::range_gold:: Range if you are adjacent to an empty
-            minion spawn point in the battle zone. 
+            **Choose one —**
+            >>Target a hero adjacent to you.
+            >>If you are adjacent to an empty spawn point
+            >in the battle zone, target a hero in range.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -38,32 +39,30 @@ val dodger = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 1,
         modifier = Modifier.RANGE,
-        modifierValue = 1,
-        modifierValueSign = Sign.PLUS,
+        modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
         "Death Trap",
         """
-            You may remove a friendly minion in radius.
-            One enemy hero in radius who is adjacent
-            to an empty minion spawn point in the
-            battle zone, discards a card, if able.
+            An enemy hero in radius who is
+            adjacent to an empty spawn point in
+            the battle zone, discards a card, if able.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 6,
+        initiative = 7,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryDefense = 1,
     ),
     Card(
         "Tide of Darkness",
         """
-            Whenever you perform an action, all spaces
-            count as if they are in a battle zone
-            and have a minion spawn point.
+            While you are performing an action, all spaces
+            count as if they are in the battle zone and
+            havd a friendly minion spawn point.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -71,9 +70,8 @@ val dodger = setOf(
     Card(
         "Shield of Decay",
         """
-            +3 ::defense_blue:: Defense if there are 2 or more
-            empty minion spawn points in
-            radius in the battle zone.
+            +2 ::defense_blue:: Defense if there are 2 or more empty
+            spawn points in radius in the battle zone.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -88,27 +86,26 @@ val dodger = setOf(
     Card(
         "Littlefinger of Death",
         """
-            Target a unit in range. +2 ::attack_red:: Attack if you
-            target a hero with a card in the discard.
+            **Choose one —**
+            >>Target a hero adjacent to you.
+            >>Target a hero in range who has one or
+            >more cards in the discard.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 5,
-        secondaryDefense = 3,
+        secondaryDefense = 4,
     ),
     Card(
         "Dark Ritual",
         """
-            You may remove a friendly minion in radius.
-            If there are 3 or more empty minion spawn
-            points in radius in the battle zone, gain 1 coin.
-            ~(Removing the minion is optional!)
+            If there are 2 or more empty spawn points
+            in radius in the battle zone, gain 1 coin.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -122,10 +119,8 @@ val dodger = setOf(
     Card(
         "Vampiric Shield",
         """
-            You may remove a friendly minion in radius.
-            +3 ::defense_blue:: Defense if there are 2 or more
-            empty minion spawn points in
-            radius in the battle zone.
+            +2 ::defense_blue:: Defense if there are 2 or more empty
+            minion spawn points in radius in the battle zone.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -137,33 +132,33 @@ val dodger = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryMovement = 3,
-        item = Item.ATTACK,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Finger of Death",
         """
-            Target a unit in range. +3 ::attack_red:: if you
-            target a hero with a card in the discard.
+            **Choose one —**
+            >>Target a hero adjacent to you.
+            >>Target a hero in range who has one or
+            >more cards in the discard.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 3,
-        secondaryMovement = 5,
-        secondaryDefense = 4,
-        item = Item.DEFENSE,
+        secondaryMovement = 4,
+        secondaryDefense = 6,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Darker Ritual",
         """
-            You may remove a friendly minion in radius.
-            If there are 3 or more empty minion spawn
-            points in radius in the battle zone, gain 2 coins.
+            If there are 2 or more empty spawn points
+            in radius in the battle zone, gain 2 coins.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -174,14 +169,14 @@ val dodger = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 2,
-        item = Item.INITIATIVE,
+        item = Item.DEFENSE,
     ),
     Card(
-        "Drain Essence",
+        "Weakness",
         """
-            Perform a non-attack action of a card in
-            the discard of an enemy hero in radius;
-            apply no item bonuses.
+            **This turn:** Enemy heroes
+            in radius have -4 ::attack_silver:: Attack.
+            ~(They can still attack, even with a negative attack value.)
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -192,41 +187,38 @@ val dodger = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.ATTACK,
     ),
     Card(
         "Burning Skull",
         """
             Target a unit in range. After the attack:
-            Push every enemy unit adjacent to the target
-            1 space away from the target's space.
+            Move up to 1 minion adjacent to you
+            1 space, to a space not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 3,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 5,
-        secondaryDefense = 6,
-        item = Item.INITIATIVE,
+        secondaryMovement = 4,
+        secondaryDefense = 5,
+        item = Item.DEFENSE,
     ),
     Card(
         "Necromancy",
         """
-            If an enemy hero in radius has a card in
-            the discard, respawn a friendly minion in
-            an adjacent spawn point in the battle zone.
+            Respawn a friendly minion in an empty friendly
+            spawn point adjacent to you in the battle zone.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
         initiative = 3,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
@@ -234,50 +226,48 @@ val dodger = setOf(
     Card(
         "Aegis of Doom",
         """
-            You may remove a friendly minion in radius.
-            If there are 2 or more empty minion spawn
-            points in radius in a battle zone +4 ::defense_blue::
-            Defense and **This turn:** You are immune.
+            +4 ::defense_blue:: if there are 2 or more empty
+            spawn points in radius in a battle zone.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 1 to 2,
         initiative = 11,
         primaryAction = Action.DEFENSE,
-        primaryValue = 5,
+        primaryValue = 4,
         primaryValueSign = Sign.PLUS,
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryMovement = 3,
-        item = Item.RANGE,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Middlefinger of Death",
         """
-            Target a unit in range. +3 ::attack_red:: if you
-            target a hero with a card in the discard.
-            **This turn:** The target cannot retrieve cards.
+            **Choose one, or both, on different targets —**
+            >>Target a hero adjacent to you.
+            >>Target a hero in range who has one or 
+            >more cards in the discard.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
         modifierValue = 3,
-        secondaryMovement = 5,
-        secondaryDefense = 4,
-        item = Item.AREA,
+        secondaryMovement = 4,
+        secondaryDefense = 6,
+        item = Item.MOVEMENT,
     ),
     Card(
         "Darkest Ritual",
         """
-            You may remove a friendly minion in radius.
-            If there are 3 or more empty minion spawn
-            points in radius in the battle zone, gain 2
-            coins, and you may retrieve a discarded card.
+            If there are 2 or more empty spawn points in
+            radius in the battle zone, gain 2 coins. If you
+            have your Ultimate, gain an ::attack_silver:: Attack item.
+            ~(Use any spare card from the box with the corresponding icon.)
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -288,14 +278,13 @@ val dodger = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        item = Item.DEFENSE,
     ),
     Card(
-        "Soul Siphon",
+        "Enfeeblement",
         """
-            Perform an action of a card in the
-            discard of an enemy hero in radius,
-            apply no item bonuses.
+            **This turn:** Enemy heroes in radius have
+            -6 ::attack_silver:: Attack and cannot repeat actions.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -311,28 +300,27 @@ val dodger = setOf(
     Card(
         "Blazing Skull",
         """
-            Target a unit in range. Before the attack:
-            Push every enemy unit adjacent to the
-            target 1 space away from the target's space.
+            Target a unit in range. After the attack:
+            Move up to 2 minions adjacent to you
+            1 space each, to spaces not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 5,
-        secondaryDefense = 6,
-        item = Item.MOVEMENT,
+        secondaryMovement = 4,
+        secondaryDefense = 5,
+        item = Item.AREA,
     ),
     Card(
         "Necromastery",
         """
-            If an enemy hero in radius has a card in
-            the discard, respawn a friendly minion in
-            a spawn point in radius in the battle zone.
+            Respawn a friendly minion in an empty friendly
+            spawn point in radius in the battle zone.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -340,9 +328,9 @@ val dodger = setOf(
         initiative = 2,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 4,
+        modifierValue = 1,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.DEFENSE,
+        item = Item.RANGE,
     ),
 )
