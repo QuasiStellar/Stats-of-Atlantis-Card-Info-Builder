@@ -10,16 +10,17 @@ val arien = setOf(
     Card(
         "Noble Blade",
         """
+            Target a unit adjacent to you.
             Before the attack: You may move another
             unit that is adjacent to the target 1 space.
-            ~("Another unit" does not include you). 
+            ~("Another unit" never includes you.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
+        secondaryDefense = 2,
+        secondaryMovement = 1,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
-        secondaryMovement = 1,
-        secondaryDefense = 2,
     ),
     Card(
         "Ceremonial Blade",
@@ -39,23 +40,22 @@ val arien = setOf(
     Card(
         "Spell Break",
         """
-            **This turn:** Enemy heroes in radius
-            cannot perform skills.
-            ~(Spell Break will not stop an attack action).
+            **This turn:** Enemy heroes in radius cannot
+            perform skill actions, except on gold cards.
+            ~(Skill ::skill_silver:: is an action type. Other action types are unaffected.)
         """.trimIndent(),
         Color.SILVER,
-        initiative = 12,
+        initiative = 13,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryDefense = 3,
     ),
     Card(
         "Living Tsunami",
         """
-            After you perform a basic skill, you
-            may trigger a minion battle in the
-            battle zone you are in.
+            Once per turn, before performing an
+            Attack action, you may move 1 space.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -64,7 +64,7 @@ val arien = setOf(
         "Aspiring Duelist",
         """
             Ignore all minion defense modifiers.
-            ~(This includes your minions, as well as the enemy minions).
+            ~(This includes your minions, as well as the enemy minions.)
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -74,24 +74,23 @@ val arien = setOf(
         secondaryMovement = 3,
     ),
     Card(
-        "Gush of Water",
+        "Dangerous Current",
         """
-            After the attack: You may push every
-            adjacent token and enemy unit 1 space.
-            ~(If you choose this option, push all units that can be pushed).
+            Target a unit adjacent to you. Before the
+            attack: Up to 1 enemy hero in any of the
+            2 spaces in a straight line directly behind
+            the target discards a card, or is defeated.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        modifier = Modifier.RANGE,
-        modifierValue = 1,
+        primaryValue = 6,
         secondaryMovement = 4,
-        secondaryDefense = 3,
+        secondaryDefense = 6,
     ),
     Card(
-        "Waveform",
+        "Liquid Leap",
         """
             Place yourself into a space in range
             without a spawn point and not adjacent
@@ -110,8 +109,8 @@ val arien = setOf(
         "Expert Duelist",
         """
             Ignore all minion defense modifiers.
-            **This turn:** You are immune
-            to all other enemy attacks.
+            **This turn:** You are immune to attack actions
+            of all enemy heroes, except this attacker.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -123,17 +122,18 @@ val arien = setOf(
         item = Item.DEFENSE,
     ),
     Card(
-        "High Tide",
+        "Rogue Wave",
         """
-            After the attack: You may push every
-            adjacent token and enemy unit 1 space.
+            Target a unit in range.
+            After the attack: You may an enemy
+            unit adjacent to you up to 2 spaces.
         """.trimIndent(),
         Color.RED,
         level = 2,
-        variant = 1 to 2,
+        variant = 2 to 2,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 4,
@@ -156,37 +156,34 @@ val arien = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
     Card(
         "Slippery Ground",
         """
-            **This turn:** Enemies in radius may not move
-            more than 1 space with a movement action.
-            ~(Enemies who start movement out of radius are unaffected).
+            **This turn:** Enemies heroes adjacent
+            to you cannot fast travel, or move more
+            than 1 space with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 3,
+        primaryAction = Action.MOVEMENT,
         secondaryDefense = 6,
         item = Item.ATTACK,
     ),
     Card(
-        "Violent Torrent",
+        "Raging Stream",
         """
-            Before the attack: One enemy hero in any of
-            the 3 spaces in a straight line directly behind
+            Target a unit adjacent to you. Before the
+            attack: Up to 1 enemy hero in any of the
+            3 spaces in a straight line directly behind
             the target discards a card, or is defeated.
-            ~(You cannot target an empty spcae with an attack).
         """.trimIndent(),
         Color.RED,
         level = 2,
-        variant = 2 to 2,
+        variant = 1 to 2,
         initiative = 8,
         primaryAction = Action.ATTACK,
         primaryValue = 7,
@@ -195,10 +192,10 @@ val arien = setOf(
         item = Item.INITIATIVE,
     ),
     Card(
-        "Arcane Swap",
+        "Arcane Whirlpool",
         """
-            Swap with a minion or a friendly hero in range.
-            ~(Swap places with the target. This is not movement).
+            Swap with an enemy minion in range.
+            ~(Swap places with the target. This is not movement.)
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -206,17 +203,17 @@ val arien = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.ATTACK,
+        item = Item.DEFENSE,
     ),
     Card(
         "Master Duelist",
         """
             Ignore all minion defense modifiers.
-            **This turn:** You are immune
-            to all other enemy actions.
+            **This round:** You are immune to attack actions
+            of all enemy heroes, except this attacker.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -228,23 +225,23 @@ val arien = setOf(
         item = Item.RANGE,
     ),
     Card(
-        "Rogue Wave",
+        "Violent Torrent",
         """
-            After the attack: Move the target 1 space.
-            You may push every token and enemy
-            unit adjacent to you 1 space.
+            Target a unit adjacent to you. Before the
+            attack: Up to 1 enemy hero in any of the 5
+            spaces in a straight line directly behind the
+            target discards a card, or is defeated.
+            May repeat once on a different unit.
         """.trimIndent(),
         Color.RED,
         level = 3,
-        variant = 1 to 2,
+        variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
+        primaryValue = 7,
         secondaryMovement = 4,
-        secondaryDefense = 4,
-        item = Item.MOVEMENT,
+        secondaryDefense = 7,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Stranger Tide",
@@ -261,48 +258,49 @@ val arien = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.AREA,
     ),
     Card(
         "Deluge",
         """
-            **This turn and next turn:**
-            Enemies in radius may not move more
-            than 1 space with a movement action.
+            **This turn:** Enemies in radius 
+            cannot fast travel, or move more than
+            1 space with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.SKILL,
+        primaryAction = Action.MOVEMENT,
         modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 3,
+        modifierValue = 1,
         secondaryDefense = 6,
         item = Item.ATTACK,
     ),
     Card(
-        "Raging Waters",
+        "Tidal Blast",
         """
-            Before the attack: One enemy hero in any of
-            the 5 spaces in a straight line directly behind
-            the target discards a card, or is defeated.
-            May repeat once on a different target.
+            Target a unit in range.
+            After the attack: You may push an enemy
+            unit adjacent to you up to 3 spaces.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 7,
+        primaryValue = 4,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
         secondaryMovement = 4,
-        secondaryDefense = 7,
-        item = Item.INITIATIVE,
+        secondaryDefense = 4,
+        item = Item.MOVEMENT,
     ),
     Card(
-        "Empowered Swap",
+        "Ebb and Flow",
         """
-            Swap with a unit or a token in range.
+            Swap with aan enemy minion in range;
+            if it was adjacent to you, may repeact once.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -310,9 +308,9 @@ val arien = setOf(
         initiative = 3,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.AREA,
+        item = Item.DEFENSE,
     ),
 )
