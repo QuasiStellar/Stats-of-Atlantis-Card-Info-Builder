@@ -9,13 +9,12 @@ import Sign
 
 val wasp = setOf(
     Card(
-        "Dazzling Dagger",
+        "Magnetic Dagger",
         """
-            Target a unit adjacent to you. After the
-             attack: Cancel active effects on skill
-             cards of enemy heroes adjacent to you.
-             **This turn:** Enemy heroes adjacent to
-             you cannot perform skill actions.
+            Target a unit adjacent to you.
+            After the attack: **This turn:** Enemy units
+            in radius cannot be swapped or placed
+            by themselves or by enemy heroes.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -23,13 +22,16 @@ val wasp = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
     ),
     Card(
-        "Depleted Dagger",
+        "Crackling Dagger",
         """
-            Cannot target minions. After the attack:
-            **This turn:** Adjacent enemy heroes
-            cannot perform Skills. 
+            Target a hero adjacent to you.
+            After the attack: **This turn:** Enemy units
+            in radius cannot be swapped or placed
+            by themselves or by enemy heroes.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -38,41 +40,48 @@ val wasp = setOf(
         primaryValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
     ),
     Card(
         "Static Barrier",
         """
-            **This turn:** Enemy units in radius cannot
-            move or fast travel out of radius.
-            Enemy units outside of radius cannot
-            move or fast travel into radius.
+            **This turn:** While an enemy hero outside of
+            radius is performing an action, spaces in
+            radius count as obstacles. While an enemy
+            hero in radius is performing an action,
+            spaces outside of radius count as obstacles.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 11,
+        initiative = 13,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 2,
     ),
     Card(
-        "Thunder and Lightning",
+        "High Voltage",
         """
-            After you perform a basic skill one enemy
-            hero in play discards a card, if able.
+            Each time after you perform a basic skill,
+            you may defeat an enemy minion in radius;
+            an enemy hero who was adjacent to that
+            minion discards a card, if able.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
     ),
     Card(
         "Lift Up",
         """
-            Move a non-adjacent unit or a token in
-            radius up to 1 space, without moving
-            it away from you, or closer to you.
+            Move a unit, or a token, in radius 1 space,
+            without moving it away from you or closer to
+            you. May repeat once on the same target.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
-        initiative = 9,
+        initiative = 10,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 2,
@@ -82,9 +91,9 @@ val wasp = setOf(
     Card(
         "Shock",
         """
-            Target an adjacent unit. Before the attack:
-            Up to one adjacent enemy hero, except the
-            target, discards a card, if able.
+            Target a unit adjacent to you.
+            After the attack: An enemy hero in radius and
+            not adjacent to you discards a card, if able.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -97,12 +106,11 @@ val wasp = setOf(
     Card(
         "Stop Projectiles",
         """
-            If the attacker is not adjacent,
-            block the attack.
+            Block a ranged attack.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
-        initiative = 4,
+        initiative = 3,
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
@@ -110,9 +118,9 @@ val wasp = setOf(
     Card(
         "Control Gravity",
         """
-            Move a non-adjacent unit or a token in radius
-            up to 1 space, without moving it away from
-            you, or closer to you. May repeat once.
+            Move a unit, or a token, in radius 1 space,
+            without moving it away from you, or closer to 
+            you. May repeat once on the same target.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -120,7 +128,7 @@ val wasp = setOf(
         initiative = 10,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.DEFENSE,
@@ -128,9 +136,9 @@ val wasp = setOf(
     Card(
         "Electrocute",
         """
-            Target an adjacent unit. Before the attack:
-            Up to one enemy hero in radius, except the
-            target, discards a card, if able.
+            Target a unit adjacent to you.
+            After the attack: An enemy hero in radius and
+            not adjacent to you discards a card, if able.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -139,7 +147,7 @@ val wasp = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 5,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
@@ -147,8 +155,8 @@ val wasp = setOf(
     Card(
         "Deflect Projectiles",
         """
-            If the attacker is not adjacent, block
-            the attack. If you do, the attacker
+            Block a ranged attack; if you do, an enemy
+            hero in range, other than the attacker,
             discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
@@ -158,14 +166,16 @@ val wasp = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
         item = Item.ATTACK,
     ),
     Card(
         "Kinetic Repulse",
         """
-            Push every adjacent enemy unit 2 spaces;
-            each enemy hero that was stopped by an
-            obstacle discards a card, if able.
+            Push up to 2 enemy units adjacent to you
+            3 spaces; if a pushed hero is stopped by an
+            obstacle, that hero discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -179,8 +189,8 @@ val wasp = setOf(
     Card(
         "Charged Boomerang",
         """
-            Cannot target units in a straight line from you.
-            ~(Adjacent units are in a straight line as well).
+            Target a unit in range and not in a straight line.
+            ~(Units adjacent to you are in a straight line from you.)
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -209,32 +219,33 @@ val wasp = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
     Card(
         "Center of Mass",
         """
-            Move a non-adjacent unit or a token in radius
-            up to 1 space, without moving it away from
-            you, or closer to you. Repeat up to two times.
+            Move a unit, or a token, in radius 1 space,
+            without moving it away from you, or closer
+            to you. May repeat up to two times
+            on the same target.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 1 to 2,
-        initiative = 10,
+        initiative = 11,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 6,
-        item = Item.RANGE,
+        item = Item.DEFENSE,
     ),
     Card(
         "Electroblast",
         """
-            Target an adjacent unit. Before the attack:
-            Up to one enemy hero in radius, except the
-            target, discards a card, or is defeated.
+            Target a unit adjacent to you. After the attack:
+            An enemy hero in radius and not adjacent
+            to you discards a card, or is defeated.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -243,49 +254,50 @@ val wasp = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 6,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 7,
-        item = Item.MOVEMENT,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Reflect Projectiles",
         """
-            If the attacker is not adjacent to you, block
-            the attack. If you do, the attacker discards
-            a card, if able, **This turn:** Only heroes
-            adjacent to you can target you with an attack.
+            Block a ranged attack; if you do, an enemy
+            hero in range discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 1 to 2,
-        initiative = 3,
+        initiative = 2,
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
         item = Item.AREA,
     ),
     Card(
         "Kinetic Blast",
         """
-            Push every adjacent enemy unit 3 spaces;
-            each enemy hero that was stopped by an
-            obstacle discards a card, if able.
+            Push up to 2 enemy units adjacent to you
+            3 or 4 spaces; if a pushed hero is stopped by
+            an obstacle, that hero discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
-        initiative = 10,
+        initiative = 11,
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
         secondaryDefense = 6,
-        item = Item.ATTACK,
+        item = Item.RANGE,
     ),
     Card(
         "Thunder Boomerang",
         """
-            Cannot target units in a straight line from you.
-            If you defeat an enemy hero, may repeat once.
+            Target a unit in range and not in a straight line.
+            After the attack: If you targeted a hero,
+            may repeat once on a different target.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -297,7 +309,7 @@ val wasp = setOf(
         modifierValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.MOVEMENT,
     ),
     Card(
         "Mass Telekinesis",
@@ -309,12 +321,12 @@ val wasp = setOf(
         Color.GREEN,
         level = 3,
         variant = 2 to 2,
-        initiative = 3,
+        initiative = 2,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
 )
