@@ -25,7 +25,7 @@ val arien = setOf(
     Card(
         "Ceremonial Blade",
         """
-            Cannot target minions.
+            Target a hero adjacent to you.
             Before the attack: You may move a minion
             that is adjacent to the target 1 space.
         """.trimIndent(),
