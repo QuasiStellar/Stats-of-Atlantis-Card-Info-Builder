@@ -9,10 +9,11 @@ import Sign
 
 val silverarrow = setOf(
     Card(
-        "Hit and Run",
+        "Shoot and Scoot",
         """
-            Cannot attack if adjacent to an enemy unit.
-            After the attack: You may fast travel, if able.
+            Target a unit at maximum range.
+            After the attack: If able, you may
+            fast travel to an adjacent zone.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -20,7 +21,7 @@ val silverarrow = setOf(
         primaryValue = 1,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 2,
+        secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
@@ -43,19 +44,22 @@ val silverarrow = setOf(
     Card(
         "Trailblazer",
         """
-            If not adjacent to an enemy unit, you may
-            move up to 4 spaces in a straight line to a
-            space not adjacent to an enemy unit, if able.
+            You may fast travel, if able.
+            **This round:** You and friendly heroes
+            in radius may ignore obstacles while
+            performing movement actions.
         """.trimIndent(),
         Color.SILVER,
         initiative = 13,
         primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 4,
         secondaryDefense = 1,
     ),
     Card(
         "Wild Hunt",
         """
-            Each time before you perform an action
+            Each time before you perform an action,
             you may move 2 spaces in a straight line.
         """.trimIndent(),
         Color.PURPLE,
@@ -64,26 +68,26 @@ val silverarrow = setOf(
     Card(
         "Grasping Roots",
         """
-            **This turn:** Enemy heroes in radius adjacent
-            to terrain cannot fast travel, or move more
-            than 1 space with a movement action.
+            **This turn:** Enemy heroes in radius cannot
+            fast travel, or move more than 1 space
+            with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 10,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 3,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryDefense = 3,
+        secondaryMovement = 3,
     ),
     Card(
         "Snap Shot",
         """
-            -2 ::range_red:: Range for every unit adjacent to the
-            target, including you. Target a hero in range,
-            or a minion adjacent to you and in range.
-            ~(If your range is below 1, you cannot perform this action).
+            **Choose one —**
+            >>Target a unit in range, which is not
+            adjacent to any other unit.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -91,17 +95,15 @@ val silverarrow = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 3,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
-        modifierValueSign = Sign.MINUS,
+        modifierValue = 2,
         secondaryMovement = 5,
         secondaryDefense = 5,
     ),
     Card(
         "Disorient",
         """
-            Move an adjacent enemy unit up to
-            1 space. If you do, move up to that
-            number of spaces in a straight line.
+            Move an enemy unit adjacent to you 1 space;
+            if you do, you may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -113,27 +115,28 @@ val silverarrow = setOf(
     Card(
         "Entangling Vines",
         """
-            **This turn:** Enemy heroes in radius
-            adjacent to terrain, or to their friendly
-            hero, cannot fast travel, or move more than
-            1 space with a movement action.
+            **This turn:** Enemy heroes in radius cannot
+            fast travel, or move more than 1 space
+            with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 1 to 2,
         initiative = 10,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 3,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 3,
+        secondaryMovement = 3,
         item = Item.DEFENSE,
     ),
     Card(
         "Opportunity Shot",
         """
-            -2 ::range_red:: Range for every unit adjacent
-            to the target, including you.
+            **Choose one —**
+            >>Target a unit in range, which is not
+            >>adjacent to any other unit.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -142,17 +145,16 @@ val silverarrow = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 4,
         modifier = Modifier.RANGE,
-        modifierValue = 4,
-        modifierValueSign = Sign.MINUS,
+        modifierValue = 3,
         secondaryMovement = 5,
         secondaryDefense = 5,
-        item = Item.INITIATIVE,
+        item = Item.DEFENSE,
     ),
     Card(
         "Divert Attention",
         """
-            Move an adjacent enemy unit up to
-            2 spaces. If you do, move up to that
+            Move an enemy unit adjacent to you up
+            to 2 spaces; if you do, move up to that
             number of spaces in a straight line.
         """.trimIndent(),
         Color.GREEN,
@@ -167,8 +169,7 @@ val silverarrow = setOf(
     Card(
         "Warning Shot",
         """
-            If not adjacent to an enemy unit,
-            **End of turn:** An enemy hero in radius,
+            **End of turn:** An enemy hero in radius
             discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
@@ -197,14 +198,13 @@ val silverarrow = setOf(
         modifierValue = 3,
         secondaryMovement = 5,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Fae Healing",
         """
-            If you are not adjacent to an enemy unit,
-            another hero in radius may retrieve a
-            discarded card.
+            A hero  in radius may retrieve a discarded
+            card; if they do, that hero gains 1 coin.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -220,46 +220,46 @@ val silverarrow = setOf(
     Card(
         "Grappling Branches",
         """
-            **This turn:** Enemy heroes in radius
-            adjacent to terrain, or to their friendly
-            unit, cannot fast travel, or move more
-            than 1 space with a movement action.
+            **This turn:** Enemy heroes in radius cannot
+            fast travel, or move more than 1 space
+            with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 1 to 2,
         initiative = 11,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 3,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryDefense = 4,
+        secondaryMovement = 3,
         item = Item.DEFENSE,
     ),
     Card(
         "Clear Shot",
         """
-            -2 ::range_red:: Range for every unit adjacent
-            to the target, including you.
+            **Choose one —**
+            >>Target a unit in range, which is not
+            >adjacent to any other unit.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
-        modifierValue = 5,
-        modifierValueSign = Sign.MINUS,
-        secondaryMovement = 5,
+        modifierValue = 4,
         secondaryDefense = 6,
-        item = Item.INITIATIVE,
+        secondaryMovement = 5,
+        item = Item.AREA,
     ),
     Card(
         "Lead Astray",
         """
-            Move an adjacent enemy unit up to
-            3 spaces. If you do, move up to that
+            Move an enemy unit adjacent to you up
+            to 3 spaces; if you do, move up to that
             number of spaces in a straight line.
         """.trimIndent(),
         Color.GREEN,
@@ -274,9 +274,8 @@ val silverarrow = setOf(
     Card(
         "Treetop Sentinel",
         """
-            If not adjacent to an enemy unit,
-            **End of turn:** An enemy hero in radius,
-            discards a card or is defeated.
+            **End of turn:** An enemy hero in radius
+            discards a card, or is defeated.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -287,14 +286,14 @@ val silverarrow = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 4,
-        item = Item.ATTACK,
+        item = Item.RANGE,
     ),
     Card(
         "Rain of Arrows",
         """
             Target a unit at maximum range.
-            If you target a hero, may repeat
-            up to two times on different heroes.
+            If you target a hero, repeat once on a different
+            hero; if you do, may repeat once on a minion.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -306,14 +305,13 @@ val silverarrow = setOf(
         modifierValue = 3,
         secondaryMovement = 5,
         secondaryDefense = 5,
-        item = Item.AREA,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Nature's Blessing",
         """
-            If you are not adjacent to an enemy unit,
-            you and up to one hero in radius may
-            retrieve a discarded card.
+            A hero in radius may retrieve a discarded
+            card; if they do, that hero gains 2 coins.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -324,6 +322,6 @@ val silverarrow = setOf(
         modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 2,
-        item = Item.RANGE,
+        item = Item.ATTACK,
     ),
 )
