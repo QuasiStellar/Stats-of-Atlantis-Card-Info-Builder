@@ -27,17 +27,17 @@ val ignatia = setOf(
     Card(
         "Unreliable Jolt",
         """
-            ::tiebreaker_blue::: Target an adjacent hero in range.
+            ::tiebreaker_blue::: Target a hero adjacent to you.
             ---
-            ::tiebreaker_orange:: Target a non-adjacent hero in range.
+            ::tiebreaker_orange:: Target a hero in range not adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
+        primaryValue = 1,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),

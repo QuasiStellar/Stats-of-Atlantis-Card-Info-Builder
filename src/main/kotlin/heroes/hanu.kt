@@ -26,15 +26,16 @@ val hanu = setOf(
     Card(
         "Fight or Flight",
         """
-            If discard is empty, an adjacent
-            enemy hero discards a card, if able. You
-            then move 2 spaces in a straight line, if able.
+            Target a hero adjacent to you.
+            If the target is not defeated, After the attack:
+            If able, move 3 spaces in a straight line.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 12,
-        primaryAction = Action.SKILL,
-        secondaryMovement = 3,
+        primaryAction = Action.ATTACK,
+        primaryValue = 1,
+        secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(

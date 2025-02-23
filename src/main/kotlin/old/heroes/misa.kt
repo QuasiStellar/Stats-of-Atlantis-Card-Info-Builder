@@ -22,19 +22,21 @@ val misa = setOf(
         secondaryDefense = 6,
     ),
     Card(
-        "???",
+        "Step In",
         """
-            You may move through obstacles.
-            **This turn:** You are immune to non-ranged
-            attacks and skills. Ignore the effects of
-            tokens. Other units may move through you.
+            Place yourself into a space in radius,
+            adjacent to an enemy hero. **This turn:**
+            Heroes in radius must attack you, or a minion,
+            if able, when performing an attack action.
+            The first time you discard a card, gain 2 coins.
         """.trimIndent(),
-        Color.GOLD,
+        Color.SILVER,
         handicapped = true,
-        initiative = 8,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 4,
-        secondaryDefense = 5,
+        initiative = 11,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 1,
+        secondaryDefense = 2,
     ),
     Card(
         "Swoop In",

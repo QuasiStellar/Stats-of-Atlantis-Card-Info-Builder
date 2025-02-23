@@ -23,7 +23,7 @@ val swift = setOf(
         secondaryDefense = 1,
     ),
     Card(
-        "???",
+        "Backup",
         """
             Perform the primary action of the resolved
             card in your previous turn slot.

@@ -28,10 +28,10 @@ val wuk = setOf(
     Card(
         "Makeshift Weapon",
         """
-            Cannot attack if you are not adjacent to a tree
-            token. Target a unit in range. After the attack:
-            If the target was adjacent to you, move it 1
-            space to a space adjacent to you, if able.
+            **Choose one —**
+            >>Target a hero adjacent to you.
+            >>Remove a ::token_tree:: Tree token adjacent to you.
+            >Target a hero in range.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -39,7 +39,7 @@ val wuk = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 3,
         modifier = Modifier.RANGE,
-        modifierValue = 1,
+        modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 2,
     ),
@@ -101,7 +101,7 @@ val wuk = setOf(
             Move up to 1 space. Push an adjacent token
             up to 3 spaces. If the token is pushed 2 or
             more spaces, an enemy hero adjacent to
-            that token discards a card, if able.    
+            that token discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 1,

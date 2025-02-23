@@ -26,19 +26,20 @@ val tali = setOf(
         secondaryDefense = 1,
     ),
     Card(
-        "Cold Touch",
+        "Ice Shard",
         """
-            A hero in range with an unresolved card
-            may choose to retrieve that card. If they
-            do not, name a color. That hero discards
-            a card of that color, if able.
+            Target a hero adjacent to you. If the targetr
+            discards a card to defend, After the attack:
+            Another enemy hero in radius discards a
+            card of the same color, if able.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 9,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
+        initiative = 10,
+        primaryAction = Action.ATTACK,
+        primaryValue = 2,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),

@@ -29,15 +29,18 @@ val whisper = setOf(
     Card(
         "Vile Accusation",
         """
-            An enemy hero in range discards a card,
-            if able; then, if able, that hero moves the
-            number of spaces equal to that card's
-            printed movement value in a straight line.
+            **Choose one —**
+            >>Target a hero in range with an empty discard.
+            >After the attack: If able, that hero performs a
+            >movement action on the card they defended
+            >with, moving full distance in a straight line.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 11,
-        primaryAction = Action.SKILL,
+        primaryAction = Action.ATTACK,
+        primaryValue = 1,
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 1,
