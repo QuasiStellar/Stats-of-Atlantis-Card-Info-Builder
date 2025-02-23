@@ -30,20 +30,16 @@ val trinkets = setOf(
     Card(
         "Ramshackle Turret",
         """
-            **Choose one —**
-            >>You may remove the turret. Move up to
-            >2 spaces and place the Turret into an
-            >adjacent space. It counts as terrain.
-            >>Enemy hero in range of both you and
-            >the Turret discards a card, if able.
+            Move up to 3 spaces and place
+            the Turret into a space adjacent to you;
+            it counts as an obstacle.
+            ~(The Turret is not a token and remains in play between rounds.)
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 11,
+        initiative = 12,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 1,
-        secondaryMovement = 3,
+        secondaryMovement = 4,
         secondaryDefense = 1,
     ),
     Card(

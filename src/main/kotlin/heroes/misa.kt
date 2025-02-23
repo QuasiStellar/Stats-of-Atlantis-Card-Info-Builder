@@ -22,19 +22,18 @@ val misa = setOf(
         secondaryDefense = 6,
     ),
     Card(
-        "???",
+        "Leaf on the Wind",
         """
-            You may move through obstacles.
-            **This turn:** You are immune to non-ranged
-            attacks and skills. Ignore the effects of
-            tokens. Other units may move through you.
+            Place yourself into a space
+            at maximum range.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 8,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 4,
-        secondaryDefense = 5,
+        initiative = 11,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 4,
+        secondaryDefense = 1,
     ),
     Card(
         "Swoop In",

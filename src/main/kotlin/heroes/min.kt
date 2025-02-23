@@ -27,10 +27,9 @@ val min = setOf(
     Card(
         "Chop Down",
         """
-            Cannot target minions.
-            After the attack: You may swap this card
-            with a resolved or discarded attack card
-            and apply that card's text.
+            Target a hero adjacent to you.
+            After the attack: Apply the "After the attack"
+            text of your resolved or discarded red card.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,

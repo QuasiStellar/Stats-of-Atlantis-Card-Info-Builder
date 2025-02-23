@@ -25,10 +25,10 @@ val ursafar = setOf(
     Card(
         "Jaws That Bite",
         """
-            Before the attack: If you are enraged and
-            not adjacent to an enemy unit, move up to
-            1 space. Target a hero adjacent to you. After
-            the attack: **This round:** You are enraged.
+            Before the attack: If enraged, you may
+            move 1 space to a space adjacent to an
+            enemy hero. Target a hero adjacent to you.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,

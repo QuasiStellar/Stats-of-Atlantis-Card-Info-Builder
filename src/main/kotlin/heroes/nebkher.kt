@@ -29,11 +29,10 @@ val nebkher = setOf(
     Card(
         "Mind Probe",
         """
-            Perform the primary action of a non-attack
-            card in the previous turn slot of an enemy
-            hero in range; apply no item bonuses. If you
-            would place a token, place an illusion token
-            instead. Ignore effects that give markers.
+            Perform the action on the card in the previous
+            turn slot of an enemy hero in range; if you
+            would place any tokens this way, place a ::token_illusion::
+            Illusion tokens instead; do not use markers.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -42,7 +41,7 @@ val nebkher = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 1,
-        secondaryDefense = 2,
+        secondaryDefense = 1,
     ),
     Card(
         "Diabolical Laughter",

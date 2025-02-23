@@ -29,18 +29,17 @@ val bain = setOf(
     Card(
         "Side Quest",
         """
-            Up to 1 adjacent enemy hero discards a
-            card, if able. Give a hero in radius
-            a ::marker_bounty:: bounty marker.
-            The hero with a bounty marker spends 1
-            additional ::life_counters:: life counter when defeated.
+            If you are adjacent to an enemy unit,
+            give a hero in radius a ::marker_bounty:: Bounty marker.
+            A hero with the bounty marker spends
+            1 additional ::life_counters:: life counter when defeated.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 10,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),

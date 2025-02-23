@@ -26,15 +26,17 @@ val silverarrow = setOf(
     Card(
         "Keep the Distance",
         """
-            Cannot attack if adjacent to an enemy unit.
-            Target an enemy hero. After the attack: You
-            may fast travel within the same zone, if able.
+            Target a hero at maximum range.
+            After the attack: If able, you may
+            fast travel up to an adjacent zone.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 10,
+        initiative = 11,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 1,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),

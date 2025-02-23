@@ -34,7 +34,7 @@ val cutter = setOf(
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 11,
+        initiative = 12,
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 1,

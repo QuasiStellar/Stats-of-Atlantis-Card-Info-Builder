@@ -23,14 +23,15 @@ val garrus = setOf(
     Card(
         "Angry Swipe",
         """
-            Target a hero adjacent to you. +2 ::attack_gold:: Attack
-            if you have exactly one card in the discard.
+            Target a hero adjacent to you.
+            +1 ::attack_gold:: Attack for every card in your discard.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 10,
         primaryAction = Action.ATTACK,
         primaryValue = 3,
+        primaryValueSign = Sign.PLUS,
         secondaryMovement = 1,
         secondaryDefense = 2,
     ),

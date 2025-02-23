@@ -23,14 +23,15 @@ val swift = setOf(
         secondaryDefense = 1,
     ),
     Card(
-        "???",
+        "Backup",
         """
-            Perform the primary action of the resolved
-            card in your previous turn slot.
+            Perform the primary action of your rightmost
+            resolved card. If you perform an Attack
+            action this way, you cannot target minions.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 5,
+        initiative = 6,
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 1,
