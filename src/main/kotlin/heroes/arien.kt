@@ -263,7 +263,7 @@ val arien = setOf(
     Card(
         "Deluge",
         """
-            **This turn:** Enemies in radius 
+            **This turn:** Enemies in radius
             cannot fast travel, or move more than
             1 space with a movement action.
         """.trimIndent(),
