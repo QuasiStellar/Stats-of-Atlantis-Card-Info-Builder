@@ -10,13 +10,14 @@ val garrus = setOf(
     Card(
         "Angry Strike",
         """
-            Target a unit adjacent to you. +2 ::attack_gold:: Attack
-            if you have exactly one card in the discard.
+            Target a hero adjacent to you.
+            +1 ::attack_gold:: Attack for every card in your discard.
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
+        primaryValueSign = Sign.PLUS,
         secondaryMovement = 1,
         secondaryDefense = 3,
     ),
@@ -38,10 +39,10 @@ val garrus = setOf(
     Card(
         "Chilling Howl",
         """
-            You may discard a resolved card in the
-            previous turn slot. **This round:** Enemy
-            heroes in radius cannot fast travel, or move
-            more than 2 spaces with a movement action.
+            You may discard one of your resolved cards.
+            **This round:** Enemy heroes in radius
+            cannot fast travel, or move more than
+            2 spaces with a movement action.
         """.trimIndent(),
         Color.SILVER,
         initiative = 13,
@@ -51,12 +52,10 @@ val garrus = setOf(
         secondaryDefense = 3,
     ),
     Card(
-        "Death Grip",
+        "Battle Fury",
         """
-            While you are adjacent to exactly one enemy
-            hero, that hero cannot move or be moved,
-            placed, or swapped and you cannot be
-            moved, placed or swapped by enemy heroes.
+            Each time after one of your resolved cards is
+            discarded, you may perform its primary action.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -64,62 +63,63 @@ val garrus = setOf(
     Card(
         "Menace",
         """
-            Move an enemy unit in radius to a space
-            outside of radius by the shortest valid path.
+            Move an enemy unit in range 1 space
+            to a space farther away from you.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 9,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 1,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 6,
     ),
     Card(
         "Trace",
         """
-            Before the attack: If you have exactly
-            one card in the discard, you may move
-            up to 1 space to a space adjacent to
-            an enemy hero and target that hero.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: If you have one or more
+            cards in the discard, you may move 1 space.
+            >Target a hero adjacent to you.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 7,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 5,
     ),
     Card(
         "Hold Ground",
         """
-            If there is an enemy hero in range,
-            you may retrieve a discarded card.
+            If there at least two enemy heroes in
+            radius, you may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 5,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
     ),
     Card(
         "Threaten",
         """
-            Move an enemy unit in radius to a space
-            outside of radius by the shortest valid path.
+            Move an enemy unit in range 1 space
+            to a space farther away from you.
+            May repeat once.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
+        modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 6,
@@ -128,11 +128,11 @@ val garrus = setOf(
     Card(
         "Chase",
         """
-            Before the attack: If you have exactly
-            one card in the discard, you may move
-            up to 2 spaces to a space adjacent to
-            an enemy hero and target that hero.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: If you have one or more
+            cards in the discard, move up to 2 spaces.
+            >Target a hero adjacent to you.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -147,8 +147,8 @@ val garrus = setOf(
     Card(
         "Make a Stand",
         """
-            If there is an enemy hero in range,
-            you may retrieve a discarded card.
+            If there are at least two enemy heroes in
+            radius, you may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -156,37 +156,36 @@ val garrus = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
     ),
     Card(
-        "Shields Up!",
+        "Form Up!",
         """
-            **This round:** You and friendly units in
-            radius are immune to ranged actions of
-            enemy heroes outside of radius. Cancel
-            this effect if you fast travel, or move.
+            Move a friendly unit in range 1 space
+            to a space closer to you.
+            May repeat once.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 6,
-        modifier = Modifier.AREA,
-        modifierValue = 2,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
         secondaryMovement = 3,
+        secondaryDefense = 6,
         item = Item.ATTACK,
     ),
     Card(
         "Blunt Force",
         """
-            Target a unit adjacent to you. After the attack:
-            you may move up to 2 spaces to a space
-            adjacent to the nearest enemy hero.
-            Push that hero up to 2 spaces.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space to a
+            space adjacent to an enemy hero; if you do,
+            push that hero 3 spaces, ignoring obstacles.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -201,8 +200,8 @@ val garrus = setOf(
     Card(
         "Light Pilum",
         """
-            An enemy hero in range, not adjacent
-            to you, discards a card, if able.
+            An enemy hero in range discards a card,
+            if able. You may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -210,7 +209,7 @@ val garrus = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
@@ -218,17 +217,16 @@ val garrus = setOf(
     Card(
         "Terrify",
         """
-            Move an enemy unit in radius to a space
-            outside of radius by the shortest valid path.
-            If you do, **This turn:** That hero cannot move
-            back into radius with a movement action.
+            Move an enemy unit in range 1 space
+            to a space farther away from you.
+            May repeat up to two times.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
+        modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 7,
@@ -237,18 +235,18 @@ val garrus = setOf(
     Card(
         "Hunt Down",
         """
-            Before the attack: If you have exactly
-            one card in the discard, you may move
-            up to 3 spaces to a space adjacent to
-            an enemy hero and target that hero.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: If you have one or more
+            cards in the discard, move up to 3 spaces.
+            >Target a hero adjacent to you.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 4,
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.RANGE,
@@ -256,9 +254,9 @@ val garrus = setOf(
     Card(
         "Battle Ready",
         """
-            If there is an enemy hero in range,
-            you may retrieve a discarded card.
-            **End of the next turn:** May repeat once.
+            If there are at least two enemy heroes
+            in radius, you may retrieve up to
+            two discarded cards.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -266,38 +264,36 @@ val garrus = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
     ),
     Card(
-        "Form Testudo!",
+        "Testudo!",
         """
-            **This round:** You and friendly units in
-            radius are immune to ranged actions
-            of enemy heroes outside of radius.
-            Cancel this effect if you fast travel, or
-            move more than 2 spaces in a single turn.
+            Move a friendly unit in range 1 space
+            to a space closer to you.
+            May repeat up to two times.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 7,
-        modifier = Modifier.AREA,
-        modifierValue = 2,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
         secondaryMovement = 3,
+        secondaryDefense = 7,
         item = Item.ATTACK,
     ),
     Card(
         "Send Flying",
         """
             Target a unit adjacent to you. After the attack:
-            you may move up to 3 spaces to a space
-            adjacent to the nearest enemy hero.
-            Push that hero up to 2 spaces.
+            you may move up to 2 spaces to a space
+            adjacent to an enemy hero; if you do, push
+            that hero 3 spaces, ignoring obstacles.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -312,8 +308,8 @@ val garrus = setOf(
     Card(
         "Heavy Pilum",
         """
-            An enemy hero in range, not adjacent
-            to you, discards a card, or is defeated.
+            An enemy hero in range discards a card,
+            or is defeated. You may move up to 2 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -321,7 +317,7 @@ val garrus = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
