@@ -8,18 +8,20 @@ import Modifier
 
 val misa = setOf(
     Card(
-        "Watch Me Soar",
+        "Watch How I Soar",
         """
-            You may move through obstacles.
-            **This turn:** You are immune to non-ranged
-            attacks and skills. Ignore the effects of
-            tokens. Other units may move through you.
+            **Choose one —**
+            >>Place yourself into a space
+            >at maximum range.
+            >>Defeat a minion adjacent to you.
         """.trimIndent(),
         Color.GOLD,
-        initiative = 9,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 5,
-        secondaryDefense = 6,
+        initiative = 12,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 4,
+        secondaryMovement = 1,
+        secondaryDefense = 2,
     ),
     Card(
         "Leaf on the Wind",
@@ -38,26 +40,24 @@ val misa = setOf(
     Card(
         "Swoop In",
         """
-            Place yourself into a space in radius,
-            adjacent to an enemy hero. **This turn:**
-            Heroes in radius must attack you, if able,
-            when performing an attack action. The first
-            time you discard a card, gain 2 coins.
+            Place yourself into a space in radius adjacent
+            to two or more enemy units; if you do,
+            you may retrieve a discarded card.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 12,
+        initiative = 6,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryDefense = 3,
     ),
     Card(
         "Power Overwhelming",
         """
-            You may move through obstacles.
-            Your actions with **"Next turn"**
-            active effects count as if they had a
-            **"This round"** active effect instead.
+            Whenever you choose one, you may choose
+            two different options instead, in any order.
+            Each time after you place yourself, an enemy
+            hero adjacent to you discards a card, if able.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -65,49 +65,49 @@ val misa = setOf(
     Card(
         "Sudden Breeze",
         """
-            Move up to 3 spaces in a straight line
-            ignoring the obstacles.
+            Move up to 3 spaces in a straight line, ignoring
+            obstacles; you may place an enemy unit you
+            moved through into a space adjacent to you.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 10,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
-        secondaryDefense = 3,
+        secondaryMovement = 1,
+        secondaryDefense = 5,
     ),
     Card(
         "Challenge Accepted",
         """
-            Target a unit adjacent to you.
-            After the attack: If the target defends
-            successfully, gain 2 coins.
+            Target a unit adjacent to you. After the attack:
+            **This turn:** Gain +2 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 6,
-        secondaryMovement = 1,
-        secondaryDefense = 2,
+        primaryValue = 5,
+        secondaryMovement = 3,
+        secondaryDefense = 6,
     ),
     Card(
         "Focus",
         """
-            **Next turn:** After you resolve a skill,
-            you may repeat it once.
+            **Next turn:** Before you perform a
+            primary action, you may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 3,
         primaryAction = Action.SKILL,
-        secondaryMovement = 3,
-        secondaryDefense = 4,
+        secondaryMovement = 2,
+        secondaryDefense = 3,
     ),
     Card(
         "Gust of Wind",
         """
-            Move up to 3 spaces in a straight line
-            ignoring obstacles. You may place 1 unit
+            Move up to 4 spaces in a straight line ignoring
+            obstacles; you may place an enemy unit you
             moved through into a space adjacent to you.
         """.trimIndent(),
         Color.BLUE,
@@ -115,53 +115,50 @@ val misa = setOf(
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
-        secondaryDefense = 3,
-        item = Item.DEFENSE,
+        secondaryMovement = 1,
+        secondaryDefense = 6,
+        item = Item.ATTACK,
     ),
     Card(
         "Matter of Honor",
         """
-            Target a unit adjacent to you.
-            After the attack: If the target defends
-            successfully, gain 3 coins.
+            Target a unit adjacent to you. After the attack:
+            **This turn:** Gain +3 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 7,
-        secondaryMovement = 1,
-        secondaryDefense = 2,
+        primaryValue = 6,
+        secondaryMovement = 3,
+        secondaryDefense = 7,
         item = Item.INITIATIVE,
     ),
     Card(
         "Discipline",
         """
-            **Next turn:** After you resolve an attack or a
-            skill, you may repeat it once. Cannot attack
-            the same hero twice this way.
+            **Next turn:** Before you perform a primary
+            action, move up to 2 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 1 to 2,
         initiative = 2,
         primaryAction = Action.SKILL,
-        secondaryMovement = 3,
-        secondaryDefense = 5,
+        secondaryMovement = 2,
+        secondaryDefense = 3,
         item = Item.INITIATIVE,
     ),
     Card(
         "Living Tornado",
         """
-            Swap two enemy units in radius,
-            not adjacent to you.
+            Swap two units at maximum radius.
         """.trimIndent(),
-        Color.BLUE,
+        Color.GREEN,
         level = 2,
         variant = 2 to 2,
-        initiative = 10,
+        initiative = 2,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
@@ -173,7 +170,7 @@ val misa = setOf(
         "Power Shot",
         """
             Target a unit in range. After the attack: If the
-            target is not adjacent to you, you may move
+            target was at maximum range, you may move
             it 1 space, to a space farther away from you.
         """.trimIndent(),
         Color.RED,
@@ -181,34 +178,34 @@ val misa = setOf(
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 3,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 1,
-        secondaryDefense = 1,
+        secondaryMovement = 3,
+        secondaryDefense = 4,
         item = Item.DEFENSE,
     ),
     Card(
         "Dash and Slash",
         """
-            **Next turn:** The first enemy hero you move
-            through discards a card, if able. If a hero
-            discards a card this way, gain 1 coin.
+            Move up to 4 spaces in a straight line,
+            ignoring obstacles. An enemy hero you
+            moved through discards a card, if able.
         """.trimIndent(),
-        Color.GREEN,
+        Color.BLUE,
         level = 2,
         variant = 2 to 2,
-        initiative = 2,
+        initiative = 10,
         primaryAction = Action.SKILL,
-        secondaryMovement = 3,
-        secondaryDefense = 7,
-        item = Item.ATTACK,
+        secondaryMovement = 1,
+        secondaryDefense = 6,
+        item = Item.DEFENSE,
     ),
     Card(
         "Crushing Squall",
         """
-            Move up to 4 spaces in a straight line
-            ignoring obstacles. You may place 1 unit
+            Move up to 5 spaces in a straight line, ignoring
+            obstacles; you may place an enemy unit you
             moved through into a space adjacent to you.
         """.trimIndent(),
         Color.BLUE,
@@ -216,97 +213,92 @@ val misa = setOf(
         variant = 1 to 2,
         initiative = 11,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
-        secondaryDefense = 4,
-        item = Item.RANGE,
+        secondaryMovement = 1,
+        secondaryDefense = 6,
+        item = Item.AREA,
     ),
     Card(
         "Worthy Opponent",
         """
-            Target a unit adjacent to you. If you target a
-            hero, that hero cannot choose to not defend.
-            After the attack: If the target defends
-            successfully, gain 4 coins.
+            Target a unit adjacent to you.
+            After the attack:
+            **This turn:** Gain +5 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 7,
-        secondaryMovement = 1,
-        secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        primaryValue = 6,
+        secondaryMovement = 3,
+        secondaryDefense = 7,
+        item = Item.MOVEMENT,
     ),
     Card(
         "Mastery",
         """
-            **Next turn:** After you resolve an action,
-            you may repeat it once. Cannot attack
-            the same hero twice this way.
+            **Next turn:** Before you perform a
+            primary action, you may move 3 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 1 to 2,
         initiative = 2,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 5,
-        secondaryMovement = 3,
-        item = Item.DEFENSE,
+        primaryAction = Action.SKILL,
+        secondaryMovement = 2,
+        secondaryDefense = 4,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Storm Spirit",
         """
-            Swap with an enemy unit in radius, not
-            adjacent to you, or swap two enemy
-            units in radius, not adjacent to you.
+            Swap two units in radius and
+            at equal distance from you.
+        """.trimIndent(),
+        Color.GREEN,
+        level = 3,
+        variant = 2 to 2,
+        initiative = 2,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
+        secondaryMovement = 2,
+        secondaryDefense = 4,
+        item = Item.ATTACK,
+    ),
+    Card(
+        "Thunder Shot",
+        """
+            Target a unit in range. After the attack:
+            If the target is not adjacent to you, you may move it
+            1 space, to a space farther away from you.
+        """.trimIndent(),
+        Color.RED,
+        level = 3,
+        variant = 2 to 2,
+        initiative = 10,
+        primaryAction = Action.ATTACK,
+        primaryValue = 3,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
+        secondaryMovement = 3,
+        secondaryDefense = 4,
+        item = Item.DEFENSE,
+    ),
+    Card(
+        "Death from Above",
+        """
+            Move up to 5 spaces in a straight line,
+            ignoring obstacles; an enemy hero you
+            moved through discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 11,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 2,
-        secondaryDefense = 4,
-        item = Item.MOVEMENT,
-    ),
-    Card(
-        "Thunder Shot",
-        """
-            Target a unit in range. After the attack:
-            If the target is not adjacent to you, you
-            may move it 1 space, to a space farther
-            away from you, up to two times.
-        """.trimIndent(),
-        Color.RED,
-        level = 3,
-        variant = 2 to 2,
-        initiative = 10,
-        primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
         secondaryMovement = 1,
-        secondaryDefense = 2,
-        item = Item.AREA,
-    ),
-    Card(
-        "Death from Above",
-        """
-            **Next turn:** The first enemy hero you
-            move through this turn discards a card,
-            or is defeated. If a hero discards a
-            card this way, gain 2 coin.
-        """.trimIndent(),
-        Color.GREEN,
-        level = 3,
-        variant = 2 to 2,
-        initiative = 2,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 7,
-        secondaryMovement = 3,
-        item = Item.ATTACK,
+        secondaryDefense = 6,
+        item = Item.RANGE,
     ),
 )
