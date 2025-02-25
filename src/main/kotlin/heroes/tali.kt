@@ -10,25 +10,24 @@ val tali = setOf(
     Card(
         "Turn to Ice",
         """
-            **Choose one —**
-            >>A hero in range with an unresolved card
-            >may choose to retrieve that card. If they
-            >do not, name a color. That hero discards
-            >a card of that color, if able.
-            >>Defeat an adjacent minion.
+            Target a unit adjacent to you. If the target
+            discards a card to defend, After the attack:
+            Another enemy hero in radius discards a
+            card of the same color, if able.
         """.trimIndent(),
         Color.GOLD,
-        initiative = 10,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 3,
+        initiative = 11,
+        primaryAction = Action.ATTACK,
+        primaryValue = 3,
+        modifier = Modifier.AREA,
+        modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
         "Ice Shard",
         """
-            Target a hero adjacent to you. If the targetr
+            Target a hero adjacent to you. If the target
             discards a card to defend, After the attack:
             Another enemy hero in radius discards a
             card of the same color, if able.
@@ -46,67 +45,64 @@ val tali = setOf(
     Card(
         "Commune with Spirits",
         """
-            The nearest friendly hero names a color,
-            you may then **choose one —**
-            >>Discard a card of that color. If you do,
-            >perform any one action on that card.
-            >>Retrieve a discarded card of that color.
+            A friendly hero in play names a color;
+            you may discard a card of that color.
+            Perform the primary aciton on a card
+            of that color in your discard.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 12,
+        initiative = 13,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
     ),
     Card(
         "Reign of Winter",
         """
-            Whenever an enemy hero in play
-            retrieves a card as a result of an action,
-            that hero discards a card, if able, and
-            you may retrieve your discarded card.
+            Each time after you defeat a minion with your
+            basic attack, an enemy hero in radius discards
+            a card of the color of your choice, if able.
         """.trimIndent(),
         Color.PURPLE,
+        modifier = Modifier.AREA,
+        modifierValue = 4,
         level = 4,
     ),
     Card(
         "Cold Snap",
         """
-            The nearest enemy hero in radius discards a
-            card, if able. **Next turn, after playing cards:**
-            That hero may retrieve a discarded card.
+            Choose a direction. Move each enemy unit
+            in radius 1 space in that direction, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 9,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 5,
     ),
     Card(
-        "Frost Dagger",
+        "Winter Dagger",
         """
-            After the attack: If you target a hero,
-            that hero discards a card, if able.
-            **Next turn, after playing cards:**
-            That hero may retrieve that card.
+            Target a unit adjacent to you.
+            +3 ::attack_red:: Attack if this card is not in the discard.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 2,
+        primaryValueSign = Sign.PLUS,
         secondaryMovement = 4,
         secondaryDefense = 6,
     ),
     Card(
         "Glacial Barrier",
         """
-            Place an ::token_ice:: ice token in radius, adjacent
-            to another ice token, if able. Enemy
-            heroes have -1 ::initiative:: Initiative penalty for
-            every ice token they are adjacent to.
+            Place an ::token_ice:: ice token in radius.
+            Enemy heroes have -1 ::initiative:: Initiative for
+            every Ice token they are adjacent to.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -120,10 +116,8 @@ val tali = setOf(
     Card(
         "Snowstorm",
         """
-            Name a color. The nearest enemy hero in
-            radius discards a card of that color, if able.
-            **Next turn, after playing cards:** That hero
-            may retrieve a discarded card of that color.
+            Choose a direction. Move each enemy unit in
+            radius 1 space in that direciton, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -134,22 +128,21 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.ATTACK,
+        item = Item.DEFENSE,
     ),
     Card(
-        "Frost Spear",
+        "Winter Spear",
         """
-            After the attack: If you target a hero, name a
-            color. That hero discards a card of that color,
-            if able. **Next turn, after playing cards:**
-            That hero may retrieve that card.
+            Target a unit adjacent to you.
+            +3 ::attack_red:: Attack if this card is not in the discard.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 3,
+        primaryValueSign = Sign.PLUS,
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
@@ -157,10 +150,9 @@ val tali = setOf(
     Card(
         "Wall of Frost",
         """
-            Place up to 2 ::token_ice:: ice tokens in radius,
-            adjacent to another ice token, if able.
-            Enemy heroes have -1 ::initiative:: Initiative penalty
-            for every ice token they are adjacent to.
+            Place up to 2 ::token_ice:: ice tokens in radius.
+            Enemy heroes have -1 ::initiative:: Initiative
+            for every Ice token they are adjacent to.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -171,14 +163,14 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.ATTACK,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Guardian Spirit",
         """
-            If you have a card in the discard,
-            a friendly hero in radius may
-            retrieve a discarded card.
+            Up to 1 friendly hero in radius
+            may retrieve a discarded card.
+            If "Guardian Spirit" is in the discard, retrieve it.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -189,23 +181,24 @@ val tali = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.DEFENSE,
+        item = Item.ATTACK,
     ),
     Card(
         "Spirit Wolf",
         """
-            If your discard is empty, target an
-            adjacent unit. Otherwise, target an
-            adjacent unit, or a minion in range.
+            **Choose one —**
+            >>If this card is not in the discard,
+            >target a unit in range.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
+        primaryValue = 3,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 3,
         item = Item.DEFENSE,
@@ -213,29 +206,28 @@ val tali = setOf(
     Card(
         "Ancestral Totem",
         """
-            Place a ::token_totem:: in radius.
-            If a friendly melee minion adjacent
-            to a totem would be defeated, you
-            may remove the totem instead.
+            Place a ::token_totem:: in range.
+            If a friendly melee minion adjacent to a Totem
+            would be defeated, remove the totem instead.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
         initiative = 3,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
+        modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
     Card(
         "Blizzard",
         """
-            Name a color. The nearest enemy hero in
-            radius discards a card of that color, if able.
-            **End of next turn:** That hero may retrieve
-            a discarded card of that color.
+            Choose a direction. Move each enemy unit
+            in radius 1 space in that direction, if able.
+            If this card is in the discard, **End of turn:**
+            May repeat once.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -246,33 +238,31 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 6,
-        item = Item.ATTACK,
+        item = Item.MOVEMENT,
     ),
     Card(
-        "Frost Scepter",
+        "Winter Scepter",
         """
-            After the attack: If you target a hero,
-            name a color. That hero discards a card
-            of that color, if able. **End of next turn:**
-            That hero may retrieve that card.
+            Target a unit adjacent to you.
+            +3 ::attack_red:: Attack if this card is not in the discard.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 4,
+        primaryValueSign = Sign.PLUS,
         secondaryMovement = 4,
         secondaryDefense = 7,
-        item = Item.MOVEMENT,
+        item = Item.AREA,
     ),
     Card(
         "Pack Ice",
         """
-            Place up to 3 ::token_ice:: ice tokens in radius,
-            adjacent to another ice token, if able.
-            Enemy heroes have -1 ::initiative:: Initiative penalty
-            for every ice token they are adjacent to.
+            Place up to 3 ::token_ice:: ice tokens in radius.
+            Enemy heroes have -1 ::initiative:: Initiative for
+            every Ice token they are adjacent to.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -283,14 +273,14 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.INITIATIVE,
     ),
     Card(
-        "Vengeful Spirit",
+        "Warrior Spirit",
         """
-            If you have a card in the discard,
-            you, or a friendly hero in radius,
-            may retrieve a discarded card.
+            Up to 1 friendly hero in radius may retrieve
+            a discarded card. If "Warrior Spirit" is in the
+            discard, you may retrieve a discarded card.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -306,8 +296,10 @@ val tali = setOf(
     Card(
         "Spirit Bear",
         """
-            If your discard is empty, target an adjacent
-            unit. Otherwise, target an unit in range.
+            **Choose one, or both,** on different targets —
+            >>If this card is not in the discard,
+            >target a unit in range.
+            >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -316,28 +308,28 @@ val tali = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 3,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 4,
-        item = Item.AREA,
+        item = Item.DEFENSE,
     ),
     Card(
         "Venerated Totem",
         """
-            Place a ::token_totem:: in radius. If a friendly
-            minion adjacent to a totem would be
-            defeated, you may remove the totem instead.
-            Totems are immune to enemy actions.
+            Place a ::token_totem:: in range.
+            If a friendly minion adjacent to a totem would
+            be defeated, remove the totem instead.
+            Totem tokens are immune to enemy actions.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 2 to 2,
         initiative = 3,
         primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
+        modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
 )
