@@ -10,10 +10,10 @@ val ursafar = setOf(
     Card(
         "Claws That Catch",
         """
-            Before the attack: If you are enraged and
-            not adjacent to an enemy unit, move up to
-            1 space. Target a unit adjacent to you. After
-            the attack: **This round:** You are enraged.
+            Before the attack: If enraged, you may
+            move 1 space to a space adjacent to an
+            enemy hero. Target a unit adjacent to you.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -41,22 +41,20 @@ val ursafar = setOf(
     Card(
         "Angry Roar",
         """
-            Push adjacent enemy minions up
-            to 1 space. If enraged, you may
-            retrieve a resolved attack card.
+            If enraged, perform the primary action on one
+            of your active cards with an active effect.
             **This round:** You are enraged.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 11,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 3,
+        initiative = 7,
+        primaryAction = Action.SKILL,
+        secondaryDefense = 4,
     ),
     Card(
         "Unbound Fury",
         """
-            You are always enraged. While an active
-            effect on another card is also making you
-            enraged, gain +2 ::movement_silver:: Movement.
+            You are always enraged, and all your
+            resolved cards count as active.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -64,41 +62,39 @@ val ursafar = setOf(
     Card(
         "Prowling Brute",
         """
-            If enraged, you may swap with an adjacent
-            minion after you perform this action.
-            ~(You may choose to move 0 spaces and still swap).
+            If enraged, after movement, you may swap
+            with a unit or token adjacent to you.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 9,
         primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
+        primaryValue = 1,
         secondaryDefense = 5,
     ),
     Card(
         "Prey Drive",
         """
-            Target a unit adjacent to you. Before the
-            attack: If you are enraged and target a hero,
-            you may remove an enemy minion in radius.
+            Target a unit adjacent to you. After the attack:
+            If enraged, and the target weas not removed,
+            remove up to 1 enemy minion in radius.
             **This round:** You are enraged.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         modifier = Modifier.AREA,
-        modifierValue = 2,
+        modifierValue = 3,
         secondaryMovement = 3,
-        secondaryDefense = 5,
+        secondaryDefense = 7,
     ),
     Card(
         "Sniff Out",
         """
-            If not enraged, **This round:** You are enraged;
-            otherwise, an enemy hero in range, not
-            adjacent to you, or to another unit,
+            If enraged, an enemy hero in range
             discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
@@ -106,31 +102,33 @@ val ursafar = setOf(
         initiative = 4,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 2,
-        secondaryDefense = 3,
+        secondaryDefense = 2,
     ),
     Card(
         "Rampaging Beast",
         """
-            If enraged, you may swap with an adjacent
-            unit, or a token, after you perform this action.
+            If enraged, after movement, you may swap
+            with a unit or token adjacent to you;
+            if you do, move up to 1 additional space.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
+        primaryValue = 1,
         secondaryDefense = 6,
         item = Item.DEFENSE,
     ),
     Card(
         "Prey Abundance",
         """
-            Target a unit adjacent to you. Before the
-            attack: If you are enraged and target a hero,
-            you may remove an enemy minion in radius.
+            Target a unit adjacent to you. After the attack:
+            If enraged, and the target was not removed,
+            remove up to 1 enemy minion in radius.
             **This round:** You are enraged.
         """.trimIndent(),
         Color.RED,
@@ -138,19 +136,17 @@ val ursafar = setOf(
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 6,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 3,
-        secondaryDefense = 5,
+        secondaryDefense = 7,
         item = Item.DEFENSE,
     ),
     Card(
         "Eyes on the Prey",
         """
-            If not enraged, **This round:** You are enraged;
-            otherwise, an enemy hero in range, not
-            adjacent to you, or to another unit,
+            If enraged, an enemy hero in range
             discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
@@ -159,32 +155,32 @@ val ursafar = setOf(
         initiative = 3,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 4,
+        modifierValue = 3,
         secondaryMovement = 2,
-        secondaryDefense = 4,
-        item = Item.INITIATIVE,
+        secondaryDefense = 3,
+        item = Item.ATTACK,
     ),
     Card(
-        "Hulking Menace",
+        "Cold Ire",
         """
-            **This round:** While enraged, enemy units
-            cannot move through spaces adjacent to you.
-            ~(They can move into, or out of those spaces, but not both).
+            If enraged, gain +1 ::movement_blue:: Movement.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
+        primaryValue = 1,
+        primaryValueSign = Sign.PLUS,
         secondaryDefense = 6,
         item = Item.ATTACK,
     ),
     Card(
         "Rip",
         """
-            After the attack: If you are enraged, and
-            the target is defeated, gain 1 extra coin.
+            Target a unit adjacent to you.
+            After the attack: If enraged, gain 1 coin.
             **This round:** you are enraged.
         """.trimIndent(),
         Color.RED,
@@ -192,17 +188,17 @@ val ursafar = setOf(
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 7,
+        primaryValue = 5,
         secondaryMovement = 3,
-        secondaryDefense = 7,
+        secondaryDefense = 6,
         item = Item.INITIATIVE,
     ),
     Card(
         "Instinctive Reaction",
         """
-            If not enraged, **This round:** You are enraged;
-            otherwise, **choose one —**
-            >>Perform an action on your discarded card.
+            If enraged, **choose one —**
+            >>Perform the primary action on one
+            >of your discarded cards.
             >>You may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
@@ -211,52 +207,50 @@ val ursafar = setOf(
         initiative = 3,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
-        secondaryDefense = 4,
-        item = Item.ATTACK,
+        secondaryDefense = 3,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Unstoppable Force",
         """
-            If enraged, you may swap with an
-            adjacent unit, or a token, before
-            or after you perform this action.
+            If enraged, after movement, you may swap
+            with a unit or token adjacent to you;
+            if you do, move up to 2 additional spaces.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
+        primaryValue = 1,
         secondaryDefense = 6,
         item = Item.RANGE,
     ),
     Card(
         "Feeding Frenzy",
         """
-            Target a unit adjacent to you. Before the
-            attack: If you are enraged and target a hero,
-            you may remove an enemy minion in radius.
+            Target a unit adjacent to you. After the attack:
+            If enraged, and the target was not removed,
+            remove up to 2 enemy minions in radius.
             **This round:** You are enraged.
-            May repeat once on a different target hero.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
+        primaryValue = 6,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 4,
         secondaryMovement = 3,
-        secondaryDefense = 6,
+        secondaryDefense = 8,
         item = Item.DEFENSE,
     ),
     Card(
         "Apex Predator",
         """
-            If not enraged, **This round:** You are enraged;
-            otherwise, an enemy hero in range, not
-            adjacent to you, or to another unit,
+            If enraged, an enemy hero in range
             discards a card, or is defeated.
         """.trimIndent(),
         Color.GREEN,
@@ -265,54 +259,53 @@ val ursafar = setOf(
         initiative = 3,
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
-        modifierValue = 4,
+        modifierValue = 3,
         secondaryMovement = 2,
-        secondaryDefense = 4,
-        item = Item.AREA,
+        secondaryDefense = 3,
+        item = Item.ATTACK,
     ),
     Card(
-        "Immovable Object",
+        "Eyes of Flame",
         """
-            **This round:** While enraged, enemy units
-            cannot move through spaces adjacent to you.
-            You cannot be made to leave your space by
-            enemy heroes. Ignore any effects that limit,
-            reduce, or prevent movement.
+            If enraged, gain +2 ::movement_blue:: Movement.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
+        primaryValue = 1,
+        primaryValueSign = Sign.PLUS,
         secondaryDefense = 6,
-        item = Item.ATTACK,
+        item = Item.AREA,
     ),
     Card(
         "Tear",
         """
-            After the attack: If you are enraged, and
-            the target is defeated, gain 3 extra coins; If you
-            defeat a hero, that hero spends 1 extra ::life_counters::
-            Life counter. **This round:** you are enraged.
+            Target a unit adjacent to you.
+            After the attack: If enraged, gain 2 coins.;
+            if you defeated a hero, that hero spends
+            1 additional ::life_counters:: Life counter.
+            **This round:** you are enraged.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 7,
-        secondaryMovement = 4,
+        primaryValue = 5,
+        secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
     ),
     Card(
         "Evolutionary Response",
         """
-            If not enraged, **This round:** You are enraged;
-            otherwise, **choose one, or both —**
-            >>Perform an action on your discarded card.
-            >>You may retrieve a discarded card.
+            If enraged, **choose one, or both —**
+            >> Perform the primary action on one
+            >of your discarded cards.
+            >> You may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -320,7 +313,7 @@ val ursafar = setOf(
         initiative = 3,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
-        secondaryDefense = 4,
+        secondaryDefense = 3,
         item = Item.MOVEMENT,
     ),
 )
