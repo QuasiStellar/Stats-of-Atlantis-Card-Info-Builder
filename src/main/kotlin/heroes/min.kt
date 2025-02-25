@@ -11,18 +11,19 @@ val min = setOf(
     Card(
         "Fast as Lightning",
         """
-            After the attack: You may swap this card
-            with a resolved or discarded attack card
-            and apply that card's text.
+            Target a unit in range. After the attack:
+            Apply the "After the attack" text of your
+            resolved or discarded red card.
+            ~(If it has radius, use that card's value.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 13,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
+        primaryValue = 2,
         modifier = Modifier.RANGE,
         modifierValue = 1,
         secondaryMovement = 1,
-        secondaryDefense = 2,
+        secondaryDefense = 1,
     ),
     Card(
         "Chop Down",
@@ -44,25 +45,23 @@ val min = setOf(
     Card(
         "Smoke Bomb",
         """
-            Place a ::token_smoke_bomb:: smoke bomb token in radius.
-            Units can move through the smoke bomb.
-            Enemy heroes cannot target another unit
-            if there is a smoke bomb on a straight line
-            between them and the target.
+            Place a ::token_smoke_bomb:: smoke bomb token in radius;
+            enemy heroes cannot target another you or another
+            unit if there is the Smoke Bomb on a straight
+            line between that enemy hero and their target.
         """.trimIndent(),
         Color.SILVER,
         initiative = 12,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 2,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        secondaryMovement = 1,
     ),
     Card(
         "Flurry of blows",
         """
-            After you perform a movement action,
-            all adjacent enemy heroes discard
-            a card, if able.
+            Each time after you perform an attack action,
+            you may repeat it once on a different target.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -70,10 +69,10 @@ val min = setOf(
     Card(
         "Trip Mine",
         """
-            Place 2 mine tokens, 1 ::token_blast:: blast and 1 ::token_dud::
-            dud, facedown in radius. Units may move
-            through them. After an enemy hero moves
-            through a mine, remove it. For every blast
+            Place 2 mine tokens, 1 ::token_blast:: blast and 1 ::token_dud:: dud,
+            facedown in radius; units may move through
+            them; remove mine tokens after an enemy
+            hero moves through them; for every blast
             removed, that hero discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
@@ -81,48 +80,48 @@ val min = setOf(
         initiative = 10,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 2,
-        secondaryMovement = 3,
+        modifierValue = 3,
+        secondaryMovement = 2,
         secondaryDefense = 4,
     ),
     Card(
         "Crane Stance",
         """
-            After the attack: Push an adjacent
-            enemy hero up to 1 space.
+            Target a unit adjacent to you.
+            After the attack: Push an enemy unit
+            adjacent to you up to 3 spaces.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        secondaryMovement = 4,
-        secondaryDefense = 6,
+        primaryValue = 3,
+        secondaryMovement = 5,
+        secondaryDefense = 5,
     ),
     Card(
         "Poof!",
         """
-            Swap with a mine, a grenade,
-            or a smoke bomb in radius.
-            If you do, block the attack.
+            Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+            if you do, block the attack.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 2,
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
-        modifier = Modifier.AREA,
+        modifier = Modifier.RANGE,
         modifierValue = 3,
-        secondaryMovement = 2,
+        secondaryMovement = 3,
     ),
     Card(
         "Cluster Mine",
         """
             Place 3 mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::
-            duds, facedown in radius. Units may move
-            through them. After an enemy hero moves
-            through a mine, remove it. For every blast
-            removed, that hero discards a card, if able.
+            duds, facedown in radius; units may move
+            through them; remove mine tokens after an
+            enemy hero moves through them; for every
+            blast removed, that hero discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -131,15 +130,17 @@ val min = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
-        secondaryMovement = 3,
-        secondaryDefense = 5,
-        item = Item.DEFENSE,
+        secondaryMovement = 2,
+        secondaryDefense = 4,
+        item = Item.ATTACK,
     ),
     Card(
         "Tiger Stance",
         """
-            After the attack: Push an adjacent
-            enemy hero up to 2 spaces.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space to a
+            space adjacent to the target. Push an enemy
+            unit adjacent to you up to 3 spaces.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -147,89 +148,87 @@ val min = setOf(
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
-        secondaryMovement = 4,
-        secondaryDefense = 6,
-        item = Item.DEFENSE,
+        secondaryMovement = 5,
+        secondaryDefense = 5,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Vanish",
         """
-            Swap with a mine, a grenade, or a
-            smoke bomb in radius. If you do, when
-            used as a defense, block the attack.
+            Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+            if you do, block the attack.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 1 to 2,
         initiative = 2,
-        primaryAction = Action.DEFENSE_SKILL,
+        primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 2,
-        item = Item.ATTACK,
+        modifier = Modifier.RANGE,
+        modifierValue = 4,
+        secondaryMovement = 3,
+        item = Item.DEFENSE,
     ),
     Card(
         "Death Grenade",
         """
-            Place a ::token_grenade:: grenade token into a space in
-            range, not adjacent to you. **End of turn:**
-            An enemy hero adjacent to the grenade
-            discards a card, if able, remove the grenade.
+            Place a ::token_grenade:: Grenade token into a space in
+            radius. **End of turn:** Up to 1 enemy hero
+            adjacent to that token discards a card, or is
+            defeated. Remove the Grenade token.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 2 to 2,
         initiative = 11,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
+        modifier = Modifier.AREA,
         modifierValue = 2,
-        secondaryMovement = 3,
+        secondaryMovement = 2,
         secondaryDefense = 4,
-        item = Item.ATTACK,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Viper Stance",
         """
-            After the attack: You may swap with a
-            smoke bomb or a mine in radius.
+            Target a unit adjacent to you.
+            After the attack: You may swap
+            with a ::token_smoke_bomb:: Smoke bomb in radius.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 5,
         modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 4,
-        secondaryDefense = 4,
-        item = Item.INITIATIVE,
+        modifierValue = 4,
+        secondaryMovement = 5,
+        secondaryDefense = 5,
+        item = Item.DEFENSE,
     ),
     Card(
         "Inner Strength",
         """
-            If your discard is empty, **This round:** Double
-            your item bonuses. If you discard a card,
-            cancel this effect after the action is resolved.
+            **This round:** Double your item bonuses.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
         initiative = 2,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
-        secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        secondaryMovement = 3,
+        secondaryDefense = 2,
+        item = Item.ATTACK,
     ),
     Card(
-        "Mine Field",
+        "Minefield",
         """
             Place 3 mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::
-            dud, facedown in radius. Units may move
-            through them. After an enemy hero moves
-            through a mine, remove it. For every blast
-            removed, that hero discards a card, if able.
+            dud, facedown in radius; units may move
+            through them; remove mien tokens after an
+            enemy hero moves through them; for every
+            blast removed, that hero discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -238,91 +237,92 @@ val min = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
-        secondaryMovement = 3,
+        secondaryMovement = 2,
         secondaryDefense = 5,
-        item = Item.AREA,
+        item = Item.ATTACK,
     ),
     Card(
         "Dragon Stance",
         """
-            After the attack: Move up to 1 space to a
-            space adjacent to the target, if able. Push
-            an adjacent enemy hero up to 3 spaces.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 or 2 spaces
+            to a space adjacent to the target. Push an
+            enemy unit adjacent to you up to 3 spaces.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 5,
-        secondaryMovement = 4,
-        secondaryDefense = 7,
-        item = Item.INITIATIVE,
+        primaryValue = 4,
+        secondaryMovement = 5,
+        secondaryDefense = 6,
+        item = Item.MOVEMENT,
     ),
     Card(
         "Ruse",
         """
-            Swap with a mine, a grenade, or a smoke
-            bomb in radius. If you do, when used as
-            a defense, block the attack and you may
-            retrieve a resolved or discarded silver card.
+            Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+            if you do, block the attack. You may place
+            the Smoke bomb into a space in range.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 1 to 2,
         initiative = 1,
-        primaryAction = Action.DEFENSE_SKILL,
+        primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 2,
-        item = Item.DEFENSE,
+        modifier = Modifier.RANGE,
+        modifierValue = 4,
+        secondaryMovement = 3,
+        item = Item.AREA,
     ),
     Card(
         "Holy Death Grenade",
         """
             Place a ::token_grenade:: grenade token into a space in
-            range, not adjacent to you. **End of turn:** An
-            enemy hero adjacent to the grenade discards
-            a card, or is defeated, remove the grenade.
+            radius. **End of turn:** Up to 2 enemy heroes
+            adjacent to that token discard a card, or are
+            defeated. Remove the Grenade token.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 11,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
+        modifier = Modifier.AREA,
         modifierValue = 2,
-        secondaryMovement = 3,
-        secondaryDefense = 4,
-        item = Item.MOVEMENT,
+        secondaryMovement = 2,
+        secondaryDefense = 5,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Cobra Stance",
         """
+            Target a unit adjacent to you.
             After the attack: You may swap with
-            a smoke bomb or a mine in radius.
-            If you do, repeat once on a different hero.
+            a ::token_smoke_bomb:: Smoke bomb radius; if you do, you may
+            place the Smoke bomb into a space in radius.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 4,
-        secondaryDefense = 5,
-        item = Item.RANGE,
+        modifierValue = 4,
+        secondaryMovement = 5,
+        secondaryDefense = 6,
+        item = Item.DEFENSE,
     ),
     Card(
         "Perfect Self",
         """
-            You may retrieve a discarded card. If your
-            discard is empty, **This round:** Double your
-            item bonuses. If you discard a card, cancel
-            this effect after the action is resolved.
+            **Choose one, or both —**
+            >> **This round:** Double your item bonuses.
+            >> Take a Tier II card from your deck and add
+            it to your dashboard as a permanent item.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -331,6 +331,6 @@ val min = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.ATTACK,
+        item = Item.RANGE,
     ),
 )
