@@ -11,16 +11,14 @@ val hanu = setOf(
     Card(
         "Fight and Flight",
         """
-            If your discard is empty, **choose one —**
-            >>An enemy hero adjacent to you discards a
-            >card, if able. You then move 2 spaces in a
-            >straight line, if able.
-            >>Defeat a non-heavy minion adjacent to you.
+            Target a unit adjacent to you.
+            If the target is not defeated, After the attack:
+            If able, move 3 spaces in a straight line.
         """.trimIndent(),
         Color.GOLD,
         initiative = 13,
-        primaryAction = Action.SKILL,
-        secondaryMovement = 3,
+        primaryAction = Action.ATTACK,
+        secondaryMovement = 2,
         secondaryDefense = 1,
     ),
     Card(
@@ -41,12 +39,10 @@ val hanu = setOf(
     Card(
         "Hurry up!",
         """
-            If your discard is empty, set the printed
-            ::initiative:: Initiative value of an unresolved card
-            of a hero in range to 11, until it is resolved.
-            **This turn:** If that hero performs a
-            movement action, that hero must move in
-            a straight line and the full distance, if able.
+            Set the printed ::initiative:: Initiative value of an
+            unresolved card of a hero in range to 11,
+            until it is resolved, or otherwise changes state.
+            ~(This may change the initiative order and tie breakers.)
         """.trimIndent(),
         Color.SILVER,
         initiative = 12,
@@ -58,8 +54,8 @@ val hanu = setOf(
     Card(
         "The Ultimate Trick",
         """
-            You choose the action, and how
-            it is performed for a hero you
+            You choose the next action, and how
+            it is performed, for a hero you
             target with the "Hurry Up!".
         """.trimIndent(),
         Color.PURPLE,
@@ -71,14 +67,14 @@ val hanu = setOf(
             Swap with an enemy hero in radius.
             **This turn:** That hero is immune.
             **End of turn:** Swap with that hero,
-            regardless of radius, if able.
+            regardless of radius and immunity.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 10,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 4,
     ),
@@ -87,8 +83,8 @@ val hanu = setOf(
         """
             **Choose one —**
             >>Target a unit adjacent to you.
-            >>Target a hero in range, adjacent
-            >to a friendly hero.
+            >>Target a hero in range, adjacent to your
+            >friendly hero.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -98,31 +94,29 @@ val hanu = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 5,
-        secondaryDefense = 5,
+        secondaryDefense = 4,
     ),
     Card(
-        "Little to Gain",
+        "Monkey Trick",
         """
-            If yoy have no cards in the discard, block
-            the attack. Discard your unresolved card,
-            if you have one and and place yourself on
-            a spawn point in your throne zone, if able.
-            Each enemy hero gains 1 coin.
+            Swap two friendly units in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 2,
-        primaryAction = Action.DEFENSE,
-        primaryValueSign = Sign.EXCLAMATION,
-        secondaryMovement = 3,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 1,
+        secondaryMovement = 2,
+        secondaryDefense = 1,
     ),
     Card(
         "There and Back Again",
         """
-            Swap with an enemy unit in radius.
-            **This turn:** That unit is immune.
-            **End of turn:** Swap with that unit,
-            regardless of radius, if able.
+            Swap with an enemy hero in radius.
+            **This turn:** That hero is immune.
+            **End of turn:** Swap with that hero,
+            regardless of radius and immunity.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -140,45 +134,41 @@ val hanu = setOf(
         """
             **Choose one —**
             >>Target a unit adjacent to you.
-            >>Target a hero in range, adjacent
-            >to a friendly hero.
+            >>Target a hero in range, adjacent to your
+            >friendly hero.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryMovement = 5,
-        secondaryDefense = 5,
+        secondaryDefense = 4,
         item = Item.INITIATIVE,
     ),
     Card(
-        "Barely a Nuisance",
+        "Monkey Twist",
         """
-            If yoy have no cards in the discard, block
-            the attack and place yourself on a spawn
-            point in your throne zone, if able.
-            Each enemy hero gains 1 coin.
+            Swap two friendly heroes in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 1 to 2,
         initiative = 2,
-        primaryAction = Action.DEFENSE,
-        primaryValueSign = Sign.EXCLAMATION,
-        secondaryMovement = 3,
-        item = Item.ATTACK,
+        primaryAction = Action.SKILL,
+        secondaryMovement = 2,
+        secondaryDefense = 2,
+        item = Item.DEFENSE,
     ),
     Card(
         "This Way!",
         """
             A friendly hero in radius chooses a distance
-            of 1 or 2. You choose a direction. You both
-            move that number of spaces in the chosen
-            direction, if able; stop if you reach an obstacle.
+            of 1 or 2; move both of you that number of
+            spaces in the same direction of your choice.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -189,32 +179,32 @@ val hanu = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 4,
-        item = Item.DEFENSE,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Outnumber",
         """
-            +1 ::attack_red:: Attack for each friendly
-            unit adjacent to you.
+            **Choose one —**
+            >>Target a unit adjacent to you.
+            >>Target a minion in range, adjacent to your
+            >friendly hero.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 1,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
-        modifierValue = 2,
+        modifierValue = 4,
         secondaryMovement = 5,
-        secondaryDefense = 3,
+        secondaryDefense = 5,
         item = Item.DEFENSE,
     ),
     Card(
         "Hear Nothing",
         """
             Swap with an enemy hero in radius.
-            Move up to 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -223,17 +213,17 @@ val hanu = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
-        secondaryMovement = 3,
+        secondaryMovement = 2,
         secondaryDefense = 2,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
     Card(
         "Safe Travels",
         """
-            Swap with an enemy unit in radius.
-            **This turn:** You and that unit are immune.
-            **End of turn:** Swap with that unit,
-            regardless of radius, if able.
+            Swap with an enemy hero in radius.
+            **This turn:** That hero is immune.
+            **End of turn:** Swap with that hero, regardless
+            of radius and immunity. You may move 1 space.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -249,47 +239,44 @@ val hanu = setOf(
     Card(
         "Trusted Sidekick",
         """
-            **Choose one, or both —**
+            **Choose one, or both,** in any order —
             >>Target a unit adjacent to you.
-            >>Target a hero in range, adjacent
-            >to a friendly hero.
+            >>Target a hero in range, adjacent to your
+            >friendly hero and not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryMovement = 5,
-        secondaryDefense = 6,
+        secondaryDefense = 5,
         item = Item.MOVEMENT,
     ),
     Card(
-        "Killing Joke",
+        "Monkey Business",
         """
-            If yoy have no cards in the discard, block the
-            attack and place yourself on a spawn point in
-            your throne zone, if able. If you do, retrieve
-            this card. Each enemy hero gains 1 coin.
+            Swap two friendly units in radius.
+            You may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 1 to 2,
         initiative = 1,
-        primaryAction = Action.DEFENSE,
-        primaryValueSign = Sign.EXCLAMATION,
-        secondaryMovement = 3,
+        primaryAction = Action.SKILL,
+        secondaryMovement = 2,
+        secondaryDefense = 2,
         item = Item.DEFENSE,
     ),
     Card(
         "That Way!",
         """
             A friendly hero in radius chooses a distance
-            of 1, 2, or 3. You choose a direction. You both
-            move that number of spaces in the chosen
-            direction; stop if you reach an obstacle.
+            of 1, 2, or 3; move both of you that number of
+            spaces in the same direction of your choice.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -300,33 +287,33 @@ val hanu = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.RANGE,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Pile On",
         """
-            +1 ::attack_red:: Attack for each friendly unit
-            adjacent to you. If you target a hero,
-            may repeat once on a different target.
+            **Choose one, or both,** in any order —
+            >>Target a unit adjacent to you.
+            >>Target a minion in range, adjacent to your
+            >friendly.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
-        modifierValue = 2,
+        modifierValue = 4,
         secondaryMovement = 5,
-        secondaryDefense = 4,
+        secondaryDefense = 6,
         item = Item.AREA,
     ),
     Card(
         "See Nothing",
         """
-            Move up to 1 space. Swap with an enemy
-            hero in radius. Move up to 1 space.
+            Swap with an enemy hero in radius.
+            You may move 1 space.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -335,8 +322,8 @@ val hanu = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
-        secondaryMovement = 3,
+        secondaryMovement = 2,
         secondaryDefense = 2,
-        item = Item.INITIATIVE,
+        item = Item.RANGE,
     ),
 )

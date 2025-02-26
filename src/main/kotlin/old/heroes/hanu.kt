@@ -102,7 +102,7 @@ val hanu = setOf(
     Card(
         "Little to Gain",
         """
-            If yoy have no cards in the discard, block
+            If you have no cards in the discard, block
             the attack. Discard your unresolved card,
             if you have one and and place yourself on
             a spawn point in your throne zone, if able.
@@ -157,7 +157,7 @@ val hanu = setOf(
     Card(
         "Barely a Nuisance",
         """
-            If yoy have no cards in the discard, block
+            If you have no cards in the discard, block
             the attack and place yourself on a spawn
             point in your throne zone, if able.
             Each enemy hero gains 1 coin.
@@ -268,7 +268,7 @@ val hanu = setOf(
     Card(
         "Killing Joke",
         """
-            If yoy have no cards in the discard, block the
+            If you have no cards in the discard, block the
             attack and place yourself on a spawn point in
             your throne zone, if able. If you do, retrieve
             this card. Each enemy hero gains 1 coin.
