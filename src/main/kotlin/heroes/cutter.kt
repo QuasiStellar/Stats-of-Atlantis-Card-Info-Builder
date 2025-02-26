@@ -12,10 +12,10 @@ val cutter = setOf(
         "Walk the Plank",
         """
             **Choose one —**
-            >>Push an enemy hero adjacent to you up
-            >to 3 spaces; if that hero is pushed into
-            >another zone, that hero discards a card,
-            >or is defeated.
+            >>Push an enemy hero adjacent to you
+            >up to 4 spaces; if that hero is pushed
+            >into another zone, that hero discards
+            >a card, or is defeated.
             >>Defeat a minion adjacent to you.
         """.trimIndent(),
         Color.GOLD,
@@ -43,14 +43,14 @@ val cutter = setOf(
         "Grappling Bolt",
         """
             Target an obstacle in range and in a straight
-            line, with no obstacles between you, ignore
-            immunity. Move any number of spaces in a
-            straight line towards that obstacle.
+            line, with no obstacles between you; ignore
+            immunity. Move in a straight line towards
+            that obstacle until you are adjacent to it.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 2,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 2,
+        initiative = 5,
+        primaryAction = Action.SKILL,
+        secondaryDefense = 2,
         modifier = Modifier.RANGE,
         modifierValue = 5,
     ),
@@ -65,12 +65,11 @@ val cutter = setOf(
         level = 4,
     ),
     Card(
-        "Barrage",
+        "Bombardment",
         """
-            A enemy hero in radius adjacent to
-            another enemy unit, and not adjacent
+            A enemy hero in radius, adjacent to
+            another enemy unit and not adjacent
             to you, discards a card, if able.
-            ~(The target hero must be adjacent to their friendly unit)
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -79,24 +78,24 @@ val cutter = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryMovement = 3,
-        secondaryDefense = 4,
+        secondaryDefense = 5,
     ),
     Card(
         "Daring Strike",
         """
-            Before the attack: You may move
-            1 space and target a unit adjacent to
-            you in the direction of the move;
-            if you do, gain +2 ::attack_red:: Attack.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: Move 1 space.
+            Target a unit adjacent to you in the
+            direction of the move; +2 ::attack_red:: Attack.
+            >> Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 4,
         primaryValueSign = Sign.PLUS,
-        secondaryMovement = 4,
+        secondaryMovement = 3,
         secondaryDefense = 6,
     ),
     Card(
@@ -104,24 +103,24 @@ val cutter = setOf(
         """
             Move 3 spaces in a straight line, ignoring
             obstacles, to a space adjacent to an enemy
-            hero. That hero discards a card, if able.
+            hero; that hero discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
         initiative = 3,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
-        secondaryDefense = 2,
+        secondaryDefense = 3,
     ),
     Card(
-        "Bombardment",
+        "Barrage",
         """
-            A enemy hero in radius adjacent to
-            another enemy unit, and not adjacent
+            A enemy hero in radius, adjacent to
+            another enemy unit and not adjacent
             to you, discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
-        level = 2,
+        level = 1,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
@@ -129,25 +128,25 @@ val cutter = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.ATTACK,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Bold Thrust",
         """
-            Before the attack: You may move 1 or 2
-            spaces in a straight line and target a unit
-            adjacent to you in the direction of the move;
-            if you do, gain +2 ::attack_red:: Attack.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: Move 1 or 2 spaces in a
+            straight line. Target a unit adjacent to you
+            in the direction of the move; +2 ::attack_red:: Attack.
+            >> Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         primaryValueSign = Sign.PLUS,
-        secondaryMovement = 4,
+        secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
     ),
@@ -156,7 +155,7 @@ val cutter = setOf(
         """
             Move 3 or 4 spaces in a straight line, ignoring
             obstacles, to a space adjacent to an enemy
-            hero. That hero discards a card, if able.
+            hero; that hero discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -165,16 +164,14 @@ val cutter = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 3,
-        item = Item.INITIATIVE,
+        item = Item.ATTACK,
     ),
     Card(
         "X Marks the Spot",
         """
-            Place a coin in a space in radius.
-            **End of turn:** You may place yourself in
-            a space with a coin. Any hero in a space
-            with a coin gains 1 coin. Remove the coin.
-            ~(A coin is not an obstacle. The space with a coin is empty.)
+            An enemy hero in radius **chooses one —**
+            >> You place that hero in a space in radius.
+            >> You gain 2 coins.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -185,50 +182,49 @@ val cutter = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.DEFENSE,
+        item = Item.ATTACK,
     ),
     Card(
         "Evasive Shot",
         """
-            Target a unit in range in a straight line, with
-            no other units, or terrain, between you.
-            After the attack: Move up to 2 spaces in a
-            straight line directly away from the target.
+            Target a unit in range in a straight line
+            After the attack: Move up to 2 spaces
+            in the opposite direction.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 4,
+        secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
     ),
     Card(
-        "Mediocre!",
+        "Outmaneuver",
         """
-            If the attacker has a card in their discard,
-            block the attack. If you do, the attacker
-            discards a card, if able.
+            Swap with an enemy minion in radius;
+            you may move that minion up to 2 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
         initiative = 3,
-        primaryAction = Action.DEFENSE,
-        primaryValueSign = Sign.EXCLAMATION,
+        primaryAction = Action.SKILL,
         secondaryMovement = 2,
-        item = Item.ATTACK,
+        secondaryDefense = 3,
+        item = Item.DEFENSE,
     ),
     Card(
         "Broadside",
         """
-            A enemy hero in radius adjacent to
-            another enemy unit, and not adjacent
-            to you, discards a card, or is defeated.
+            A enemy hero in radius, adjacent to
+            another enemy unit and not adjacent
+            to you, discards a card, if able.
+            May repeat once on a different target.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -238,36 +234,35 @@ val cutter = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryMovement = 3,
-        secondaryDefense = 5,
-        item = Item.ATTACK,
+        secondaryDefense = 6,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Fearless Lunge",
         """
-            Before the attack: You may move 1, 2 or 3
-            spaces in a straight line and target a unit
-            adjacent to you in the direction of the move;
-            if you do, gain +3 ::attack_red:: Attack.
-            Otherwise, target a unit adjacent to you.
+            **Choose one —**
+            >> Before the attack: Move 1, 2 or 3 spaces in
+            >a straight line. Target a unit adjacent to you
+            >in the direction of the move; +2 ::attack_red:: Attack.
+            >> Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
+        primaryValue = 5,
         primaryValueSign = Sign.PLUS,
-        secondaryMovement = 4,
+        secondaryMovement = 3,
         secondaryDefense = 7,
-        item = Item.INITIATIVE,
+        item = Item.MOVEMENT,
     ),
     Card(
         "Crashland",
         """
-            Move 3, 4 or 5 spaces in a straight
-            line, ignoring obstacles, to a space
-            adjacent to an enemy hero.
-            That hero discards a card, if able.
+            Move 3, 4 or 5 spaces in a straight line,
+            ignoring obstacles, to a space adjacent to an
+            enemy hero; that hero discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -275,16 +270,16 @@ val cutter = setOf(
         initiative = 2,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
-        secondaryDefense = 3,
-        item = Item.MOVEMENT,
+        secondaryDefense = 4,
+        item = Item.RANGE,
     ),
     Card(
         "A Fistful of Coins",
         """
-            Place a coin in up to 2 spaces in radius.
-            **End of turn:** You may place yourself in a
-            space with a coin. Heroes in a space with
-            a coin gain 1 coin. Remove the coins.
+            An enemy hero in radius **chooses one —**
+            >> You place that hero in a space in radius.
+            >> You gain 3 coins. If you have 13 or more
+            >coins, you alone win the game.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -294,42 +289,43 @@ val cutter = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryMovement = 3,
-        secondaryDefense = 5,
-        item = Item.RANGE,
+        secondaryDefense = 6,
+        item = Item.ATTACK,
     ),
     Card(
-        "Thumble Shot",
+        "Tumble Shot",
         """
-            Target a unit in range in a straight line, with no
-            other units, or terrain, between you. After the
-            attack: Move up to 2 spaces in a straight line.
+            Target a unit in range in a straight line.
+            After the attack: Move up to 3 spaces
+            in the opposite direction.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 4,
+        secondaryMovement = 3,
         secondaryDefense = 5,
-        item = Item.DEFENSE,
+        item = Item.AREA,
     ),
     Card(
-        "Pathetic!",
+        "Outsmart",
         """
-            If the attacker has a card in their discard,
-            block the attack. If you do, the attacker
-            discards a card, or is defeated.
+            Swap with an enemy minion in radius;
+            you may move that minion up to 3 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 2 to 2,
         initiative = 2,
-        primaryAction = Action.DEFENSE,
-        primaryValueSign = Sign.EXCLAMATION,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
         secondaryMovement = 2,
-        item = Item.AREA,
+        secondaryDefense = 4,
+        item = Item.DEFENSE,
     ),
 )
