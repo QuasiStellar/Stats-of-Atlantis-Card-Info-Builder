@@ -298,7 +298,7 @@ val cutter = setOf(
         item = Item.RANGE,
     ),
     Card(
-        "Thumble Shot",
+        "Tumble Shot",
         """
             Target a unit in range in a straight line, with no
             other units, or terrain, between you. After the
