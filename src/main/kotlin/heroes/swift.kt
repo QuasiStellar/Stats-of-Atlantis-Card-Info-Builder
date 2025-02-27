@@ -12,14 +12,14 @@ val swift = setOf(
         "Reload!",
         """
             **Choose one —**
+            >>Perform the primary action of your
+            >rightmost resolved card.
             >>Defeat a minion adjacent to you.
-            >>Perform the primary action of the resolved
-            >card in your previous turn slot.
         """.trimIndent(),
         Color.GOLD,
         initiative = 6,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
+        secondaryMovement = 1,
         secondaryDefense = 1,
     ),
     Card(
@@ -39,23 +39,22 @@ val swift = setOf(
     Card(
         "Bounce",
         """
-            Swap this card with a red or a gold card
-            in your hand or discard. If you do, you may
-            push an enemy unit adjacent to you 1 space,
-            then move 2 spaces in a straight line, if able.
+            Move 2 spaces in a straight line, ignoring
+            obstacles; if this card is already resolved as
+            you perform this action, may repeat once.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 13,
+        initiative = 12,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
     ),
     Card(
         "Bullet Time",
         """
-            After you perform any action on your Gold
-            card, you may perform an action on your
-            Gold card again; it can be the same action.
-            Cannot target the same enemy hero twice.
+            After you resolve a basic card, you may
+            perform the primary action on that card;
+            you cannot target the same enemy hero
+            twice in the same turn this way.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -63,24 +62,24 @@ val swift = setOf(
     Card(
         "Steam Jump",
         """
-            Place yourself into a space in a straight line
-            and at maximum radius. You may then push
-            an enemy unit adjacent to you 1 space.
+            Place yourself into a space in a straight
+            line in radius. Push an enemy unit
+            adjacent to you up to 1 space.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
         initiative = 9,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 4,
+        modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
     ),
     Card(
         "Snipe",
         """
-            Target a unit in a straight line
-            and at maximum range.
+            Target a unit at maximum range,
+            and in in a straight line.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -90,14 +89,13 @@ val swift = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryMovement = 4,
-        secondaryDefense = 5,
+        secondaryDefense = 4,
     ),
     Card(
         "Suppress",
         """
-            A non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
-            token, discards a card, if able.
+            An enemy hero in radius who is not
+            adjacent to terrain discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -111,9 +109,9 @@ val swift = setOf(
     Card(
         "Assault Jump",
         """
-            Place yourself into a space in a straight line in
-            radius and not adjacent to you. You may then
-            push an enemy unit adjacent to you 1 space.
+            Place yourself into a space in a straight
+            line in radius. Push an enemy unit
+            adjacent to you up to 2 spaces.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -129,7 +127,8 @@ val swift = setOf(
     Card(
         "Prepared Shot",
         """
-            Target a non-adjacent unit in a straight line.
+            Target a unit in range, in a straight
+            line, and not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -146,9 +145,8 @@ val swift = setOf(
     Card(
         "Pin Down",
         """
-            A non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
-            token, discards a card, if able.
+            An enemy hero in radius who is not
+            adjacent to terrain discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -158,40 +156,39 @@ val swift = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryMovement = 2,
-        secondaryDefense = 3,
+        secondaryDefense = 2,
         item = Item.ATTACK,
     ),
     Card(
-        "Tactical Jump",
+        "Delayed Jump",
         """
-            You may place yourself into a space in
-            radius not in a straight line from you.
+            **End of turn:** Place yourself into a space
+            in radius not in a straight line from you.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 4,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 1,
+        secondaryDefense = 4,
         item = Item.DEFENSE,
     ),
     Card(
         "Shotgun",
         """
-            +3 ::attack_red:: Attack if you target an adjacent unit.
-            Before the attack: Up to one enemy hero
-            adjacent to the target discards a card, if able.
+            Target a unit in range. Before the attack:
+            An enemy hero adjacent to the target
+            discards a card, if able.
         """.trimIndent(),
         Color.RED,
         level = 2,
         variant = 2 to 2,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 2,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 4,
@@ -199,9 +196,12 @@ val swift = setOf(
         item = Item.INITIATIVE,
     ),
     Card(
-        "Steam Shroud",
+        "Mark for Death",
         """
-            Move an enemy minion in radius 1 space.
+            Move an enemy minion in radius up
+            to 3 spaces to a space in radius.
+            **Next turn:** The first time an enemy minion
+            in radius is defeated, gain 1 coin.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -211,15 +211,15 @@ val swift = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryMovement = 2,
-        secondaryDefense = 3,
+        secondaryDefense = 2,
         item = Item.INITIATIVE,
     ),
     Card(
         "Drop Trooper",
         """
-            Place yourself into a space in a straight
-            line in radius. You may then push up to two
-            enemy units adjacent to you 1 space.
+            Place yourself into a space in a straight line
+            in radius. Push up to two enemy units
+            adjacent to you up to 2 spaces.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -235,7 +235,8 @@ val swift = setOf(
     Card(
         "Killshot",
         """
-            Target a non-adjacent unit in a straight line.
+            Target a unit in range, in a straight
+            line, and not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -244,17 +245,16 @@ val swift = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 6,
         modifier = Modifier.RANGE,
-        modifierValue = 6,
+        modifierValue = 5,
         secondaryMovement = 4,
-        secondaryDefense = 6,
+        secondaryDefense = 5,
         item = Item.DEFENSE,
     ),
     Card(
         "Killing Ground",
         """
-            Non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
-            token, discards a card, or is defeated.
+            An enemy hero in radius who is not adjacent
+            to terrain discards a card, or is defeated.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -268,49 +268,49 @@ val swift = setOf(
         item = Item.RANGE,
     ),
     Card(
-        "Steam Valkyrie",
+        "Mobile Scout",
         """
-            You may place yourself into a space in
+            **End of turn:** Place yourself into a space in
             radius not in a straight line from you.
-            You may then fast travel once, if able.
+            You may then fast travel, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
         variant = 2 to 2,
         initiative = 10,
-        primaryAction = Action.DEFENSE_SKILL,
-        primaryValue = 4,
+        primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
-        modifierValue = 3,
+        modifierValue = 2,
         secondaryMovement = 1,
+        secondaryDefense = 4,
         item = Item.MOVEMENT,
     ),
     Card(
         "Super-Shotgun",
         """
-            +3 ::attack_red:: Attack if you target an adjacent unit.
-            Before the attack: Up to one enemy
-            hero adjacent to the target discards
-            a card, or is defeated.
+            Target a unit in range. Before the attack:
+            An enemy hero adjacent to the target
+            discards a card, or is defeated.
         """.trimIndent(),
         Color.RED,
         level = 3,
         variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        primaryValueSign = Sign.PLUS,
+        primaryValue = 5,
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 4,
-        secondaryDefense = 7,
+        secondaryDefense = 6,
         item = Item.AREA,
     ),
     Card(
-        "Steam Cloud",
+        "Hunting Season",
         """
-            Move an enemy minion in
-            radius up to 2 spaces.
+            Move up to two enemy minions in radius,
+            up to 3 spaces each, to spaces in radius.
+            **Next turn:** The first two times an enemy
+            minion in radius is defeated, gain 1 coin.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
