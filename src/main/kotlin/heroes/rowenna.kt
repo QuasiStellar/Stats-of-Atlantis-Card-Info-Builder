@@ -44,7 +44,7 @@ val rowenna = setOf(
             to an enemy hero in range; that hero may
             move 1 space; if they do, gain 2 coins.
         """.trimIndent(),
-        Color.,
+        Color.SILVER,
         initiative = 5,
         primaryAction = Action.SKILL,
         secondaryDefense = 3,
