@@ -58,7 +58,7 @@ val rowenna = setOf(
         Color.RED,
         level = 1,
         initiative = 8,
-        primaryAction = Action.Attack,
+        primaryAction = Action.ATTACK,
         primaryValue = 5,
         modifier = Modifier.AREA,
         modifierValue = 1,
@@ -135,6 +135,7 @@ val rowenna = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         variant = 2 to 2,
+        item = Item.DEFENSE,
     ),
     Card(
         "Melee",
