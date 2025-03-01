@@ -11,6 +11,7 @@ import heroes.misa
 import heroes.nebkher
 import heroes.sabina
 import heroes.silverarrow
+import heroes.spells
 import heroes.swift
 import heroes.tali
 import heroes.tigerclaw
@@ -24,7 +25,7 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 fun main() {
-    print(Json.encodeToString(
+    println(Json.encodeToString(
         mapOf(
             "arien" to arien,
             "bain" to bain,
@@ -49,5 +50,11 @@ fun main() {
             "wuk" to wuk,
             "xargatha" to xargatha,
         )
+    ))
+
+    println()
+
+    println(Json.encodeToString(
+        spells
     ))
 }

@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Spell
 
 val gydion = setOf(
     Card(
@@ -20,4 +21,21 @@ val gydion = setOf(
         primaryAction = Action.SKILL,
         secondaryDefense = 1,
     ),
+)
+
+val spells = setOf(
+    Spell(
+        "Magic Missile",
+        """
+            Target a unit in range
+            and not adjacent to you.
+        """.trimIndent(),
+        Color.GOLD,
+        school = School.CANTRIP,
+        variant = 1 to 3,
+        primaryAction = Action.ATTACK,
+        primaryValue = 1,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
+    )
 )
