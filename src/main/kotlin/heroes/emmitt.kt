@@ -17,7 +17,6 @@ val emmitt = setOf(
             ~(Resolve ties as normal.)
         """.trimIndent(),
         Color.GOLD,
-        handicapped = true,
         initiative = 11,
         primaryAction = Action.ATTACK,
         primaryValue = 4,

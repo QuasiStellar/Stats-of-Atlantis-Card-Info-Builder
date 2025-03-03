@@ -8,14 +8,13 @@ import Modifier
 
 val ignatia = setOf(
     Card(
-        "Unreliable Jolt",
+        "Chaos Bolt",
         """
             ::tiebreaker_blue::: Target a minion adjacent to you.
             ---
             ::tiebreaker_orange:: Target a hero in range.
         """.trimIndent(),
         Color.GOLD,
-        handicapped = true,
         initiative = 11,
         primaryAction = Action.ATTACK,
         primaryValue = 2,
