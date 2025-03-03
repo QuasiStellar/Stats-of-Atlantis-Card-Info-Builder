@@ -298,7 +298,7 @@ val rowenna = setOf(
         primaryValue = 6,
         secondaryMovement = 4,
         secondaryDefense = 7,
-        variant = 1 or 2,
+        variant = 1 to 2,
         item = Item.RANGE,
     ),
     Card(
@@ -316,7 +316,7 @@ val rowenna = setOf(
         primaryValue = 7,
         secondaryMovement = 4,
         secondaryDefense = 8,
-        variant = 2 or 2,
+        variant = 2 to 2,
         item = Item.DEFENSE,
     ),
     Card(

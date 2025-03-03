@@ -6,7 +6,7 @@ import Color
 import Item
 import Modifier
 
-val emmitt = setOf(
+val mortimer = setOf(
     Card(
         "Shallow Graves",
         """

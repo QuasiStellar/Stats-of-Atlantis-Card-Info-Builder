@@ -17,5 +17,6 @@ data class Card(
     val modifierValueSign: Sign? = null,
     val secondaryMovement: Int? = null,
     val secondaryDefense: Int? = null,
+    val secondaryAttack: Int? = null,
     val item: Item? = null,
 )
