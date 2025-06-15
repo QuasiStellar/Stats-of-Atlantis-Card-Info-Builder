@@ -22,6 +22,22 @@ val misa = setOf(
         secondaryDefense = 6,
     ),
     Card(
+        "Swoop In",
+        """
+            Place yourself into a space in radius,
+            adjacent to an enemy hero. **This turn:**
+            Heroes in radius must attack you, if able,
+            when performing an attack action. The first
+            time you discard a card, gain 2 coins.
+        """.trimIndent(),
+        Color.SILVER,
+        initiative = 12,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 2,
+        secondaryDefense = 3,
+    ),
+    Card(
         "Step In",
         """
             Place yourself into a space in radius,
@@ -37,22 +53,6 @@ val misa = setOf(
         modifier = Modifier.AREA,
         modifierValue = 1,
         secondaryDefense = 2,
-    ),
-    Card(
-        "Swoop In",
-        """
-            Place yourself into a space in radius,
-            adjacent to an enemy hero. **This turn:**
-            Heroes in radius must attack you, if able,
-            when performing an attack action. The first
-            time you discard a card, gain 2 coins.
-        """.trimIndent(),
-        Color.SILVER,
-        initiative = 12,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 2,
-        secondaryDefense = 3,
     ),
     Card(
         "Power Overwhelming",

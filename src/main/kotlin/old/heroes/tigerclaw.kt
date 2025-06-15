@@ -39,10 +39,10 @@ val tigerclaw = setOf(
     Card(
         "Blend Into Shadows",
         """
-            If adjacent to an obstacle, place yourself into
-            a space in radius not adjacent to an enemy
-            unit. If you do, **Next turn:** You are immune,
-            and may move through units.
+            If you are adjacent to an obstacle, place
+            yourself into a space in radius not adjacent
+            to an enemy unit. If you do, **Next turn:** You
+            are immune, and may move through units.
         """.trimIndent(),
         Color.SILVER,
         initiative = 3,
@@ -77,7 +77,8 @@ val tigerclaw = setOf(
     Card(
         "Hit and Run",
         """
-            After the attack: Move up to 1 space.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -119,8 +120,10 @@ val tigerclaw = setOf(
     Card(
         "Combat Reflexes",
         """
-            Before or After the attack:
-            Move up to 1 space.
+            Before the attack: You may move 1 space.
+            Target a unit adjacent to you.
+            After the attack: If you did not move before
+            the attack, you may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -219,8 +222,9 @@ val tigerclaw = setOf(
     Card(
         "Leaping Strike",
         """
-            Before the attack: Move up to 1 space.
-            After the attack: Move up to 1 space.
+            Before the attack: You may move 1 space.
+            Target a unit adjacent to you.
+            After the attack: You may move 1 space.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -288,7 +292,7 @@ val tigerclaw = setOf(
         "Poisoned Dart",
         """
             Give a hero in range a ::marker_poison:: poison marker.
-            Each ::initiative:: Initiative, ::item_attack:: Attack, and ::item_defense:: Defense
+            Each ::initiative:: Initiative, ::attack_silver:: Attack, and ::defense_silver:: Defense
             item of a hero with a poison marker reduce
             that value by 1, instead of increasing it by 1.
         """.trimIndent(),

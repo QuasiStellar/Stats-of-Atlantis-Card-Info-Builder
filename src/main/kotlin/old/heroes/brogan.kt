@@ -11,8 +11,8 @@ val brogan = setOf(
     Card(
         "Onslaught",
         """
-            After the attack: If the target was defeated,
-            move into the space it occupied, if able.
+            Target a unit adjacent to you. After the attack:
+            Move into the space it occupied.
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -24,9 +24,8 @@ val brogan = setOf(
     Card(
         "Leap Forward",
         """
-            Cannot target minions.
-            After the attack: If the target was defeated,
-            move into the space it occupied, if able. 
+            Target a hero adjacent to you. After the attack:
+            Move into the space it occupied. 
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -80,8 +79,9 @@ val brogan = setOf(
     Card(
         "Mad Dash",
         """
-            Before the attack:
-            Move 2 spaces in a straight line.
+            Before the attack: Move 2 spaces in
+            a straight line to a space adjacent to
+            an enemy unit, then target that unit.
             ~(If you cannot make this move, you cannot attack).
         """.trimIndent(),
         Color.RED,
@@ -128,8 +128,9 @@ val brogan = setOf(
     Card(
         "Bullrush",
         """
-            Before the attack: Move 2 or 3
-            spaces in a straight line.
+            Before the attack: Move 2 or 3 spaces in
+            a straight line to a space adjacent to an
+            enemy unit, then target that unit.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -179,7 +180,7 @@ val brogan = setOf(
         "Throwing Axe",
         """
             Before the attack: You may discard a card.
-            If you do, +2 ::range_red:: Range.
+            If you do, +2 ::range_red:: Range. Target a unit in range.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -232,8 +233,9 @@ val brogan = setOf(
     Card(
         "Furious Charge",
         """
-            Before the attack: Move 2, 3 or 4
-            spaces in a straight line.
+            Before the attack: Move 2, 3 or 4 spaces
+            in a straight line to a space adjacent to an
+            enemy unit, then target that unit.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -283,7 +285,8 @@ val brogan = setOf(
         "Throwing Spear",
         """
             Before the attack: You may discard a card.
-            +2 ::range_red:: Range if you have a card in the discard.
+            +2 ::range_red:: Range if you have a card in the
+            discard. Target a unit in range.
         """.trimIndent(),
         Color.RED,
         level = 3,

@@ -54,7 +54,7 @@ val nebkher = setOf(
             >>**Next turn:** Gain +2 ::initiative:: Initiative.
         """.trimIndent(),
         Color.SILVER,
-        initiative = 12,
+        initiative = 11,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 4,

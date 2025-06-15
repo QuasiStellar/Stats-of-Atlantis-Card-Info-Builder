@@ -28,9 +28,9 @@ val dodger = setOf(
     Card(
         "Rusty Razor",
         """
-            Cannot target minions.
-            +1 ::range_gold:: Range if you are adjacent to an empty
-            minion spawn point in the battle zone. 
+            +1 ::range_gold:: Range if you are adjacent to
+            an empty minion spawn point in the
+            battle zone. Target a hero in range. 
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -142,7 +142,7 @@ val dodger = setOf(
     Card(
         "Finger of Death",
         """
-            Target a unit in range. +3 ::attack_red:: if you
+            Target a unit in range. +3 ::attack_red:: Attack if you
             target a hero with a card in the discard.
         """.trimIndent(),
         Color.RED,
@@ -217,8 +217,8 @@ val dodger = setOf(
         "Necromancy",
         """
             If an enemy hero in radius has a card in
-            the discard, respawn a friendly minion in
-            an adjacent spawn point in the battle zone.
+            the discard, respawn a friendly minion in a
+            spawn point adjacent to you in the battle zone.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -254,7 +254,7 @@ val dodger = setOf(
     Card(
         "Middlefinger of Death",
         """
-            Target a unit in range. +3 ::attack_red:: if you
+            Target a unit in range. +3 ::attack_red:: Attack if you
             target a hero with a card in the discard.
             **This turn:** The target cannot retrieve cards.
         """.trimIndent(),

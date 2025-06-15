@@ -15,7 +15,7 @@ val tali = setOf(
             >may choose to retrieve that card. If they
             >do not, name a color. That hero discards
             >a card of that color, if able.
-            >>Defeat an adjacent minion.
+            >>Defeat a minion adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         initiative = 10,
@@ -29,9 +29,9 @@ val tali = setOf(
         "Cold Touch",
         """
             A hero in range with an unresolved card
-            may choose to retrieve that card. If they
-            do not, name a color. That hero discards
-            a card of that color, if able.
+            may choose to retrieve that card.
+            If they do not, name a color. That hero
+            discards a card of that color, if able.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -72,7 +72,7 @@ val tali = setOf(
         """
             The nearest enemy hero in radius discards a
             card, if able. **Next turn, after playing cards:**
-            That hero may retrieve a discarded card.
+            That hero may retrieve that discarded card.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -86,9 +86,9 @@ val tali = setOf(
     Card(
         "Frost Dagger",
         """
-            After the attack: If you target a hero,
-            that hero discards a card, if able.
-            **Next turn, after playing cards:**
+            Target a unit adjacent to you. After the attack:
+            If you target a hero, that hero discards a card,
+            if able. **Next turn, after playing cards:**
             That hero may retrieve that card.
         """.trimIndent(),
         Color.RED,
@@ -138,8 +138,9 @@ val tali = setOf(
     Card(
         "Frost Spear",
         """
-            After the attack: If you target a hero, name a
-            color. That hero discards a card of that color,
+            Target a unit adjacent to you. After the
+            attack: If you target a hero, name a color.
+            That hero discards a card of that color,
             if able. **Next turn, after playing cards:**
             That hero may retrieve that card.
         """.trimIndent(),
@@ -193,9 +194,9 @@ val tali = setOf(
     Card(
         "Spirit Wolf",
         """
-            If your discard is empty, target an
-            adjacent unit. Otherwise, target an
-            adjacent unit, or a minion in range.
+            If you have a card in the discard, target a
+            minion in range, or a hero adjacent to you.
+            Otherwise, target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -212,7 +213,7 @@ val tali = setOf(
     Card(
         "Ancestral Totem",
         """
-            Place a ::token_totem:: in radius.
+            Place a ::token_totem:: totem token in radius.
             If a friendly melee minion adjacent
             to a totem would be defeated, you
             may remove the totem instead.
@@ -250,10 +251,10 @@ val tali = setOf(
     Card(
         "Frost Scepter",
         """
-            After the attack: If you target a hero,
-            name a color. That hero discards a card
-            of that color, if able. **End of next turn:**
-            That hero may retrieve that card.
+            Target a unit adjacent to you. After the attack:
+            If you target a hero, name a color. That hero
+            discards a card of that color, if able. **End of**
+            **next turn:** That hero may retrieve that card.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -305,8 +306,9 @@ val tali = setOf(
     Card(
         "Spirit Bear",
         """
-            If your discard is empty, target an adjacent
-            unit. Otherwise, target an unit in range.
+            If you have a card in the discard,
+            target a unit in range. Otherwise,
+            target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -323,8 +325,8 @@ val tali = setOf(
     Card(
         "Venerated Totem",
         """
-            Place a ::token_totem:: in radius. If a friendly
-            minion adjacent to a totem would be
+            Place a ::token_totem:: totem token in radius. If a
+            friendly minion adjacent to a totem would be
             defeated, you may remove the totem instead.
             Totems are immune to enemy actions.
         """.trimIndent(),

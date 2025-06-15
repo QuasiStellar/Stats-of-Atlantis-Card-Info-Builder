@@ -166,7 +166,7 @@ val garrus = setOf(
             **This round:** You and friendly units in
             radius are immune to ranged actions of
             enemy heroes outside of radius. Cancel
-            this effect if you fast travel, or move.
+            this effect if you move or fast travel.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -257,7 +257,7 @@ val garrus = setOf(
         """
             If there is an enemy hero in range,
             you may retrieve a discarded card.
-            **End of the next turn:** May repeat once.
+            **End of next turn:** May repeat once.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -276,8 +276,8 @@ val garrus = setOf(
             **This round:** You and friendly units in
             radius are immune to ranged actions
             of enemy heroes outside of radius.
-            Cancel this effect if you fast travel, or
-            move more than 2 spaces in a single turn.
+            Cancel this effect if you move more than
+            2 spaces in a single turn, or fast travel.
         """.trimIndent(),
         Color.BLUE,
         level = 3,

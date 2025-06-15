@@ -15,8 +15,9 @@ val bain = setOf(
             marker. The hero with a bounty marker
             spends 1 additional ::life_counters:: life counter when
             defeated. You may then **choose one —**
-            >>Defeat an adjacent enemy minion.
-            >>Adjacent enemy hero discards a card, if able.
+            >>An enemy hero adjacent to you discards
+            >a card, if able.
+            >>Defeat a minion adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -29,9 +30,9 @@ val bain = setOf(
     Card(
         "Side Quest",
         """
-            Up to 1 adjacent enemy hero discards a
-            card, if able. Give a hero in radius
-            a ::marker_bounty:: bounty marker.
+            Up to one enemy hero adjacent to
+            you discards a card, if able.
+            Give a hero in radius a ::marker_bounty:: bounty marker.
             The hero with a bounty marker spends 1
             additional ::life_counters:: life counter when defeated.
         """.trimIndent(),
@@ -47,11 +48,11 @@ val bain = setOf(
     Card(
         "Get over here!",
         """
-            Target a unit in a straight line, with no
-            obstacles between you. Then, if able,
-            move that unit towards you by the
-            shortest valid path, until it is adjacent.
-            **This turn:** If it's an enemy unit, it can't move.
+            Target a unit in a straight line and in range,
+            with no obstacles between you. Then move
+            that unit towards you by the shortest valid
+            path, until it is adjacent to you. **This turn:**
+            If it is an enemy unit, it cannot move.
         """.trimIndent(),
         Color.SILVER,
         initiative = 12,
@@ -63,8 +64,9 @@ val bain = setOf(
     Card(
         "A Complicated Profession",
         """
-            After you perform a basic skill, an adjacent
-            enemy hero discards a card, or is defeated.
+            After you perform a basic skill,
+            an enemy hero adjacent to you
+            discards a card, or is defeated.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -90,9 +92,9 @@ val bain = setOf(
     Card(
         "Light Crossbow",
         """
-            Target a minion adjacent to you, or a
-            hero in a straight line, with no other
-            units, or terrain, between you.
+            Target a minion adjacent to you, or a hero
+            in range, and in a straight line, with no
+            other units, or terrain, between you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -194,8 +196,8 @@ val bain = setOf(
     Card(
         "Hand Crossbow",
         """
-            +2 ::range_red:: Range if you target a
-            hero with a ::marker_bounty:: bounty marker.
+            +2 ::range_red:: Range if you target a hero with a
+            ::marker_bounty:: bounty marker. Target a unit in range.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -213,8 +215,9 @@ val bain = setOf(
     Card(
         "Vantage Point",
         """
-            **Next turn:** You may ignore obstacles when
-            choosing targets of attacks and skills.
+            **Next turn:** You may ignore restrictions to
+            have no obstacles between you and the
+            target, when performing attacks and skills.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -248,10 +251,11 @@ val bain = setOf(
     Card(
         "Impaler",
         """
-            Target a unit in a straight line, with no friendly
-            units, or terrain between you. Before the
-            attack: Up to one enemy hero between you
-            and the target discards a card, or is defeated.
+            Target a unit in range, and in a straight
+            line, with no friendly units, or terrain
+            between you. Before the attack: Up to
+            one enemy hero between you and the
+            target discards a card, or is defeated.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -303,9 +307,10 @@ val bain = setOf(
     Card(
         "Hunter-Seeker",
         """
-            +2 ::range_red:: Range if you target a hero with
-            a ::marker_bounty:: bounty marker. If you do, may
-            repeat once on a different adjacent unit.
+            +2 ::range_red:: Range if you target a hero with a
+            ::marker_bounty:: bounty marker. Target a unit in range.
+            If the target has a bounty marker, you may
+            repeat once on a different unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -323,9 +328,10 @@ val bain = setOf(
     Card(
         "High Ground",
         """
-            You may ignore obstacles. **Next turn:**
-            You may ignore obstacles for movement and
-            when choosing targets of attacks and skills.
+            You may ignore obstacles.
+            **Next turn:** You may ignore restrictions to
+            have no obstacles between you and the
+            target when performing attacks and skills.
         """.trimIndent(),
         Color.GREEN,
         level = 3,

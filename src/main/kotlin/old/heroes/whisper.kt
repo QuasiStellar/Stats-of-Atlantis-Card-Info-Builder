@@ -16,7 +16,7 @@ val whisper = setOf(
             >if able; then, if able, that hero moves the
             >number of spaces equal to that card's
             >printed movement value in a straight line.
-            >>Defeat an adjacent minion.
+            >>Defeat a minion adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -41,7 +41,7 @@ val whisper = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 1,
-        secondaryDefense = 1,
+        secondaryDefense = 2,
     ),
     Card(
         "Death Seeker",
@@ -72,8 +72,7 @@ val whisper = setOf(
         "Cause Fear",
         """
             Move up to 3 enemy minions in radius
-            up to 1 space in the same direction;
-            they can be moved through obstacles.
+            up to 1 space in the same direction.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -88,18 +87,19 @@ val whisper = setOf(
         "Blood Trail",
         """
             Before the attack: Move up to 1 space for
-            every empty minion spawn point in radius in
-            the battle zone, up to a maximum of 2 spaces.
+            every empty minion spawn point in radius
+            in the battle zone, up to a maximum of
+            2 spaces, then target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
-        initiative = 8,
+        initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
         modifier = Modifier.AREA,
         modifierValue = 1,
         secondaryMovement = 4,
-        secondaryDefense = 3,
+        secondaryDefense = 6,
     ),
     Card(
         "Shadow Step",
@@ -176,7 +176,7 @@ val whisper = setOf(
         """
             An enemy hero in range **chooses one —**
             >>That hero discards a card, if able.
-            >>You may defeat an adjacent minion.
+            >>You defeat a minion adjacent to you.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -187,7 +187,7 @@ val whisper = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 5,
-        item = Item.ATTACK,
+        item = Item.DEFENSE,
     ),
     Card(
         "Sense Blood",
@@ -247,10 +247,10 @@ val whisper = setOf(
     Card(
         "Sanguine Fury",
         """
-            Before the attack: Move up to 1 space for
+            Before the attack: Move up to 2 spaces for
             every empty minion spawn point in radius
             in the battle zone, up to a maximum of
-            3 spaces, then target a unit adjacent to you.
+            4 spaces, then target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -287,7 +287,7 @@ val whisper = setOf(
         """
             An enemy hero in range **chooses one —**
             >>That hero discards a card, or is defeated.
-            >>You may defeat up to 3 adjacent minions.
+            >>You defeat up to 3 minions adjacent to you.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -303,9 +303,9 @@ val whisper = setOf(
     Card(
         "Blind Frenzy",
         """
-            If able, target a hero in range with a card in
-            their discard. Otherwise, target an adjacent
-            unit. May repeat once on an different hero.
+            Target a hero in range with a card in the
+            discard, or a unit adjacent to you.
+            May repeat once on a different hero.
         """.trimIndent(),
         Color.RED,
         level = 3,

@@ -11,7 +11,8 @@ val silverarrow = setOf(
     Card(
         "Hit and Run",
         """
-            Cannot attack if adjacent to an enemy unit.
+            Cannot attack if you are adjacent to
+            an enemy unit. Target a unit in range.
             After the attack: You may fast travel, if able.
         """.trimIndent(),
         Color.GOLD,
@@ -26,24 +27,27 @@ val silverarrow = setOf(
     Card(
         "Keep the Distance",
         """
-            Cannot attack if adjacent to an enemy unit.
-            Target an enemy hero. After the attack: You
-            may fast travel within the same zone, if able.
+            Cannot attack if you are adjacent to an
+            enemy unit. Target a hero in range.
+            After the attack: You may fast travel
+            within the same zone, if able.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
-        initiative = 10,
+        initiative = 11,
         primaryAction = Action.ATTACK,
-        primaryValue = 3,
+        primaryValue = 1,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
         secondaryMovement = 1,
-        secondaryDefense = 1,
+        secondaryDefense = 2,
     ),
     Card(
         "Trailblazer",
         """
-            If not adjacent to an enemy unit, you may
-            move up to 4 spaces in a straight line to a
-            space not adjacent to an enemy unit, if able.
+            If you are not adjacent to an enemy unit, you
+            may move up to 4 spaces in a straight line to
+            a space not adjacent to an enemy unit.
         """.trimIndent(),
         Color.SILVER,
         initiative = 13,
@@ -97,8 +101,8 @@ val silverarrow = setOf(
     Card(
         "Disorient",
         """
-            Move an adjacent enemy unit up to
-            1 space. If you do, move up to that
+            Move an enemy unit adjacent to you up
+            to 1 space. If you do, move up to that
             number of spaces in a straight line.
         """.trimIndent(),
         Color.GREEN,
@@ -113,8 +117,8 @@ val silverarrow = setOf(
         """
             **This turn:** Enemy heroes in radius
             adjacent to terrain, or to their friendly
-            hero, cannot fast travel, or move more than
-            1 space with a movement action.
+            hero, cannot fast travel, or move more
+            than 1 space with a movement action.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -130,8 +134,8 @@ val silverarrow = setOf(
     Card(
         "Opportunity Shot",
         """
-            -2 ::range_red:: Range for every unit adjacent
-            to the target, including you.
+            -2 ::range_red:: Range for every unit adjacent to the
+            target, including you. Target a unit in range.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -149,8 +153,8 @@ val silverarrow = setOf(
     Card(
         "Divert Attention",
         """
-            Move an adjacent enemy unit up to
-            2 spaces. If you do, move up to that
+            Move an enemy unit adjacent to you up
+            to 2 spaces. If you do, move up to that
             number of spaces in a straight line.
         """.trimIndent(),
         Color.GREEN,
@@ -165,8 +169,8 @@ val silverarrow = setOf(
     Card(
         "Warning Shot",
         """
-            If not adjacent to an enemy unit,
-            **End of turn:** An enemy hero in radius,
+            If you are not adjacent to an enemy unit,
+            **End of turn:** An enemy hero in radius
             discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
@@ -237,8 +241,8 @@ val silverarrow = setOf(
     Card(
         "Clear Shot",
         """
-            -2 ::range_red:: Range for every unit adjacent
-            to the target, including you.
+            -2 ::range_red:: Range for every unit adjacent to the
+            target, including you. target a unit in range.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -256,8 +260,8 @@ val silverarrow = setOf(
     Card(
         "Lead Astray",
         """
-            Move an adjacent enemy unit up to
-            3 spaces. If you do, move up to that
+            Move an enemy unit adjacent to you up
+            to 3 spaces. If you do, move up to that
             number of spaces in a straight line.
         """.trimIndent(),
         Color.GREEN,
@@ -272,7 +276,7 @@ val silverarrow = setOf(
     Card(
         "Treetop Sentinel",
         """
-            If not adjacent to an enemy unit,
+            If you are not adjacent to an enemy unit,
             **End of turn:** An enemy hero in radius,
             discards a card or is defeated.
         """.trimIndent(),

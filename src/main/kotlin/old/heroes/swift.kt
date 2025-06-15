@@ -11,13 +11,11 @@ val swift = setOf(
     Card(
         "Reload!",
         """
-            **Choose one —**
-            >>Defeat a minion adjacent to you.
-            >>Perform the primary action of the resolved
-            >card in your previous turn slot.
+            Perform the primary action of the
+            resolved card in your previous turn slot.
         """.trimIndent(),
         Color.GOLD,
-        initiative = 6,
+        initiative = 5,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 1,
@@ -25,14 +23,15 @@ val swift = setOf(
     Card(
         "Backup",
         """
-            Perform the primary action of the resolved
-            card in your previous turn slot.
+            Perform the primary action of your resolved
+            card in the previous turn slot. If you perform
+            an attack this way, you cannot target minions.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
         initiative = 5,
         primaryAction = Action.SKILL,
-        secondaryMovement = 1,
+        secondaryMovement = 2,
         secondaryDefense = 1,
     ),
     Card(
@@ -78,8 +77,8 @@ val swift = setOf(
     Card(
         "Snipe",
         """
-            Target a unit in a straight line
-            and at maximum range.
+            Target a unit at maximum range
+            and in a straight line.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -94,8 +93,8 @@ val swift = setOf(
     Card(
         "Suppress",
         """
-            A non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
+            An enemy hero in radius, not adjacent
+            to you and not adjacent to terrain, or a
             token, discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
@@ -128,7 +127,8 @@ val swift = setOf(
     Card(
         "Prepared Shot",
         """
-            Target a non-adjacent unit in a straight line.
+            Target a unit in range, in a straight
+            line, and not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -145,8 +145,8 @@ val swift = setOf(
     Card(
         "Pin Down",
         """
-            A non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
+            An enemy hero in radius, not adjacent
+            to you and not adjacent to terrain, or a
             token, discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
@@ -180,9 +180,10 @@ val swift = setOf(
     Card(
         "Shotgun",
         """
-            +3 ::attack_red:: Attack if you target an adjacent unit.
-            Before the attack: Up to one enemy hero
-            adjacent to the target discards a card, if able.
+            Target a unit in range. +3 ::attack_red:: Attack if you
+            target a unit adjacent to you. Before the
+            attack: Up to one enemy hero adjacent to
+            the target discards a card, if able.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -198,18 +199,17 @@ val swift = setOf(
         item = Item.INITIATIVE,
     ),
     Card(
-        "Steam Shroud",
+        "Steam Cover",
         """
-            Move an enemy minion in radius 1 space.
+            **Next turn:** Before you perform an action, you
+            may swap any two of your resolved cards.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
         initiative = 4,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 4,
-        secondaryMovement = 2,
+        primaryAction = Action.MOVEMENT,
+        primaryValue = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
     ),
@@ -234,7 +234,8 @@ val swift = setOf(
     Card(
         "Killshot",
         """
-            Target a non-adjacent unit in a straight line.
+            Target a unit in range, in a straight
+            line, and not adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -251,9 +252,9 @@ val swift = setOf(
     Card(
         "Killing Ground",
         """
-            Non-adjacent enemy hero in radius,
-            who is not adjacent to terrain, or a
-            token, discards a card, or is defeated.
+            An enemy hero in radius, not adjacent to
+            you and not adjacent to terrain, or a token,
+            discards a card, or is defeated.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -287,10 +288,10 @@ val swift = setOf(
     Card(
         "Super-Shotgun",
         """
-            +3 ::attack_red:: Attack if you target an adjacent unit.
-            Before the attack: Up to one enemy
-            hero adjacent to the target discards
-            a card, or is defeated.
+            Target a unit in range. +3 ::attack_red:: Attack if you
+            target a unit adjacent to you. Before the
+            attack: Up to one enemy hero adjacent to
+            the target discards a card, or is defeated.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -306,19 +307,18 @@ val swift = setOf(
         item = Item.AREA,
     ),
     Card(
-        "Steam Cloud",
+        "Fog of War",
         """
-            Move an enemy minion in
-            radius up to 2 spaces.
+            **Next turn:** Before or After you perform
+            an action, you may swap any two
+            of your resolved cards.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
         variant = 2 to 2,
         initiative = 3,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 4,
-        secondaryMovement = 2,
+        primaryAction = Action.MOVEMENT,
+        primaryValue = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
     ),
