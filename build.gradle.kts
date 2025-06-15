@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "2.1.10"
     application
-    kotlin("plugin.serialization") version "1.8.20"
+    kotlin("plugin.serialization") version "2.1.10"
 }
 
 group = "org.qsr"
@@ -12,11 +12,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(23)
 }
 
 application {
