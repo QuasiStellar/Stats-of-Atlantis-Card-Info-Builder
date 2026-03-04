@@ -48,8 +48,8 @@ val brynn = setOf(
         "Decoy",
         """
             **Choose up to two times,**, on different targets —
-            >> Move an enemy minion in radius 1 space.
-            >> Move an enemy hero in radius who is
+            >>Move an enemy minion in radius 1 space.
+            >>Move an enemy hero in radius who is
             adjacent to 3 or more obstacles 2 space.
         """.trimIndent(),
         Color.SILVER,
@@ -319,7 +319,7 @@ val brynn = setOf(
         item = Item.AREA,
     ),
     Card(
-        "Split Attack",
+        "Split Throw",
         """
             Target a unit in range. If you target a hero
             who is adjacent to 3 or more obstacles,

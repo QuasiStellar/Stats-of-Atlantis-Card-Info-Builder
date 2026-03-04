@@ -293,7 +293,7 @@ val brogan = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 2,
         secondaryMovement = 4,
-        secondaryDefense = 6,
+        secondaryDefense = 7,
         item = Item.AREA,
     ),
     Card(

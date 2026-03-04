@@ -6,6 +6,7 @@ data class Card(
     val description: String,
     val color: Color,
     val handicapped: Boolean = false,
+    val extra: Boolean = false,
     val level: Int? = null,
     val variant: Pair<Int, Int> = 1 to 1,
     val initiative: Int? = null,

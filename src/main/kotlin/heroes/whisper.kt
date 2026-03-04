@@ -289,7 +289,7 @@ val whisper = setOf(
         """
             An enemy hero in range **chooses one —**
             >>That hero discards a card, or is defeated.
-            >>You may defeat up to 3 minions adjacent to you.
+            >>You defeat up to 3 minions adjacent to you.
         """.trimIndent(),
         Color.BLUE,
         level = 3,

@@ -55,7 +55,7 @@ val min = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
-        secondaryMovement = 1,
+        secondaryDefense = 1,
     ),
     Card(
         "Flurry of blows",
@@ -320,8 +320,8 @@ val min = setOf(
         "Perfect Self",
         """
             **Choose one, or both —**
-            >> **This round:** Double your item bonuses.
-            >> Take a Tier II card from your deck and add
+            >>**This round:** Double your item bonuses.
+            >>Take a Tier II card from your deck and add
             it to your dashboard as a permanent item.
         """.trimIndent(),
         Color.GREEN,
@@ -329,7 +329,7 @@ val min = setOf(
         variant = 2 to 2,
         initiative = 1,
         primaryAction = Action.SKILL,
-        secondaryMovement = 2,
+        secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.RANGE,
     ),

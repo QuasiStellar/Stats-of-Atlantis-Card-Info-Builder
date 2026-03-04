@@ -11,6 +11,8 @@ val sabina = setOf(
     Card(
         "Point Blank Shot",
         """
+            Target a unit in range. After the attack:
+            If the target is adjacent to you, push it 1 space.
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -192,6 +194,23 @@ val sabina = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+    ),
+    Card(
+        "Close Support",
+        """
+            An enemy hero in radius adjacent to your
+            friendly minion discards a card, if able.
+        """.trimIndent(),
+        Color.GREEN,
+        level = 2,
+        variant = 2 to 2,
+        initiative = 3,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
+        secondaryMovement = 2,
+        secondaryDefense = 3,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Ready and Waiting",

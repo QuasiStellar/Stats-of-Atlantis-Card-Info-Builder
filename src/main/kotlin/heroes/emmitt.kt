@@ -52,6 +52,7 @@ val emmitt = setOf(
         Color.SILVER,
         initiative = 1,
         primaryAction = Action.DEFENSE_SKILL,
+        primaryValue = 6,
         modifier = Modifier.AREA,
         modifierValue = 4,
     ),

@@ -79,7 +79,7 @@ val garrus = setOf(
         "Trace",
         """
             **Choose one —**
-            >> Before the attack: If you have one or more
+            >>Before the attack: If you have one or more
             cards in the discard, you may move 1 space.
             >Target a hero adjacent to you.
             >>Target a hero adjacent to you.
@@ -129,7 +129,7 @@ val garrus = setOf(
         "Chase",
         """
             **Choose one —**
-            >> Before the attack: If you have one or more
+            >>Before the attack: If you have one or more
             cards in the discard, move up to 2 spaces.
             >Target a hero adjacent to you.
             >>Target a hero adjacent to you.
@@ -155,7 +155,7 @@ val garrus = setOf(
         variant = 1 to 2,
         initiative = 4,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
+        modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 4,
@@ -192,7 +192,7 @@ val garrus = setOf(
         variant = 2 to 2,
         initiative = 8,
         primaryAction = Action.ATTACK,
-        primaryValue = 6,
+        primaryValue = 7,
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
@@ -236,7 +236,7 @@ val garrus = setOf(
         "Hunt Down",
         """
             **Choose one —**
-            >> Before the attack: If you have one or more
+            >>Before the attack: If you have one or more
             cards in the discard, move up to 3 spaces.
             >Target a hero adjacent to you.
             >>Target a hero adjacent to you.
@@ -263,7 +263,7 @@ val garrus = setOf(
         variant = 1 to 2,
         initiative = 4,
         primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
+        modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryMovement = 2,
         secondaryDefense = 4,

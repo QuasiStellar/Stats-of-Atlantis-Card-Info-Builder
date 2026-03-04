@@ -192,6 +192,7 @@ val xargatha = setOf(
         primaryValue = 3,
         modifier = Modifier.RANGE,
         modifierValue = 1,
+        modifierValueSign = Sign.PLUS,
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,

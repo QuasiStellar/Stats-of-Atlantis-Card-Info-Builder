@@ -52,7 +52,7 @@ val snorri = setOf(
     Card(
         "Inscribe the Runes",
         """
-            Give yourself 4 ::rune_axe::::rune_bird::::rune_anvil::::rune_horn:: Rune markers
+            Give yourself 4 ::rune_axe_marker::::rune_bird_marker::::rune_anvil_marker::::rune_horn_marker:: Rune markers
             and place one below each of your turn slots.
             A rune is active as long as it is below the
             turn slot matching the current turn.
@@ -113,7 +113,7 @@ val snorri = setOf(
         Color.GREEN,
         level = 1,
         initiative = 5,
-        primaryAction = Action.SKILL,
+        primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
     ),

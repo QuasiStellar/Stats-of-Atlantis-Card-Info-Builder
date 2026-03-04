@@ -84,10 +84,10 @@ val cutter = setOf(
         "Daring Strike",
         """
             **Choose one —**
-            >> Before the attack: Move 1 space.
+            >>Before the attack: Move 1 space.
             Target a unit adjacent to you in the
             direction of the move; +2 ::attack_red:: Attack.
-            >> Target a unit adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -120,7 +120,7 @@ val cutter = setOf(
             to you, discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
-        level = 1,
+        level = 2,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
@@ -134,10 +134,10 @@ val cutter = setOf(
         "Bold Thrust",
         """
             **Choose one —**
-            >> Before the attack: Move 1 or 2 spaces in a
+            >>Before the attack: Move 1 or 2 spaces in a
             straight line. Target a unit adjacent to you
             in the direction of the move; +2 ::attack_red:: Attack.
-            >> Target a unit adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -170,8 +170,8 @@ val cutter = setOf(
         "X Marks the Spot",
         """
             An enemy hero in radius **chooses one —**
-            >> You place that hero in a space in radius.
-            >> You gain 2 coins.
+            >>You place that hero in a space in radius.
+            >>You gain 2 coins.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -214,6 +214,8 @@ val cutter = setOf(
         variant = 2 to 2,
         initiative = 3,
         primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
@@ -241,10 +243,10 @@ val cutter = setOf(
         "Fearless Lunge",
         """
             **Choose one —**
-            >> Before the attack: Move 1, 2 or 3 spaces in
+            >>Before the attack: Move 1, 2 or 3 spaces in
             >a straight line. Target a unit adjacent to you
             >in the direction of the move; +2 ::attack_red:: Attack.
-            >> Target a unit adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -277,8 +279,8 @@ val cutter = setOf(
         "A Fistful of Coins",
         """
             An enemy hero in radius **chooses one —**
-            >> You place that hero in a space in radius.
-            >> You gain 3 coins. If you have 13 or more
+            >>You place that hero in a space in radius.
+            >>You gain 3 coins. If you have 13 or more
             >coins, you alone win the game.
         """.trimIndent(),
         Color.BLUE,

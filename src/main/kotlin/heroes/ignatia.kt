@@ -13,6 +13,7 @@ val ignatia = setOf(
             ::tiebreaker_blue::: Target a minion adjacent to you.
             ---
             ::tiebreaker_orange:: Target a hero in range.
+            ~(Apply the text matching the symbol on the Tie Breaker coin.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -43,8 +44,8 @@ val ignatia = setOf(
     Card(
         "Equilibrium",
         """
-            **This round:** Each time you perform or repeat
-            a primary action, you may apply either ::tiebreaker_blue:: or ::tiebreaker_orange::
+            **This round:** Each time you perform or repeat a
+            primary action, you may apply either ::tiebreaker_blue:: or ::tiebreaker_orange::
             card text, regardless of the Tie Breaker coin.
         """.trimIndent(),
         Color.SILVER,
@@ -137,26 +138,6 @@ val ignatia = setOf(
         item = Item.ATTACK,
     ),
     Card(
-        "Searing Heat",
-        """
-            ::tiebreaker_blue::: Move a friendly hero in radius
-            2 spaces in a straight line.
-            ---
-            ::tiebreaker_orange:: Move an enemy hero in radius
-            2 spaces in a straight line.
-        """.trimIndent(),
-        Color.BLUE,
-        level = 2,
-        variant = 2 to 2,
-        initiative = 9,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 3,
-        secondaryDefense = 4,
-        item = Item.INITIATIVE,
-    ),
-    Card(
         "Erratic Fireblast",
         """
             ::tiebreaker_blue::: Target a unit in range not in a straight line.
@@ -174,25 +155,6 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.DEFENSE,
-    ),
-    Card(
-        "Crack of Doom",
-        """
-            ::tiebreaker_blue:: Target a unit adjacent to you.
-            ---
-            ::tiebreaker_orange::: Target a unit at a maximum range.
-        """.trimIndent(),
-        Color.RED,
-        level = 2,
-        variant = 2 to 2,
-        initiative = 7,
-        primaryAction = Action.ATTACK,
-        primaryValue = 5,
-        modifier = Modifier.RANGE,
-        modifierValue = 5,
-        secondaryMovement = 3,
-        secondaryDefense = 6,
-        item = Item.INITIATIVE,
     ),
     Card(
         "Path of Cinders",
@@ -213,6 +175,45 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+    ),
+    Card(
+        "Searing Heat",
+        """
+            ::tiebreaker_blue::: Move a friendly hero in radius
+            2 spaces in a straight line.
+            ---
+            ::tiebreaker_orange:: Move an enemy hero in radius
+            2 spaces in a straight line.
+        """.trimIndent(),
+        Color.BLUE,
+        level = 2,
+        variant = 2 to 2,
+        initiative = 9,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
+        secondaryMovement = 3,
+        secondaryDefense = 4,
+        item = Item.INITIATIVE,
+    ),
+    Card(
+        "Crack of Doom",
+        """
+            ::tiebreaker_blue:: Target a unit adjacent to you.
+            ---
+            ::tiebreaker_orange::: Target a unit at a maximum range.
+        """.trimIndent(),
+        Color.RED,
+        level = 2,
+        variant = 2 to 2,
+        initiative = 7,
+        primaryAction = Action.ATTACK,
+        primaryValue = 5,
+        modifier = Modifier.RANGE,
+        modifierValue = 5,
+        secondaryMovement = 3,
+        secondaryDefense = 6,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Unstable Portal",
@@ -242,7 +243,7 @@ val ignatia = setOf(
             adjacent to an enemy hero.
         """.trimIndent(),
         Color.BLUE,
-        level = 2,
+        level = 3,
         variant = 1 to 2,
         initiative = 10,
         primaryAction = Action.SKILL,
@@ -251,26 +252,6 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.RANGE,
-    ),
-    Card(
-        "Scorching Blaze",
-        """
-            ::tiebreaker_blue::: Move a friendly hero in radius
-            2 or 3 spaces in a straight line.
-            ---
-            ::tiebreaker_orange:: Move an enemy hero in radius
-            2 or 3 spaces in a straight line.
-        """.trimIndent(),
-        Color.BLUE,
-        level = 2,
-        variant = 2 to 2,
-        initiative = 10,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.AREA,
-        modifierValue = 3,
-        secondaryMovement = 3,
-        secondaryDefense = 4,
-        item = Item.MOVEMENT,
     ),
     Card(
         "Loosely-Aimed Firebolts",
@@ -293,26 +274,6 @@ val ignatia = setOf(
         item = Item.AREA,
     ),
     Card(
-        "Imminent Eruption",
-        """
-            ::tiebreaker_blue::: Target a unit adjacent to you.
-            May repeat once on a minion.
-            ---
-            ::tiebreaker_orange:: Target a unit at maximum range.
-        """.trimIndent(),
-        Color.RED,
-        level = 3,
-        variant = 2 to 2,
-        initiative = 8,
-        primaryAction = Action.ATTACK,
-        primaryValue = 6,
-        modifier = Modifier.RANGE,
-        modifierValue = 5,
-        secondaryMovement = 3,
-        secondaryDefense = 6,
-        item = Item.INITIATIVE,
-    ),
-    Card(
         "Path of Flames",
         """
             ::tiebreaker_blue::: Move up to 4 spaces in a straight line.
@@ -331,6 +292,46 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+    ),
+    Card(
+        "Scorching Blaze",
+        """
+            ::tiebreaker_blue::: Move a friendly hero in radius
+            2 or 3 spaces in a straight line.
+            ---
+            ::tiebreaker_orange:: Move an enemy hero in radius
+            2 or 3 spaces in a straight line.
+        """.trimIndent(),
+        Color.BLUE,
+        level = 3,
+        variant = 2 to 2,
+        initiative = 10,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
+        secondaryMovement = 3,
+        secondaryDefense = 4,
+        item = Item.MOVEMENT,
+    ),
+    Card(
+        "Imminent Eruption",
+        """
+            ::tiebreaker_blue::: Target a unit adjacent to you.
+            May repeat once on a minion.
+            ---
+            ::tiebreaker_orange:: Target a unit at maximum range.
+        """.trimIndent(),
+        Color.RED,
+        level = 3,
+        variant = 2 to 2,
+        initiative = 8,
+        primaryAction = Action.ATTACK,
+        primaryValue = 6,
+        modifier = Modifier.RANGE,
+        modifierValue = 5,
+        secondaryMovement = 3,
+        secondaryDefense = 6,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Chaos Gate",

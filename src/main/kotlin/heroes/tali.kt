@@ -8,7 +8,7 @@ import Modifier
 
 val tali = setOf(
     Card(
-        "Turn to Ice",
+        "Ice Blast",
         """
             Target a unit adjacent to you. If the target
             discards a card to defend, After the attack:

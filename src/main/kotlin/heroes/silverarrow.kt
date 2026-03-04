@@ -29,7 +29,7 @@ val silverarrow = setOf(
         """
             Target a hero at maximum range.
             After the attack: If able, you may
-            fast travel up to an adjacent zone.
+            fast travel to an adjacent zone.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -86,7 +86,7 @@ val silverarrow = setOf(
         """
             **Choose one —**
             >>Target a unit in range, which is not
-            adjacent to any other unit.
+            >adjacent to any other unit.
             >>Target a hero adjacent to you.
         """.trimIndent(),
         Color.RED,

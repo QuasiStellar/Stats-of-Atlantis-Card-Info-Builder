@@ -50,7 +50,7 @@ fun main() {
             "min" to min,
             "misa" to misa,
             "mortimer" to mortimer,
-            "mark" to mrak,
+            "mrak" to mrak,
             "nebkher" to nebkher,
             "razzle" to razzle,
             "rowenna" to rowenna,
@@ -75,5 +75,11 @@ fun main() {
 
     println(Json.encodeToString(
         spells
+    ))
+
+    println()
+
+    println(Json.encodeToString(
+        HeroBoard.entries.toList()
     ))
 }

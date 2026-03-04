@@ -100,6 +100,8 @@ val wasp = setOf(
         initiative = 8,
         primaryAction = Action.ATTACK,
         primaryValue = 5,
+        modifier = Modifier.AREA,
+        modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 6,
     ),
@@ -168,7 +170,7 @@ val wasp = setOf(
         secondaryMovement = 2,
         modifier = Modifier.RANGE,
         modifierValue = 3,
-        item = Item.ATTACK,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Kinetic Repulse",

@@ -59,6 +59,31 @@ val razzle = setOf(
         modifierValue = 3,
     ),
     Card(
+        "Twin Strike",
+        """
+            After you perform a basic attack action,
+            another one of you may repeat it once,
+            targeting a different unit.
+        """.trimIndent(),
+        Color.PURPLE,
+        level = 4,
+    ),
+    Card(
+        "Alleyoop",
+        """
+            Swap with a friendly hero in range.
+            Move another one of you up to 1 space.
+        """.trimIndent(),
+        Color.BLUE,
+        level = 1,
+        initiative = 10,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
+        secondaryMovement = 3,
+        secondaryDefense = 2,
+    ),
+    Card(
         "Phantom Strike",
         """
             Target a unit adjacent to you. After the attack:
@@ -87,89 +112,6 @@ val razzle = setOf(
         secondaryDefense = 1,
     ),
     Card(
-        "Alleyoop",
-        """
-            Swap with a friendly hero in range.
-            Move another one of you up to 1 space.
-        """.trimIndent(),
-        Color.BLUE,
-        level = 1,
-        initiative = 9,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 3,
-        secondaryMovement = 2,
-        secondaryDefense = 3,
-    ),
-    Card(
-        "Hit and Gone",
-        """
-            Target a unit adjacent to you. After the attack:
-            You may remove one or more of you
-            in play, except the last one of you.
-        """.trimIndent(),
-        Color.RED,
-        level = 2,
-        initiative = 9,
-        primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        secondaryMovement = 4,
-        secondaryDefense = 4,
-        item = Item.DEFENSE,
-        variant = 1 to 2,
-    ),
-    Card(
-        "Rummage",
-        """
-            Target a unit adjacent to you.
-            After the attack: If there is another one of you
-            in radius, you may retrieve a discarded card.
-            ~(All of you share cards in hand, deck, and discard.)
-        """.trimIndent(),
-        Color.RED,
-        level = 2,
-        initiative = 9,
-        primaryAction = Action.ATTACK,
-        primaryValue = 4,
-        modifier = Modifier.RANGE,
-        modifierValue = 3,
-        secondaryMovement = 4,
-        secondaryDefense = 4,
-        variant = 2 to 2,
-        item = Item.INITIATIVE,
-    ),
-    Card(
-        "High Wire",
-        """
-            After you move, move another
-            one of you up to 2 spaces.
-        """.trimIndent(),
-        Color.GREEN,
-        level = 2,
-        initiative = 2,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
-        secondaryDefense = 2,
-        variant = 1 to 2,
-        item = Item.INITIATIVE,
-    ),
-    Card(
-        "Theatrics",
-        """
-            Swap with a minion in range.
-        """.trimIndent(),
-        Color.GREEN,
-        level = 2,
-        initiative = 2,
-        primaryAction = Action.SKILL,
-        secondaryMovement = 2,
-        secondaryDefense = 2,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
-        variant = 2 to 2,
-        item = Item.ATTACK,
-    ),
-    Card(
         "Group Performance",
         """
             Swap with a friendly hero in range.
@@ -185,6 +127,38 @@ val razzle = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.ATTACK,
+    ),
+    Card(
+        "Hit and Gone",
+        """
+            Target a unit adjacent to you. After the attack:
+            You may remove one or more of you
+            in play, except the last one of you.
+        """.trimIndent(),
+        Color.RED,
+        level = 2,
+        variant = 1 to 2,
+        initiative = 9,
+        primaryAction = Action.ATTACK,
+        primaryValue = 4,
+        secondaryMovement = 4,
+        secondaryDefense = 4,
+        item = Item.DEFENSE,
+    ),
+    Card(
+        "High Wire",
+        """
+            After you move, move another
+            one of you up to 2 spaces.
+        """.trimIndent(),
+        Color.GREEN,
+        level = 2,
+        variant = 1 to 2,
+        initiative = 2,
+        primaryAction = Action.MOVEMENT,
+        primaryValue = 2,
+        secondaryDefense = 2,
+        item = Item.INITIATIVE,
     ),
     Card(
         "Magic Trick",
@@ -203,36 +177,39 @@ val razzle = setOf(
         item = Item.DEFENSE,
     ),
     Card(
-        "Wire Dancers",
+        "Rummage",
         """
-            After you move, move another
-            one of you up to 3 spaces.
+            Target a unit adjacent to you.
+            After the attack: If there is another one of you
+            in radius, you may retrieve a discarded card.
+            ~(All of you share cards in hand, deck, and discard.)
         """.trimIndent(),
-        Color.GREEN,
+        Color.RED,
         level = 2,
-        initiative = 1,
-        primaryAction = Action.MOVEMENT,
-        primaryValue = 2,
-        secondaryDefense = 2,
-        variant = 1 to 2,
+        variant = 2 to 2,
+        initiative = 9,
+        primaryAction = Action.ATTACK,
+        primaryValue = 4,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
+        secondaryMovement = 4,
+        secondaryDefense = 4,
         item = Item.INITIATIVE,
     ),
     Card(
-        "Spectacle",
+        "Theatrics",
         """
             Swap with a minion in range.
-            May repeat once by another one of you,
-            targeting a different minion.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
-        initiative = 1,
+        variant = 2 to 2,
+        initiative = 2,
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 2,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        variant = 2 to 2,
         item = Item.ATTACK,
     ),
     Card(
@@ -253,6 +230,39 @@ val razzle = setOf(
         item = Item.AREA,
     ),
     Card(
+        "Into Thin Air",
+        """
+            Target a unit adjacent to you. After the attack:
+            You may remove one or more of you
+            in play, including all of you.
+            ~(If all are removed, you are not defeated. Respawn as normal.)
+        """.trimIndent(),
+        Color.RED,
+        level = 3,
+        variant = 1 to 2,
+        initiative = 10,
+        primaryAction = Action.ATTACK,
+        primaryValue = 5,
+        secondaryMovement = 4,
+        secondaryDefense = 4,
+        item = Item.RANGE,
+    ),
+    Card(
+        "Wire Dancers",
+        """
+            After you move, move another
+            one of you up to 3 spaces.
+        """.trimIndent(),
+        Color.GREEN,
+        level = 3,
+        variant = 1 to 2,
+        initiative = 1,
+        primaryAction = Action.MOVEMENT,
+        primaryValue = 2,
+        secondaryDefense = 2,
+        item = Item.INITIATIVE,
+    ),
+    Card(
         "Aaaand it's gone!",
         """
             Push an unit adjacent to you up to 3 spaces;
@@ -269,24 +279,6 @@ val razzle = setOf(
         item = Item.DEFENSE,
     ),
     Card(
-        "Into Thin Air",
-        """
-            Target a unit adjacent to you. After the attack:
-            You may remove one or more of you
-            in play, including all of you.
-            ~(If all are removed, you are not defeated. Respawn as normal.)
-        """.trimIndent(),
-        Color.RED,
-        level = 3,
-        initiative = 10,
-        primaryAction = Action.ATTACK,
-        primaryValue = 5,
-        secondaryMovement = 4,
-        secondaryDefense = 4,
-        item = Item.RANGE,
-        variant = 1 to 2,
-    ),
-    Card(
         "Ransack",
         """
             Target a unit adjacent to you.
@@ -295,24 +287,32 @@ val razzle = setOf(
         """.trimIndent(),
         Color.RED,
         level = 3,
+        variant = 2 to 2,
         initiative = 10,
         primaryAction = Action.ATTACK,
         primaryValue = 5,
-        modifier = Modifier.RANGE,
+        modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 4,
-        variant = 2 to 2,
         item = Item.MOVEMENT,
     ),
     Card(
-        "Twin Strike",
+        "Spectacle",
         """
-            After you perform a basic attack action,
-            another one of you may repeat it once,
-            targeting a different unit.
+            Swap with a minion in range.
+            May repeat once by another one of you,
+            targeting a different minion.
         """.trimIndent(),
-        Color.PURPLE,
-        level = 4 ,
+        Color.GREEN,
+        level = 3,
+        variant = 2 to 2,
+        initiative = 1,
+        primaryAction = Action.SKILL,
+        secondaryMovement = 2,
+        secondaryDefense = 2,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
+        item = Item.ATTACK,
     ),
 )

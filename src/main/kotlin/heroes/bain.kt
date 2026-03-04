@@ -194,7 +194,7 @@ val bain = setOf(
             **Choose one —**
             >>Target a hero in range with
             >a ::marker_bounty:: Bounty marker.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -302,7 +302,7 @@ val bain = setOf(
             **Choose one, or both,** on different targets —
             >>Target a hero in range with
             >a ::marker_bounty:: Bounty marker.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,

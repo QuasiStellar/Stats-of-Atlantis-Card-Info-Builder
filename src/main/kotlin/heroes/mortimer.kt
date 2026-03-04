@@ -14,7 +14,7 @@ val mortimer = setOf(
             Before the attack: **Choose up to three times —**
             >>Move a ::token_zombie:: Zombie token in radius 1 space.
             >>Remove a Zombie token adjacent to the
-            >target; if you do, gain +1 ::gold_attack:: Attack.
+            >target; if you do, gain +1 ::attack_gold:: Attack.
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -33,7 +33,7 @@ val mortimer = setOf(
             Before the attack: **Choose up to two times —**
             >>Move a ::token_zombie:: Zombie token in radius 1 space.
             >>Remove a Zombie token adjacent to the
-            >target; if you do, gain +1 ::gold_attack:: Attack.
+            >target; if you do, gain +1 ::attack_gold:: Attack.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,

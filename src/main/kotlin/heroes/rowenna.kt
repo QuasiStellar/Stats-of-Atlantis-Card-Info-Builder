@@ -20,7 +20,7 @@ val rowenna = setOf(
         primaryAction = Action.ATTACK,
         primaryValue = 4,
         secondaryMovement = 1,
-        secondaryDefense = 1,
+        secondaryDefense = 2,
     ),
     Card(
         "Earn the Spurs",
@@ -47,7 +47,37 @@ val rowenna = setOf(
         Color.SILVER,
         initiative = 5,
         primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 4,
         secondaryDefense = 3,
+    ),
+    Card(
+        "Fabled Lance",
+        """
+            All of your attack actions gain the "Ranged"
+            subtype, target a unit in range, and count
+            as having a printed ::range_purple:: Range value of 2.
+        """.trimIndent(),
+        Color.PURPLE,
+        level = 4 ,
+        modifier = Modifier.RANGE,
+        modifierValue = 2,
+    ),
+    Card(
+        "Stand Guard",
+        """
+            Swap with a friendly unit in range
+            which is adjacent to an enemy hero,
+            or who has a card in the disacrd.
+        """.trimIndent(),
+        Color.BLUE,
+        level = 1,
+        initiative = 9,
+        primaryAction = Action.SKILL,
+        modifier = Modifier.RANGE,
+        modifierValue = 3,
+        secondaryMovement = 2,
+        secondaryDefense = 6,
     ),
     Card(
         "Token of Gratitude",
@@ -70,9 +100,9 @@ val rowenna = setOf(
         """
             After movement, if yhou are adjacent to
             an enemy hero, you may **Choose one —**
-            >> Place a friendly minion in radius into a
+            >>Place a friendly minion in radius into a
             >space adjacent to that enemy hero.
-            >> Place an enemy minion in radius into a
+            >>Place an enemy minion in radius into a
             >space adjacent to you.
         """.trimIndent(),
         Color.GREEN,
@@ -83,22 +113,6 @@ val rowenna = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 3,
-    ),
-    Card(
-        "Stand Guard",
-        """
-            Swap with a friendly unit in range
-            which is adjacent to an enemy hero,
-            or who has a card in the disacrd.
-        """.trimIndent(),
-        Color.BLUE,
-        level = 1,
-        initiative = 9,
-        primaryAction = Action.SKILL,
-        modifier = Modifier.RANGE,
-        modifierValue = 3,
-        secondaryMovement = 2,
-        secondaryDefense = 6,
     ),
     Card(
         "Fair Share",
@@ -142,9 +156,9 @@ val rowenna = setOf(
         """
             After movement, if you are adjacent to
             an enemy hero, you may **Choose one —**
-            >> Place a friendly minion in radius into a
+            >>Place a friendly minion in radius into a
             >space adjacent to that enemy hero.
-            >> Place an enemy minion in radius into a
+            >>Place an enemy minion in radius into a
             >space adjacent to you.
         """.trimIndent(),
         Color.GREEN,
@@ -152,8 +166,7 @@ val rowenna = setOf(
         initiative = 11,
         primaryAction = Action.MOVEMENT,
         primaryValue = 2,
-        secondaryMovement = 1,
-        secondaryDefense = 2,
+        secondaryDefense = 4,
         modifier = Modifier.AREA,
         modifierValue = 3,
         variant = 1 to 2,
@@ -215,9 +228,9 @@ val rowenna = setOf(
         """
             After movement, if you are adjacent to
             an enemy hero, you may **Choose one —**
-            >> Place a friendly minion in radius into a
+            >>Place a friendly minion in radius into a
             >space adjacent to that enemy hero.
-            >> Place an enemy minion in radius into a
+            >>Place an enemy minion in radius into a
             >space adjacent to you.
         """.trimIndent(),
         Color.GREEN,
@@ -293,12 +306,14 @@ val rowenna = setOf(
         """.trimIndent(),
         Color.RED,
         level = 3 ,
+        variant = 1 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 6,
+        modifier = Modifier.AREA,
+        modifierValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 7,
-        variant = 1 to 2,
         item = Item.RANGE,
     ),
     Card(
@@ -311,24 +326,14 @@ val rowenna = setOf(
         """.trimIndent(),
         Color.RED,
         level = 3 ,
+        variant = 2 to 2,
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 7,
+        modifier = Modifier.AREA,
+        modifierValue = 4,
         secondaryMovement = 4,
         secondaryDefense = 8,
-        variant = 2 to 2,
         item = Item.DEFENSE,
-    ),
-    Card(
-        "Fabled Lance",
-        """
-            All of your attack actions gain the "Ranged"
-            subtype, target a unit in range, and count
-            as having a printed ::range_purple:: Range value of 2.
-        """.trimIndent(),
-        Color.PURPLE,
-        level = 4 ,
-        modifier = Modifier.RANGE,
-        modifierValue = 2,
     ),
 )

@@ -12,9 +12,9 @@ val gydion = setOf(
         "Cantrip",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Shocking Grasp" ~(To repel a foe!)
-            >> "Magic Missile" ~(To blast at range!)
-            >> "Expeditious Retreat" ~(To dart a great distance!)
+            >>"Shocking Grasp" ~(To repel a foe!)
+            >>"Magic Missile" ~(To blast at range!)
+            >>"Expeditious Retreat" ~(To dart a great distance!)
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -91,8 +91,8 @@ val gydion = setOf(
         "Lesser Evocation",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Burning Hands"
-            >> "Fireball"
+            >>"Burning Hands"
+            >>"Fireball"
             ~(Wait for your allies to clear the area before hurling a fireball!)
         """.trimIndent(),
         Color.RED,
@@ -108,8 +108,8 @@ val gydion = setOf(
         "Lesser Necromancy",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Vampiric Touch"
-            >> "Create Undead"
+            >>"Vampiric Touch"
+            >>"Create Undead"
             ~(Harm your foe to heal yourself. Raise an undead servant.)
         """.trimIndent(),
         Color.RED,
@@ -125,9 +125,9 @@ val gydion = setOf(
         "Greater Evocation",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Burning Hands"
-            >> "Fireball"
-            >> "Sunburst"
+            >>"Burning Hands"
+            >>"Fireball"
+            >>"Sunburst"
             ~(Sunburst's reach and power grows with every cast spell.)
         """.trimIndent(),
         Color.RED,
@@ -143,9 +143,9 @@ val gydion = setOf(
         "Greater Necromancy",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Vampiric Touch"
-            >> "Create Undead"
-            >> "Energy Drain"
+            >>"Vampiric Touch"
+            >>"Create Undead"
+            >>"Energy Drain"
             ~(Drain energy from a foe in sight to restore your vitality.)
         """.trimIndent(),
         Color.RED,
@@ -161,8 +161,8 @@ val gydion = setOf(
         "Lesser Enchantment",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Suggestion"
-            >> "Dominate Person"
+            >>"Suggestion"
+            >>"Dominate Person"
             ~(Turn the dominated person against their own troops.)
         """.trimIndent(),
         Color.BLUE,
@@ -178,8 +178,8 @@ val gydion = setOf(
         "Lesser Transmutation",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Midas Touch"
-            >> "Disintegrate"
+            >>"Midas Touch"
+            >>"Disintegrate"
             ~(Create gold. Turn objects and lesser creatures into dust.)
         """.trimIndent(),
         Color.BLUE,
@@ -195,9 +195,9 @@ val gydion = setOf(
         "Greater Enchantment",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Suggestion"
-            >> "Dominate Person"
-            >> "Power Word Kill"
+            >>"Suggestion"
+            >>"Dominate Person"
+            >>"Power Word Kill"
             ~(Command a weakened foe within earshot to perish instantly.)
         """.trimIndent(),
         Color.BLUE,
@@ -213,9 +213,9 @@ val gydion = setOf(
         "Greater Transmutation",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Midas Touch"
-            >> "Disintegrate"
-            >> "Polymorph"
+            >>"Midas Touch"
+            >>"Disintegrate"
+            >>"Polymorph"
             ~(Polymorph enemies into creatures or objects and vice versa.)
         """.trimIndent(),
         Color.BLUE,
@@ -231,8 +231,8 @@ val gydion = setOf(
         "Lesser Abjuration",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Shield"
-            >> "Banishment"
+            >>"Shield"
+            >>"Banishment"
             ~(Touch anything to have it banished where you please.)
         """.trimIndent(),
         Color.GREEN,
@@ -248,8 +248,8 @@ val gydion = setOf(
         "Lesser Conjuration",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Find Familiar"
-            >> "Dimension Door"
+            >>"Find Familiar"
+            >>"Dimension Door"
             ~(Summon a familiar to assist you. Travel to a faraway place.)
         """.trimIndent(),
         Color.GREEN,
@@ -265,9 +265,9 @@ val gydion = setOf(
         "Greater Abjuration",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Shield"
-            >> "Banishment"
-            >> "Invulnerability"
+            >>"Shield"
+            >>"Banishment"
+            >>"Invulnerability"
             ~(Invulnerability makes you impervious to deadly perils.)
         """.trimIndent(),
         Color.GREEN,
@@ -283,9 +283,9 @@ val gydion = setOf(
         "Greater Conjuration",
         """
             **Choose and cast one** spell in the spellbook —
-            >> "Find Familiar"
-            >> "Dimension Door"
-            >> "Cloud Kill"
+            >>"Find Familiar"
+            >>"Dimension Door"
+            >>"Cloud Kill"
             ~(Create a deadly cloud within distance to weaken your foe.)
         """.trimIndent(),
         Color.GREEN,
@@ -515,7 +515,7 @@ val spells = setOf(
         "Find Familiar",
         """
             Place a ::token_familiar:: Familiar token in radius.
-            You may remove up to three  other spell
+            You may remove up to three other spell
             cards from the spellbook faceup.
         """.trimIndent(),
         Color.GREEN,
@@ -528,7 +528,8 @@ val spells = setOf(
     ),
     Spell(
         "Cloud Kill",
-        """ An enemy hero in radius
+        """
+            An enemy hero in radius
             discards a basic card, if able.
         """.trimIndent(),
         Color.GREEN,

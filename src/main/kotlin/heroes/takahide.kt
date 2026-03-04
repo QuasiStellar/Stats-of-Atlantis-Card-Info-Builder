@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Sign
 
 val takahide = setOf(
     Card(
@@ -15,7 +16,6 @@ val takahide = setOf(
             ~(This card starts the game in your hand.)
         """.trimIndent(),
         Color.GOLD,
-        variant = 1 to 3,
         initiative = 8,
         primaryAction = Action.MOVEMENT,
         primaryValue = 5,
@@ -30,7 +30,7 @@ val takahide = setOf(
             ~(This card starts the game in your deck.)
         """.trimIndent(),
         Color.GOLD,
-        variant = 2 to 3,
+        extra = true,
         initiative = 7,
         primaryAction = Action.ATTACK,
         primaryValue = 5,
@@ -48,22 +48,12 @@ val takahide = setOf(
             ~(This card starts the game in your deck.)
         """.trimIndent(),
         Color.GOLD,
-        variant = 3 to 3,
+        extra = true,
         initiative = 9,
         primaryAction = Action.ATTACK,
         primaryValue = 7,
         secondaryDefense = 3,
         secondaryMovement = 3,
-    ),
-    Card(
-        "Shameful Display",
-        """
-            ~(You are defeated.)
-        """.trimIndent(),
-        Color.SILVER,
-        handicapped = true,
-        initiative = 5,
-        primaryAction = Action.DEFENSE,
     ),
     Card(
         "Bushido",
@@ -77,6 +67,17 @@ val takahide = setOf(
         initiative = 5,
         primaryAction = Action.SKILL,
         secondaryDefense = 6,
+    ),
+    Card(
+        "Shameful Display",
+        """
+            ~(You are defeated.)
+        """.trimIndent(),
+        Color.SILVER,
+        handicapped = true,
+        initiative = 5,
+        primaryAction = Action.DEFENSE,
+        primaryValueSign = Sign.EXCLAMATION,
     ),
     Card(
         "Set an Example",
@@ -188,7 +189,7 @@ val takahide = setOf(
         """
             Target a unit adjacent to you.
             After the attack: **This turn:** Empty spaces in
-            radius to you count as obstacles for enemy units.
+            radius count as obstacles for enemy units.
         """.trimIndent(),
         Color.RED,
         level = 3,

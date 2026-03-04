@@ -114,9 +114,9 @@ val mrak = setOf(
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 4,
-        secondaryAttack = 6,
+        secondaryAttack = 7,
         secondaryMovement = 3,
-        secondaryDefense = 7,
+        secondaryDefense = 8,
         item = Item.INITIATIVE,
     ),
     Card(

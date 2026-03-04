@@ -220,7 +220,7 @@ val trinkets = setOf(
         Color.GREEN,
         level = 2,
         variant = 2 to 2,
-        initiative = 4,
+        initiative = 3,
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,

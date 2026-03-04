@@ -303,9 +303,9 @@ val ursafar = setOf(
         "Evolutionary Response",
         """
             If enraged, **choose one, or both —**
-            >> Perform the primary action on one
+            >>Perform the primary action on one
             >of your discarded cards.
-            >> You may retrieve a discarded card.
+            >>You may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
         level = 3,

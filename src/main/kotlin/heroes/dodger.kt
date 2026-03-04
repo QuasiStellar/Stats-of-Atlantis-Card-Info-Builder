@@ -98,8 +98,8 @@ val dodger = setOf(
         primaryValue = 4,
         modifier = Modifier.RANGE,
         modifierValue = 2,
-        secondaryMovement = 5,
-        secondaryDefense = 4,
+        secondaryMovement = 4,
+        secondaryDefense = 5,
     ),
     Card(
         "Dark Ritual",

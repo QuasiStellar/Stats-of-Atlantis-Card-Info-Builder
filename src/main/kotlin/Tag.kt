@@ -1,12 +1,12 @@
 enum class Tag {
-    Damager,
+        Damager,
     Disabler,
-    Durable,
-    Farming,
-    Healer,
+        Durable,
+        Farming,
+        Healer,
     Melee,
-    Pusher,
-    Sniper,
+        Pusher,
+        Sniper,
     Tactician,
     Tokens,
 }
