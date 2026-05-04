@@ -304,7 +304,7 @@ val brynn = setOf(
         """
             Target a unit adjacent to you.
             If you target a hero adjacent to
-            3 or more obstacles obstacles, +2 ::attack_red:: attack and After
+            3 or more obstacles, +2 ::attack_red:: attack and After
             the attack: You may retrieve this card.
         """.trimIndent(),
         Color.RED,

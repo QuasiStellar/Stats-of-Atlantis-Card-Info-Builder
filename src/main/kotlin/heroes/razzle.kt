@@ -72,7 +72,7 @@ val razzle = setOf(
         "Alleyoop",
         """
             Swap with a friendly hero in range.
-            Move another one of you up 1 space.
+            Move another one of you up to 1 space.
         """.trimIndent(),
         Color.BLUE,
         level = 1,

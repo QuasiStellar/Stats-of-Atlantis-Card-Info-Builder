@@ -268,7 +268,7 @@ val tigerclaw = setOf(
         "Backstab with a Ballista",
         """
             Target a unit in range;
-            if a friendly unit is adjacent to the target
+            if a friendly unit is adjacent to the target,
             +2 ::attack_red:: Attack, and the target cannot
             perform a primary action to defend.
         """.trimIndent(),

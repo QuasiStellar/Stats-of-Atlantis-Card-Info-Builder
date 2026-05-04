@@ -27,7 +27,7 @@ val emmitt = setOf(
         "Tear in Time",
         """
             Target a hero adjacent to you.
-            After the attack: **Next Turn:** Heroes with
+            After the attack: **Next turn:** Heroes with
             lower initiative act before heroes with higher
             initiative. This effect ignores immunity.
         """.trimIndent(),

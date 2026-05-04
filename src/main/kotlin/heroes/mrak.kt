@@ -26,7 +26,7 @@ val mrak = setOf(
         "Lesser Fissure",
         """
             Target a hero adjacent to you. After the attack:
-            Place a ::token_rock:: rock token in each of the first
+            Place a ::token_rock:: Rock token in each of the first
             three empty spaces in the straight line
             from you in the direction of the attack.
         """.trimIndent(),
