@@ -13,7 +13,7 @@ val tigerclaw = setOf(
         """
             Before the attack: Move 2 spaces in a straight
             line through an enemy unit; target that unit.
-            ~(If you cannot make this move, you cannot attack).
+            ~(If you cannot make this move, you cannot attack.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 13,
@@ -39,7 +39,7 @@ val tigerclaw = setOf(
     Card(
         "Blend Into Shadows",
         """
-            If adjacent to terrain, place yourself
+            If you are adjacent to terrain, place yourself
             into a space in radius; if you do, **Next turn:**
             You are immune to enemy attack actions.
         """.trimIndent(),
@@ -185,9 +185,9 @@ val tigerclaw = setOf(
     Card(
         "Poisoned Dagger",
         """
-            Give a hero in range a ::marker_poison:: poison marker.
+            Give a hero in range a ::marker_poison:: Poison marker.
             The hero with a poison marker has
-            -1 ::initiative:: Initiative, -1 ::attack_silver:: Attack, and -1 ::defense_silver:: Defense.
+            -1 ::initiative:: Initiative, -1 ::attack_silver:: Attack and -1 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -236,7 +236,7 @@ val tigerclaw = setOf(
     Card(
         "Master Thief",
         """
-            Move up to 2 spaces.  Take 1 or 2 coins
+            Move up to 2 spaces. Take 1 or 2 coins
             from an enemy hero adjacent to you;
             if you do, you may move up to 2 spaces.
         """.trimIndent(),
@@ -288,9 +288,9 @@ val tigerclaw = setOf(
     Card(
         "Poisoned Dart",
         """
-            Give a hero in range a ::marker_poison:: poison marker.
+            Give a hero in range a ::marker_poison:: Poison marker.
             The hero with a poison marker has
-            -2 ::initiative:: Initiative, -2 ::attack_silver:: Attack, and -2 ::defense_silver:: Defense.
+            -2 ::initiative:: Initiative, -2 ::attack_silver:: Attack and -2 ::defense_silver:: Defense.
         """.trimIndent(),
         Color.GREEN,
         level = 3,

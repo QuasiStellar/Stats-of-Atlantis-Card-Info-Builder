@@ -87,7 +87,7 @@ val silverarrow = setOf(
             **Choose one —**
             >>Target a unit in range, which is not
             >adjacent to any other unit.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -135,8 +135,8 @@ val silverarrow = setOf(
         """
             **Choose one —**
             >>Target a unit in range, which is not
-            >>adjacent to any other unit.
-            >>Target a hero adjacent to you.
+            >adjacent to any other unit.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -203,7 +203,7 @@ val silverarrow = setOf(
     Card(
         "Fae Healing",
         """
-            A hero  in radius may retrieve a discarded
+            A hero in radius may retrieve a discarded
             card; if they do, that hero gains 1 coin.
         """.trimIndent(),
         Color.GREEN,
@@ -241,7 +241,7 @@ val silverarrow = setOf(
             **Choose one —**
             >>Target a unit in range, which is not
             >adjacent to any other unit.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,

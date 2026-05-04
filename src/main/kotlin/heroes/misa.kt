@@ -106,7 +106,7 @@ val misa = setOf(
     Card(
         "Gust of Wind",
         """
-            Move up to 4 spaces in a straight line ignoring
+            Move up to 4 spaces in a straight line, ignoring
             obstacles; you may place an enemy unit you
             moved through into a space adjacent to you.
         """.trimIndent(),
@@ -189,7 +189,7 @@ val misa = setOf(
         "Dash and Slash",
         """
             Move up to 4 spaces in a straight line,
-            ignoring obstacles. An enemy hero you
+            ignoring obstacles; an enemy hero you
             moved through discards a card, if able.
         """.trimIndent(),
         Color.BLUE,
@@ -238,7 +238,7 @@ val misa = setOf(
         "Mastery",
         """
             **Next turn:** Before you perform a
-            primary action, you may move 3 spaces.
+            primary action, move up to 3 spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,

@@ -67,7 +67,7 @@ val cutter = setOf(
     Card(
         "Bombardment",
         """
-            A enemy hero in radius, adjacent to
+            An enemy hero in radius, adjacent to
             another enemy unit and not adjacent
             to you, discards a card, if able.
         """.trimIndent(),
@@ -85,7 +85,7 @@ val cutter = setOf(
         """
             **Choose one —**
             >>Before the attack: Move 1 space.
-            Target a unit adjacent to you in the
+            Target a hero adjacent to you in the
             direction of the move; +2 ::attack_red:: Attack.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -115,7 +115,7 @@ val cutter = setOf(
     Card(
         "Barrage",
         """
-            A enemy hero in radius, adjacent to
+            An enemy hero in radius, adjacent to
             another enemy unit and not adjacent
             to you, discards a card, if able.
         """.trimIndent(),
@@ -135,7 +135,7 @@ val cutter = setOf(
         """
             **Choose one —**
             >>Before the attack: Move 1 or 2 spaces in a
-            straight line. Target a unit adjacent to you
+            straight line. Target a hero adjacent to you
             in the direction of the move; +2 ::attack_red:: Attack.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -187,7 +187,7 @@ val cutter = setOf(
     Card(
         "Evasive Shot",
         """
-            Target a unit in range in a straight line
+            Target a unit in range and in a straight line.
             After the attack: Move up to 2 spaces
             in the opposite direction.
         """.trimIndent(),
@@ -223,7 +223,7 @@ val cutter = setOf(
     Card(
         "Broadside",
         """
-            A enemy hero in radius, adjacent to
+            An enemy hero in radius, adjacent to
             another enemy unit and not adjacent
             to you, discards a card, if able.
             May repeat once on a different target.
@@ -244,7 +244,7 @@ val cutter = setOf(
         """
             **Choose one —**
             >>Before the attack: Move 1, 2 or 3 spaces in
-            >a straight line. Target a unit adjacent to you
+            >a straight line. Target a hero adjacent to you
             >in the direction of the move; +2 ::attack_red:: Attack.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -297,7 +297,7 @@ val cutter = setOf(
     Card(
         "Tumble Shot",
         """
-            Target a unit in range in a straight line.
+            Target a unit in range and in a straight line.
             After the attack: Move up to 3 spaces
             in the opposite direction.
         """.trimIndent(),

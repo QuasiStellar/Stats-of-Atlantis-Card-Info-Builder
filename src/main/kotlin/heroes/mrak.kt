@@ -26,7 +26,7 @@ val mrak = setOf(
         "Lesser Fissure",
         """
             Target a hero adjacent to you. After the attack:
-            Place a ::token_rock:: Rock token in each of the first
+            Place a ::token_rock:: rock token in each of the first
             three empty spaces in the straight line
             from you in the direction of the attack.
         """.trimIndent(),
@@ -122,7 +122,7 @@ val mrak = setOf(
     Card(
         "Stone Carapace",
         """
-            **This round:** if you would discard a card from
+            **This round:** If you would discard a card from
             your hand, you may discard this card instead;
             you may discard this card to perform its
             defense action, as if it was in your hand.
@@ -229,7 +229,7 @@ val mrak = setOf(
         """
             Move any number of spaces in a straight
             line, ignoring obstacles, without moving
-            through more than two empty space.
+            through more than two empty spaces.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -299,7 +299,7 @@ val mrak = setOf(
         "Rock Solid",
         """
             You may retrieve a discarded card.
-            **This round:** if you would discard a card from
+            **This round:** If you would discard a card from
             your hand, you may discard this card instead;
             you may discard this card to perform its
             defense action, as if it was in your hand.

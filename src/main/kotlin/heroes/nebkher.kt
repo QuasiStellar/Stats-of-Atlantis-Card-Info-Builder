@@ -13,7 +13,7 @@ val nebkher = setOf(
             **Choose one —**
             >>Perform an action on the card in the previous
             >turn slot of an enemy hero in range; if you
-            >would place any tokens, place ::token_illusion::
+            >would place any tokens this way, place ::token_illusion::
             >Illusion tokens instead; skip giving markers.
             >>Defeat a minion adjacent to you.
         """.trimIndent(),
@@ -28,7 +28,7 @@ val nebkher = setOf(
     Card(
         "Mind Probe",
         """
-            Perform the action on the card in the previous
+            Perform an action on the card in the previous
             turn slot of an enemy hero in range; if you
             would place any tokens this way, place ::token_illusion::
             Illusion tokens instead; do not use markers.

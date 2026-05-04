@@ -63,7 +63,7 @@ val ursafar = setOf(
         "Prowling Brute",
         """
             If enraged, after movement, you may swap
-            with a unit or token adjacent to you.
+            with a unit or a token adjacent to you.
             **This round:** You are enraged.
         """.trimIndent(),
         Color.BLUE,
@@ -77,7 +77,7 @@ val ursafar = setOf(
         "Prey Drive",
         """
             Target a unit adjacent to you. After the attack:
-            If enraged, and the target weas not removed,
+            If enraged, and the target was not removed,
             remove up to 1 enemy minion in radius.
             **This round:** You are enraged.
         """.trimIndent(),
@@ -110,7 +110,7 @@ val ursafar = setOf(
         "Rampaging Beast",
         """
             If enraged, after movement, you may swap
-            with a unit or token adjacent to you;
+            with a unit or a token adjacent to you;
             if you do, move up to 1 additional space.
             **This round:** You are enraged.
         """.trimIndent(),
@@ -181,7 +181,7 @@ val ursafar = setOf(
         """
             Target a unit adjacent to you.
             After the attack: If enraged, gain 1 coin.
-            **This round:** you are enraged.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -214,7 +214,7 @@ val ursafar = setOf(
         "Unstoppable Force",
         """
             If enraged, after movement, you may swap
-            with a unit or token adjacent to you;
+            with a unit or a token adjacent to you;
             if you do, move up to 2 additional spaces.
             **This round:** You are enraged.
         """.trimIndent(),
@@ -284,10 +284,10 @@ val ursafar = setOf(
         "Tear",
         """
             Target a unit adjacent to you.
-            After the attack: If enraged, gain 2 coins.;
+            After the attack: If enraged, gain 2 coins;
             if you defeated a hero, that hero spends
             1 additional ::life_counters:: Life counter.
-            **This round:** you are enraged.
+            **This round:** You are enraged.
         """.trimIndent(),
         Color.RED,
         level = 3,

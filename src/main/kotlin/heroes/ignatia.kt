@@ -12,7 +12,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Target a minion adjacent to you.
             ---
-            ::tiebreaker_orange:: Target a hero in range.
+            ::tiebreaker_orange::: Target a hero in range.
             ~(Apply the text matching the symbol on the Tie Breaker coin.)
         """.trimIndent(),
         Color.GOLD,
@@ -29,7 +29,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Target a hero adjacent to you.
             ---
-            ::tiebreaker_orange:: Target a hero in range not adjacent to you.
+            ::tiebreaker_orange::: Target a hero in range not adjacent to you.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -56,8 +56,8 @@ val ignatia = setOf(
     Card(
         "Chaos Incarnate",
         """
-            The first time each turn after youy perform
-            a primary actionm you may flip the Tie Breaker
+            The first time each turn after you perform
+            a primary action, you may flip the Tie Breaker
             coin; if you do, you may perform that action
             again, choosing different targets.
         """.trimIndent(),
@@ -67,10 +67,10 @@ val ignatia = setOf(
     Card(
         "Abrupt Combustion",
         """
-            ::tiebreaker_blue::: An enemy hero in radius, adjacent to a
-            token or a minion discards a card, if able.
+            ::tiebreaker_blue::: An enemy hero in radius adjacent to a
+            token or to a minion discards a card, if able.
             ---
-            ::tiebreaker_orange:: Remove an enemy minion in radius
+            ::tiebreaker_orange::: Remove an enemy minion in radius
             adjacent to an enemy hero.
         """.trimIndent(),
         Color.BLUE,
@@ -87,7 +87,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Target a unit in range not in a straight line.
             ---
-            ::tiebreaker_orange:: Target a unit in range in a straight line.
+            ::tiebreaker_orange::: Target a unit in range in a straight line.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -103,10 +103,10 @@ val ignatia = setOf(
         "Path of Ashes",
         """
             ::tiebreaker_blue::: Move up to 2 spaces in a straight line.
-            Place a ::token_magma:: magma token in each empty
+            Place a ::token_magma:: Magma token in each empty
             space you moved through, or out of.
             ---
-            ::tiebreaker_orange:: Place up to 2 magma tokens in radius.
+            ::tiebreaker_orange::: Place up to 2 Magma tokens in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -121,9 +121,9 @@ val ignatia = setOf(
         "Spontaneous Immolation",
         """
             ::tiebreaker_blue::: An enemy hero in radius adjacent to a
-            token or a minion discards a card, if able.
+            token or to a minion discards a card, if able.
             ---
-            ::tiebreaker_orange:: Remove an enemy minion in radius
+            ::tiebreaker_orange::: Remove an enemy minion in radius
             adjacent to an enemy hero.
         """.trimIndent(),
         Color.BLUE,
@@ -142,7 +142,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Target a unit in range not in a straight line.
             ---
-            ::tiebreaker_orange:: Target a unit in range in a straight line.
+            ::tiebreaker_orange::: Target a unit in range in a straight line.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -160,10 +160,10 @@ val ignatia = setOf(
         "Path of Cinders",
         """
             ::tiebreaker_blue::: Move up to 3 spaces in a straight line.
-            Place a ::token_magma:: magma token in each empty
+            Place a ::token_magma:: Magma token in each empty
             space you moved through, or out of.
             ---
-            ::tiebreaker_orange:: Place up to 3 magma tokens in radius.
+            ::tiebreaker_orange::: Place up to 3 Magma tokens in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -182,7 +182,7 @@ val ignatia = setOf(
             ::tiebreaker_blue::: Move a friendly hero in radius
             2 spaces in a straight line.
             ---
-            ::tiebreaker_orange:: Move an enemy hero in radius
+            ::tiebreaker_orange::: Move an enemy hero in radius
             2 spaces in a straight line.
         """.trimIndent(),
         Color.BLUE,
@@ -199,9 +199,9 @@ val ignatia = setOf(
     Card(
         "Crack of Doom",
         """
-            ::tiebreaker_blue:: Target a unit adjacent to you.
+            ::tiebreaker_blue::: Target a unit adjacent to you.
             ---
-            ::tiebreaker_orange::: Target a unit at a maximum range.
+            ::tiebreaker_orange::: Target a unit at maximum range.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -220,7 +220,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Swap with a friendly unit in radius.
             ---
-            ::tiebreaker_orange:: Swap with an enemy unit in radius.
+            ::tiebreaker_orange::: Swap with an enemy unit in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -237,9 +237,9 @@ val ignatia = setOf(
         "Violent Conflagration",
         """
             ::tiebreaker_blue::: An enemy hero in radius adjacent to a
-            token or a minion discards a card, or is defeated.
+            token or to a minion discards a card, or is defeated.
             ---
-            ::tiebreaker_orange:: Defeat an enemy minion in radius
+            ::tiebreaker_orange::: Defeat an enemy minion in radius
             adjacent to an enemy hero.
         """.trimIndent(),
         Color.BLUE,
@@ -258,7 +258,7 @@ val ignatia = setOf(
         """
             ::tiebreaker_blue::: Target a unit in range not in a straight line.
             ---
-            ::tiebreaker_orange:: Target a unit in range in a straight line.
+            ::tiebreaker_orange::: Target a unit in range in a straight line.
             May repeat once on a different hero.
         """.trimIndent(),
         Color.RED,
@@ -277,10 +277,10 @@ val ignatia = setOf(
         "Path of Flames",
         """
             ::tiebreaker_blue::: Move up to 4 spaces in a straight line.
-            Place a ::token_magma:: magma token in each empty
+            Place a ::token_magma:: Magma token in each empty
             space you moved through, or out of.
             ---
-            ::tiebreaker_orange:: Place up to 4 magma tokens in radius.
+            ::tiebreaker_orange::: Place up to 4 Magma tokens in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -299,7 +299,7 @@ val ignatia = setOf(
             ::tiebreaker_blue::: Move a friendly hero in radius
             2 or 3 spaces in a straight line.
             ---
-            ::tiebreaker_orange:: Move an enemy hero in radius
+            ::tiebreaker_orange::: Move an enemy hero in radius
             2 or 3 spaces in a straight line.
         """.trimIndent(),
         Color.BLUE,
@@ -319,7 +319,7 @@ val ignatia = setOf(
             ::tiebreaker_blue::: Target a unit adjacent to you.
             May repeat once on a minion.
             ---
-            ::tiebreaker_orange:: Target a unit at maximum range.
+            ::tiebreaker_orange::: Target a unit at maximum range.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -339,7 +339,7 @@ val ignatia = setOf(
             ::tiebreaker_blue::: Swap with a friendly unit in radius.
             You may move that unit 1 space.
             ---
-            ::tiebreaker_orange:: Swap with an enemy unit in radius.
+            ::tiebreaker_orange::: Swap with an enemy unit in radius.
             You may move 1 space.
         """.trimIndent(),
         Color.GREEN,

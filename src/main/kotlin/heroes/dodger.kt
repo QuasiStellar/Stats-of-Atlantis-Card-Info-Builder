@@ -48,7 +48,7 @@ val dodger = setOf(
         """
             An enemy hero in radius who is
             adjacent to an empty spawn point in
-            the battle zone, discards a card, if able.
+            the battle zone discards a card, if able.
         """.trimIndent(),
         Color.SILVER,
         initiative = 7,
@@ -61,8 +61,8 @@ val dodger = setOf(
         "Tide of Darkness",
         """
             While you are performing an action, all spaces
-            count as if they are in the battle zone and
-            havd a friendly minion spawn point.
+            count as if they were in the battle zone and
+            had a friendly minion spawn point.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -87,7 +87,7 @@ val dodger = setOf(
         "Littlefinger of Death",
         """
             **Choose one —**
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
             >>Target a hero in range who has one or
             >more cards in the discard.
         """.trimIndent(),
@@ -120,7 +120,7 @@ val dodger = setOf(
         "Vampiric Shield",
         """
             +2 ::defense_blue:: Defense if there are 2 or more empty
-            minion spawn points in radius in the battle zone.
+            spawn points in radius in the battle zone.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -138,7 +138,7 @@ val dodger = setOf(
         "Finger of Death",
         """
             **Choose one —**
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
             >>Target a hero in range who has one or
             >more cards in the discard.
         """.trimIndent(),
@@ -226,8 +226,8 @@ val dodger = setOf(
     Card(
         "Aegis of Doom",
         """
-            +4 ::defense_blue:: if there are 2 or more empty
-            spawn points in radius in a battle zone.
+            +4 ::defense_blue:: Defense if there are 2 or more empty
+            spawn points in radius in the battle zone.
         """.trimIndent(),
         Color.BLUE,
         level = 3,
@@ -245,7 +245,7 @@ val dodger = setOf(
         "Middlefinger of Death",
         """
             **Choose one, or both, on different targets —**
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
             >>Target a hero in range who has one or 
             >more cards in the discard.
         """.trimIndent(),

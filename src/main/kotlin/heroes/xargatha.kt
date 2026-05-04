@@ -14,6 +14,7 @@ val xargatha = setOf(
             Target a unit adjacent to you.
             After the attack: May repeat once
             on a different enemy hero.
+            ~(You may repeat even if the original target was a minion.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -41,7 +42,7 @@ val xargatha = setOf(
         "Siren's Call",
         """
             Target an enemy unit not adjacent to you
-            and in range; if able, move that unit
+            and in range; if able, move the target
             up to 3 spaces to a space adjacent to you.
         """.trimIndent(),
         Color.SILVER,
@@ -67,7 +68,7 @@ val xargatha = setOf(
             **Next turn:** Enemy heroes in radius count
             as both heroes and terrain, and cannot
             perform movement actions.
-            ~(If you move, the radius "moves" with you)
+            ~(If you move, the radius "moves" with you.)
         """.trimIndent(),
         Color.BLUE,
         level = 1,

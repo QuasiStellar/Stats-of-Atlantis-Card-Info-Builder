@@ -139,7 +139,7 @@ val whisper = setOf(
     Card(
         "Sanguine Path",
         """
-            Before the attack: Move up to
+            Before the attack: You may move up to
             1 space for every empty minion spawn point
             in radius in the battle zone, up to a maximum
             of 2 spaces. Target a unit adjacent to you.

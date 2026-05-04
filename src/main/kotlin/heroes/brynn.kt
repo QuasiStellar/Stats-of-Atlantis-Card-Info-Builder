@@ -14,7 +14,7 @@ val brynn = setOf(
             >>Target a unit adjacent to you.
             >>Target a hero in range who is
             >adjacent to 3 or more obstacles.
-            ~(You, other heroes, minions, tokens and terrain are obstacles.)
+            ~(You, other heroes, minions, tokens, and terrain are obstacles.)
         """.trimIndent(),
         Color.GOLD,
         initiative = 12,
@@ -32,7 +32,7 @@ val brynn = setOf(
             >>Target a hero adjacent to you.
             >>Target a hero in range who is
             >adjacent to 3 or more obstacles.
-            ~(You, other heroes, minions, tokens and terrain are obstacles.)
+            ~(You, other heroes, minions, tokens, and terrain are obstacles.)
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -47,10 +47,10 @@ val brynn = setOf(
     Card(
         "Decoy",
         """
-            **Choose up to two times,**, on different targets —
+            **Choose up to two times,** on different targets —
             >>Move an enemy minion in radius 1 space.
             >>Move an enemy hero in radius who is
-            adjacent to 3 or more obstacles 2 space.
+            adjacent to 3 or more obstacles 1 space.
         """.trimIndent(),
         Color.SILVER,
         initiative = 1,
@@ -208,7 +208,7 @@ val brynn = setOf(
         "Mountain Guide",
         """
             You may move a friendly unit, which is adjacent
-            to you, up to 3 spaces. If an enemy hero in
+            to you, up to 2 spaces. If an enemy hero in
             radius is adjacent to 3 or more obstacles, move
             a different friendly unit in radius up to 2 spaces.
         """.trimIndent(),
@@ -304,7 +304,7 @@ val brynn = setOf(
         """
             Target a unit adjacent to you.
             If you target a hero adjacent to
-            3 or more obstacles, +2 ::attack_red:: attack and After
+            3 or more obstacles obstacles, +2 ::attack_red:: attack and After
             the attack: You may retrieve this card.
         """.trimIndent(),
         Color.RED,

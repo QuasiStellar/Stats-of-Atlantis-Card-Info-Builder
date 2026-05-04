@@ -352,7 +352,7 @@ val spells = setOf(
         "Burning Hands",
         """
             Target a unit adjacent to you.
-            Before the attack: Up to  enemy
+            Before the attack: Up to 1 enemy
             hero adjacent to the target
             discards a card, if able.
         """.trimIndent(),
@@ -367,8 +367,8 @@ val spells = setOf(
         "Fireball",
         """
             Target a unit in range,
-            not adjacent to you or
-            to your friendly unit.
+            not adjacent to you, or
+to your friendly unit.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -447,20 +447,7 @@ val spells = setOf(
         """
             **This round:** You are
             immune to basic attacks.
-            ~(Cancelled if the spell is returned to she spellbook.)
-        """.trimIndent(),
-        Color.GREEN,
-        level = 1,
-        school = School.ABJURATION,
-        variant = 1 to 2,
-        primaryAction = Action.SKILL,
-    ),
-    Spell(
-        "Shield",
-        """
-            **This round:** You are
-            immune to basic attacks.
-            ~(Cancelled if the spell is returned to she spellbook.)
+            ~(Cancelled if the spell is returned to the spellbook.)
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -572,7 +559,7 @@ val spells = setOf(
     Spell(
         "Power Word Kill",
         """
-            Defeate an enemy hero in
+            Defeat an enemy hero in
             radius with no cards in hand.
         """.trimIndent(),
         Color.BLUE,

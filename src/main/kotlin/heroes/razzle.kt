@@ -72,7 +72,7 @@ val razzle = setOf(
         "Alleyoop",
         """
             Swap with a friendly hero in range.
-            Move another one of you up to 1 space.
+            Move another one of you up 1 space.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -163,7 +163,7 @@ val razzle = setOf(
     Card(
         "Magic Trick",
         """
-            Push an unit adjacent to you up to 2 spaces;
+            Push a unit adjacent to you up to 2 spaces;
             for every space the target moved, move this
             one of you one space in the opposite direction.
         """.trimIndent(),
@@ -265,7 +265,7 @@ val razzle = setOf(
     Card(
         "Aaaand it's gone!",
         """
-            Push an unit adjacent to you up to 3 spaces;
+            Push a unit adjacent to you up to 3 spaces;
             for every space the target moved, move this
             one of you one space in the opposite direction.
         """.trimIndent(),

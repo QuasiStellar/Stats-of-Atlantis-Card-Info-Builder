@@ -284,8 +284,8 @@ val wuk = setOf(
     Card(
         "Assert Dominance",
         """
-            **This round:** Up to 1 enemy minion adjacent
-            to you does not count towards the minion total
+            **This round:** Up to 2 enemy minions adjacent
+            to you do not count towards the minion total
             during minion battle, regardless of immunity.
         """.trimIndent(),
         Color.BLUE,

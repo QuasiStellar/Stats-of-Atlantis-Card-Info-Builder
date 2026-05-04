@@ -165,7 +165,7 @@ val takahide = setOf(
         item = Item.DEFENSE,
     ),
     Card(
-        "Hold my Sake",
+        "Hold my Saké",
         """
             Target a unit adjacent to you.
             After the attack: A friendly hero in radius
@@ -297,7 +297,7 @@ val takahide = setOf(
     Card(
         "Pledge of Allegiance",
         """
-            A friendly hero in radius may discard a card.
+            A friendly hero in range may discard a card.
             If that hero has a card in the discard,
             both you and that hero gain 1 coin and
             you may retrieve a discarded card.
@@ -334,7 +334,7 @@ val takahide = setOf(
     Card(
         "Loyal Retainer",
         """
-            A friendly hero in radius may discard a card.
+            A friendly hero in range may discard a card.
             If that hero has a card in the discard,
             both you and that hero gain 2 coins and
             you may retrieve a discarded card.

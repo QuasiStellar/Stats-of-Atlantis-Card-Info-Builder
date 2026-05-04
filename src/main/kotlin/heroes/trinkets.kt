@@ -248,7 +248,7 @@ val trinkets = setOf(
         """
             Target a unit in range of both you and the
             Turret. If the target is in a straight line from
-            you, and in a straight line from the Turret,
+            you and in a straight line from the Turret,
             gain +3 ::attack_red:: Attack.
         """.trimIndent(),
         Color.RED,

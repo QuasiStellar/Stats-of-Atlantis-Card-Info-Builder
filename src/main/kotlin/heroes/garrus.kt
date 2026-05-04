@@ -10,7 +10,7 @@ val garrus = setOf(
     Card(
         "Angry Strike",
         """
-            Target a hero adjacent to you.
+            Target a unit adjacent to you;
             +1 ::attack_gold:: Attack for every card in your discard.
         """.trimIndent(),
         Color.GOLD,
@@ -24,7 +24,7 @@ val garrus = setOf(
     Card(
         "Angry Swipe",
         """
-            Target a hero adjacent to you.
+            Target a hero adjacent to you;
             +1 ::attack_gold:: Attack for every card in your discard.
         """.trimIndent(),
         Color.GOLD,
@@ -82,7 +82,7 @@ val garrus = setOf(
             >>Before the attack: If you have one or more
             cards in the discard, you may move 1 space.
             >Target a hero adjacent to you.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -95,7 +95,7 @@ val garrus = setOf(
     Card(
         "Hold Ground",
         """
-            If there at least two enemy heroes in
+            If there are at least two enemy heroes in
             radius, you may retrieve a discarded card.
         """.trimIndent(),
         Color.GREEN,
@@ -132,7 +132,7 @@ val garrus = setOf(
             >>Before the attack: If you have one or more
             cards in the discard, move up to 2 spaces.
             >Target a hero adjacent to you.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -239,7 +239,7 @@ val garrus = setOf(
             >>Before the attack: If you have one or more
             cards in the discard, move up to 3 spaces.
             >Target a hero adjacent to you.
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
         level = 3,
@@ -291,7 +291,7 @@ val garrus = setOf(
         "Send Flying",
         """
             Target a unit adjacent to you. After the attack:
-            you may move up to 2 spaces to a space
+            You may move up to 2 spaces to a space
             adjacent to an enemy hero; if you do, push
             that hero 3 spaces, ignoring obstacles.
         """.trimIndent(),

@@ -64,7 +64,7 @@ val arien = setOf(
         "Aspiring Duelist",
         """
             Ignore all minion defense modifiers.
-            ~(This includes your minions, as well as the enemy minions.)
+            ~(This includes your minions, as well as enemy minions.)
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -125,7 +125,7 @@ val arien = setOf(
         "Rogue Wave",
         """
             Target a unit in range.
-            After the attack: You may an enemy
+            After the attack: You may push an enemy
             unit adjacent to you up to 2 spaces.
         """.trimIndent(),
         Color.RED,
@@ -161,7 +161,7 @@ val arien = setOf(
     Card(
         "Slippery Ground",
         """
-            **This turn:** Enemies heroes adjacent
+            **This turn:** Enemy heroes adjacent
             to you cannot fast travel, or move more
             than 1 space with a movement action.
         """.trimIndent(),
@@ -264,7 +264,7 @@ val arien = setOf(
     Card(
         "Deluge",
         """
-            **This turn:** Enemies in radius
+            **This turn:** Enemy heroes in radius
             cannot fast travel, or move more than
             1 space with a movement action.
         """.trimIndent(),
@@ -301,8 +301,8 @@ val arien = setOf(
     Card(
         "Ebb and Flow",
         """
-            Swap with aan enemy minion in range;
-            if it was adjacent to you, may repeact once.
+            Swap with an enemy minion in range;
+            if it was adjacent to you, may repeat once.
         """.trimIndent(),
         Color.GREEN,
         level = 3,

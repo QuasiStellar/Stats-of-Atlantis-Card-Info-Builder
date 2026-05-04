@@ -79,7 +79,7 @@ val swift = setOf(
         "Snipe",
         """
             Target a unit at maximum range,
-            and in in a straight line.
+            and in a straight line.
         """.trimIndent(),
         Color.RED,
         level = 1,

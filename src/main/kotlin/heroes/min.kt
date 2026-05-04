@@ -45,9 +45,9 @@ val min = setOf(
     Card(
         "Smoke Bomb",
         """
-            Place a ::token_smoke_bomb:: smoke bomb token in radius;
-            enemy heroes cannot target another you or another
-            unit if there is the Smoke Bomb on a straight
+            Place the ::token_smoke_bomb:: Smoke bomb token in radius;
+            enemy heroes cannot target you or another
+            unit if the Smoke bomb token is on a straight
             line between that enemy hero and their target.
         """.trimIndent(),
         Color.SILVER,
@@ -69,7 +69,7 @@ val min = setOf(
     Card(
         "Trip Mine",
         """
-            Place 2 mine tokens, 1 ::token_blast:: blast and 1 ::token_dud:: dud,
+            Place 2 Mine tokens, 1 ::token_blast:: blast and 1 ::token_dud:: dud,
             facedown in radius; units may move through
             them; remove mine tokens after an enemy
             hero moves through them; for every blast
@@ -102,7 +102,7 @@ val min = setOf(
     Card(
         "Poof!",
         """
-            Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+            Swap with a ::token_smoke_bomb:: Smoke bomb token in range;
             if you do, block the attack.
         """.trimIndent(),
         Color.GREEN,
@@ -117,7 +117,7 @@ val min = setOf(
     Card(
         "Cluster Mine",
         """
-            Place 3 mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::
+            Place 3 Mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::
             duds, facedown in radius; units may move
             through them; remove mine tokens after an
             enemy hero moves through them; for every
@@ -155,7 +155,7 @@ val min = setOf(
     Card(
         "Vanish",
         """
-            Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+            Swap with a ::token_smoke_bomb:: Smoke bomb token in range;
             if you do, block the attack.
         """.trimIndent(),
         Color.GREEN,
@@ -224,9 +224,9 @@ val min = setOf(
     Card(
         "Minefield",
         """
-            Place 3 mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::
+            Place 3 Mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::
             dud, facedown in radius; units may move
-            through them; remove mien tokens after an
+            through them; remove mine tokens after an
             enemy hero moves through them; for every
             blast removed, that hero discards a card, if able.
         """.trimIndent(),
@@ -280,7 +280,7 @@ val min = setOf(
     Card(
         "Holy Death Grenade",
         """
-            Place a ::token_grenade:: grenade token into a space in
+            Place a ::token_grenade:: Grenade token into a space in
             radius. **End of turn:** Up to 2 enemy heroes
             adjacent to that token discard a card, or are
             defeated. Remove the Grenade token.
@@ -301,7 +301,7 @@ val min = setOf(
         """
             Target a unit adjacent to you.
             After the attack: You may swap with
-            a ::token_smoke_bomb:: Smoke bomb radius; if you do, you may
+            a ::token_smoke_bomb:: Smoke bomb in radius; if you do, you may
             place the Smoke bomb into a space in radius.
         """.trimIndent(),
         Color.RED,

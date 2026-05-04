@@ -29,7 +29,7 @@ val mortimer = setOf(
     Card(
         "Shallow Graves",
         """
-            Target a unit adjacent to you.
+            Target a hero adjacent to you.
             Before the attack: **Choose up to two times —**
             >>Move a ::token_zombie:: Zombie token in radius 1 space.
             >>Remove a Zombie token adjacent to the
@@ -86,7 +86,7 @@ val mortimer = setOf(
             **Choose one —**
             >>Move a ::token_zombie:: Zombie token in range up to
             >1 space; that Zombie token may push a
-            >unit or token adjacent to it 1 space.
+            >unit or a token adjacent to it 1 space.
             >>Move 1 space.
         """.trimIndent(),
         Color.BLUE,
@@ -206,7 +206,7 @@ val mortimer = setOf(
             **Choose up to two times —**
             >>Move a ::token_zombie:: Zombie token in range up to
             >1 space; that Zombie token may push a
-            >unit or token adjacent to it 1 space.
+            >unit or a token adjacent to it 1 space.
             >>Move 1 space.
         """.trimIndent(),
         Color.BLUE,
@@ -245,7 +245,7 @@ val mortimer = setOf(
             **Choose up to three times —**
             >>Move a ::token_zombie:: Zombie token in range up to
             >1 space; that Zombie token may push a
-            >unit or token adjacent to it 1 space.
+            >unit or a token adjacent to it 1 space.
             >>Move 1 space.
         """.trimIndent(),
         Color.BLUE,

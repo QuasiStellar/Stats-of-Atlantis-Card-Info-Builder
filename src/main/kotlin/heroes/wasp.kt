@@ -121,7 +121,7 @@ val wasp = setOf(
         "Control Gravity",
         """
             Move a unit, or a token, in radius 1 space,
-            without moving it away from you, or closer to 
+            without moving it away from you or closer to 
             you. May repeat once on the same target.
         """.trimIndent(),
         Color.BLUE,
@@ -227,7 +227,7 @@ val wasp = setOf(
         "Center of Mass",
         """
             Move a unit, or a token, in radius 1 space,
-            without moving it away from you, or closer
+            without moving it away from you or closer
             to you. May repeat up to two times
             on the same target.
         """.trimIndent(),

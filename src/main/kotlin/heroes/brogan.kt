@@ -176,7 +176,7 @@ val brogan = setOf(
         "Throwing Axe",
         """
             **Choose one —**
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
             >>You may discard a card;
             if you do, target a unit in range.
         """.trimIndent(),
@@ -228,7 +228,7 @@ val brogan = setOf(
     Card(
         "Furious Charge",
         """
-            Before the attack: Move 2, 3 or 4 spaces
+            Before the attack: Move 2, 3, or 4 spaces
             in a straight line to a space adjacent to an
             enemy unit, then target that unit.
         """.trimIndent(),
@@ -280,7 +280,7 @@ val brogan = setOf(
         "Throwing Spear",
         """
             **Choose one —**
-            >>Target a hero adjacent to you.
+            >>Target a unit adjacent to you.
             >>You may discard a card. If you have a card
             in the discard, target a unit in range.
         """.trimIndent(),
@@ -299,7 +299,7 @@ val brogan = setOf(
     Card(
         "Master Skald",
         """
-            A friendly hero in range gains 2 coin2;
+            A friendly hero in range gains 2 coins;
             if any hero was defeated this round,
             that friendly hero gains 4 coins instead.
         """.trimIndent(),

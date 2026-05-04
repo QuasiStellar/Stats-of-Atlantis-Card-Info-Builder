@@ -15,7 +15,7 @@ val bain = setOf(
             After the attack: You may give an enemy
             hero in radius the ::marker_bounty:: Bounty marker.
             A hero with the Bounty marker spends
-            1 additional ::life_counters:: life counter when defeated.
+            1 additional ::life_counters:: Life counter when defeated.
         """.trimIndent(),
         Color.GOLD,
         initiative = 11,
@@ -30,9 +30,9 @@ val bain = setOf(
         "Side Quest",
         """
             If you are adjacent to an enemy unit,
-            give a hero in radius a ::marker_bounty:: Bounty marker.
+            give a hero in radius the ::marker_bounty:: Bounty marker.
             A hero with the Bounty marker spends
-            1 additional ::life_counters:: life counter when defeated.
+            1 additional ::life_counters:: Life counter when defeated.
         """.trimIndent(),
         Color.GOLD,
         handicapped = true,
@@ -48,7 +48,7 @@ val bain = setOf(
         """
             Target a unit or a token in range and in a
             straight line, with no obstacles between you
-            and the target. Move that target towards you
+            and the target. Move the target towards you
             in a straight line, until you are adjacent.
         """.trimIndent(),
         Color.SILVER,
@@ -62,7 +62,7 @@ val bain = setOf(
         "A Complicated Profession",
         """
             After you give a hero the ::marker_bounty:: Bounty marker,
-            that hero discards a card.
+            that hero discards a card, if able.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -90,7 +90,7 @@ val bain = setOf(
         "Light Crossbow",
         """
             Target a unit in range and in a straight line
-            with no other units or terrain between you.
+            with no units or terrain between you.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -105,7 +105,7 @@ val bain = setOf(
     Card(
         "Close Call",
         """
-            If the hero in play has a ::marker_bounty:: Bounty marker,
+            If a hero in play has a ::marker_bounty:: Bounty marker,
             block the attack and that hero
             gives the marker to you.
             ~(The marker's effect is applied to you.)
@@ -158,7 +158,7 @@ val bain = setOf(
     Card(
         "Narrow Escape",
         """
-            If the hero in play has a ::marker_bounty:: Bounty marker,
+            If a hero in play has a ::marker_bounty:: Bounty marker,
             block the attack and retrieve the marker.
         """.trimIndent(),
         Color.GREEN,
@@ -265,7 +265,7 @@ val bain = setOf(
     Card(
         "Perfect Getaway",
         """
-            If the hero in play has a ::marker_bounty:: Bounty marker,
+            If a hero in play has a ::marker_bounty:: Bounty marker,
             block the attack.
         """.trimIndent(),
         Color.GREEN,

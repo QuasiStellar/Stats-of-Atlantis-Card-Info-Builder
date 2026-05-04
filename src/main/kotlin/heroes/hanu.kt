@@ -153,7 +153,7 @@ val hanu = setOf(
     Card(
         "Monkey Twist",
         """
-            Swap two friendly heroes in radius.
+            Swap two friendly units in radius.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -172,6 +172,7 @@ val hanu = setOf(
             A friendly hero in radius chooses a distance
             of 1 or 2; move both of you that number of
             spaces in the same direction of your choice.
+            ~(Both must be moved the full distance, or neither one moves.)
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -280,7 +281,7 @@ val hanu = setOf(
         "That Way!",
         """
             A friendly hero in radius chooses a distance
-            of 1, 2, or 3; move both of you that number of
+            of 1, 2 or 3; move both of you that number of
             spaces in the same direction of your choice.
         """.trimIndent(),
         Color.BLUE,
@@ -300,7 +301,7 @@ val hanu = setOf(
             **Choose one, or both,** in any order —
             >>Target a unit adjacent to you.
             >>Target a minion in range, adjacent to your
-            >friendly.
+            >friendly hero.
         """.trimIndent(),
         Color.RED,
         level = 3,

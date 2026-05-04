@@ -93,7 +93,7 @@ val sabina = setOf(
     Card(
         "Troop Movement",
         """
-            Move a friendly minion in radius up to 1 space,
+            Move a friendly minion in radius 1 space,
             to a space in radius. May repeat once.
         """.trimIndent(),
         Color.GREEN,
@@ -181,7 +181,7 @@ val sabina = setOf(
             Target a unit in range. After the attack:
             If the target was adjacent to you, remove
             up to one enemy minion adjacent to you.
-            ~(You gain no coins for removing a minion, only defeating.)
+            ~(You gain no coins for removing a minion, only for defeating.)
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -270,7 +270,7 @@ val sabina = setOf(
         """
             If there are two or more friendly minions in
             radius, you may retrieve a discarded card;
-            if you do, you may up to 2 spaces.
+            if you do, move up to 2 spaces.
         """.trimIndent(),
         Color.BLUE,
         level = 3,

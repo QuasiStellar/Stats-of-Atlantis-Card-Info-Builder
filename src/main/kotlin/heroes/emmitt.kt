@@ -26,8 +26,8 @@ val emmitt = setOf(
     Card(
         "Tear in Time",
         """
-            Target a unit adjacent to you.
-            After the attack: **Next turn:** Heroes with
+            Target a hero adjacent to you.
+            After the attack: **Next Turn:** Heroes with
             lower initiative act before heroes with higher
             initiative. This effect ignores immunity.
         """.trimIndent(),
@@ -265,7 +265,7 @@ val emmitt = setOf(
         item = Item.AREA,
     ),
     Card(
-        "Temporal Judgement",
+        "Temporal Judgment",
         """
             Target a unit adjacent to you; when defending,
             the enemy hero must use the ::initiative:: Initiative
@@ -283,7 +283,7 @@ val emmitt = setOf(
         item = Item.RANGE,
     ),
     Card(
-        "Deja Vu",
+        "Déjà Vu",
         """
             Target a unit adjacent to you. After the attack:
             You may place 2 ::token_glitch:: Glitch tokens in radius,

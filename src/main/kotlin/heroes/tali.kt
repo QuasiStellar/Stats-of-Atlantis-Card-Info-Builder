@@ -47,7 +47,7 @@ val tali = setOf(
         """
             A friendly hero in play names a color;
             you may discard a card of that color.
-            Perform the primary aciton on a card
+            Perform the primary action on a card
             of that color in your discard.
         """.trimIndent(),
         Color.SILVER,
@@ -100,7 +100,7 @@ val tali = setOf(
     Card(
         "Glacial Barrier",
         """
-            Place an ::token_ice:: ice token in radius.
+            Place an ::token_ice:: Ice token in radius.
             Enemy heroes have -1 ::initiative:: Initiative for
             every Ice token they are adjacent to.
         """.trimIndent(),
@@ -117,7 +117,7 @@ val tali = setOf(
         "Snowstorm",
         """
             Choose a direction. Move each enemy unit in
-            radius 1 space in that direciton, if able.
+            radius 1 space in that direction, if able.
         """.trimIndent(),
         Color.BLUE,
         level = 2,
@@ -150,7 +150,7 @@ val tali = setOf(
     Card(
         "Wall of Frost",
         """
-            Place up to 2 ::token_ice:: ice tokens in radius.
+            Place up to 2 ::token_ice:: Ice tokens in radius.
             Enemy heroes have -1 ::initiative:: Initiative
             for every Ice token they are adjacent to.
         """.trimIndent(),
@@ -206,9 +206,9 @@ val tali = setOf(
     Card(
         "Ancestral Totem",
         """
-            Place a ::token_totem:: in range.
+            Place a ::token_totem:: Totem token in range.
             If a friendly melee minion adjacent to a Totem
-            would be defeated, remove the totem instead.
+            would be defeated, remove the Totem instead.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -260,7 +260,7 @@ val tali = setOf(
     Card(
         "Pack Ice",
         """
-            Place up to 3 ::token_ice:: ice tokens in radius.
+            Place up to 3 ::token_ice:: Ice tokens in radius.
             Enemy heroes have -1 ::initiative:: Initiative for
             every Ice token they are adjacent to.
         """.trimIndent(),
@@ -316,9 +316,9 @@ val tali = setOf(
     Card(
         "Venerated Totem",
         """
-            Place a ::token_totem:: in range.
-            If a friendly minion adjacent to a totem would
-            be defeated, remove the totem instead.
+            Place a ::token_totem:: Totem token in range.
+            If a friendly minion adjacent to a Totem would
+            be defeated, remove the Totem instead.
             Totem tokens are immune to enemy actions.
         """.trimIndent(),
         Color.GREEN,

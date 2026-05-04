@@ -54,7 +54,7 @@ val rowenna = setOf(
     Card(
         "Fabled Lance",
         """
-            All of your attack actions gain the "Ranged"
+            All your attack actions gain the "Ranged"
             subtype, target a unit in range, and count
             as having a printed ::range_purple:: Range value of 2.
         """.trimIndent(),
@@ -68,7 +68,7 @@ val rowenna = setOf(
         """
             Swap with a friendly unit in range
             which is adjacent to an enemy hero,
-            or who has a card in the disacrd.
+            or who has a card in the discard.
         """.trimIndent(),
         Color.BLUE,
         level = 1,
@@ -98,7 +98,7 @@ val rowenna = setOf(
     Card(
         "Close Quarters",
         """
-            After movement, if yhou are adjacent to
+            After movement, if you are adjacent to
             an enemy hero, you may **Choose one —**
             >>Place a friendly minion in radius into a
             >space adjacent to that enemy hero.
@@ -177,7 +177,7 @@ val rowenna = setOf(
         """
             If both you and an enemy hero in radius
             have no cards in the discard, that hero
-            discards ac ard, if able.
+            discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -227,7 +227,7 @@ val rowenna = setOf(
         "Grand Melee",
         """
             After movement, if you are adjacent to
-            an enemy hero, you may **Choose one —**
+            an enemy hero, **Choose up to two times —**
             >>Place a friendly minion in radius into a
             >space adjacent to that enemy hero.
             >>Place an enemy minion in radius into a

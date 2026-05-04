@@ -12,9 +12,8 @@ val snorri = setOf(
         """
             Target a unit adjacent to you;
             if a rune is active:
-
             ::rune_bird::: You may target a minion in range instead.
-            ::rune_axe::: +3 ::attack_gold:: Attack
+            ::rune_axe::: +3 ::attack_gold:: Attack.
             ::rune_anvil::: If you target a hero, gain 3 coins.
             ::rune_horn::: Repeat once on a different hero in range.
         """.trimIndent(),
@@ -33,8 +32,7 @@ val snorri = setOf(
         """
             Target a hero adjacent to you;
             if a rune is active:
-
-            ::rune_axe::: +3 ::attack_gold:: Attack
+            ::rune_axe::: +3 ::attack_gold:: Attack.
             ::rune_anvil::: Gain 2 coins.
             ::rune_horn::: Repeat once on a different hero in range.
         """.trimIndent(),
@@ -69,7 +67,7 @@ val snorri = setOf(
         """
             Each time you perform an action, choose
             one inactive rune; that rune counts as
-            a second rune for this action.
+            a second active rune for this action.
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
@@ -156,7 +154,7 @@ val snorri = setOf(
     Card(
         "Runic Hammer",
         """
-            Before the atack: if the ::rune_horn:: rune
+            Before the attack: If the ::rune_horn:: rune
             is active, you may move 1 space.
             Target a unit adjacent to you.
             After the attack: If the ::rune_anvil:: rune is active,
@@ -272,7 +270,7 @@ val snorri = setOf(
     Card(
         "Runic Battleaxe",
         """
-            Before the atack: if the ::rune_horn:: rune
+            Before the attack: If the ::rune_horn:: rune
             is active, you may move 1 space.
             Target a unit adjacent to you.
             After the attack: If a rune is active:
