@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Spell
+import Trait
 
 val gydion = setOf(
     Card(
@@ -20,6 +21,7 @@ val gydion = setOf(
         initiative = 11,
         primaryAction = Action.SKILL,
         secondaryDefense = 1,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Cheap Trick",
@@ -33,6 +35,7 @@ val gydion = setOf(
         initiative = 10,
         primaryAction = Action.SKILL,
         secondaryDefense = 1,
+        traits = emptySet(),
     ),
     Card(
         "Prepare Spells",
@@ -47,6 +50,7 @@ val gydion = setOf(
         initiative = 13,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
+        traits = setOf(Trait.REMOVING),
     ),
     Card(
         "Elementary Enchantment",
@@ -60,6 +64,7 @@ val gydion = setOf(
         primaryAction = Action.SKILL,
         secondaryDefense = 3,
         secondaryMovement = 2,
+        traits = emptySet(),
     ),
     Card(
         "Elementary Evocation",
@@ -73,6 +78,7 @@ val gydion = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = emptySet(),
     ),
     Card(
         "Elementary Abjuration",
@@ -86,6 +92,7 @@ val gydion = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = emptySet(),
     ),
     Card(
         "Lesser Evocation",
@@ -103,6 +110,7 @@ val gydion = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Lesser Necromancy",
@@ -120,6 +128,7 @@ val gydion = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Evocation",
@@ -138,6 +147,7 @@ val gydion = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Necromancy",
@@ -156,6 +166,7 @@ val gydion = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Lesser Enchantment",
@@ -173,6 +184,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Lesser Transmutation",
@@ -190,6 +202,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Enchantment",
@@ -208,6 +221,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Transmutation",
@@ -226,6 +240,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Lesser Abjuration",
@@ -243,6 +258,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Lesser Conjuration",
@@ -260,6 +276,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Abjuration",
@@ -278,6 +295,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Greater Conjuration",
@@ -296,6 +314,7 @@ val gydion = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "The Archwizard",
@@ -306,6 +325,7 @@ val gydion = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
 )
 
@@ -323,6 +343,7 @@ val spells = setOf(
         primaryValue = 1,
         modifier = Modifier.RANGE,
         modifierValue = 3,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Shocking Grasp",
@@ -336,6 +357,7 @@ val spells = setOf(
         variant = 2 to 3,
         primaryAction = Action.ATTACK,
         primaryValue = 3,
+        traits = setOf(Trait.MOVING_UNITS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Expeditious Retreat",
@@ -347,6 +369,7 @@ val spells = setOf(
         variant = 3 to 3,
         primaryAction = Action.MOVEMENT,
         primaryValue = 5,
+        traits = setOf(Trait.STRAIGHT_LINE),
     ),
     Spell(
         "Burning Hands",
@@ -362,6 +385,7 @@ val spells = setOf(
         variant = 1 to 2,
         primaryAction = Action.ATTACK,
         primaryValue = 5,
+        traits = setOf(Trait.DISCARD, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Fireball",
@@ -378,6 +402,7 @@ to your friendly unit.
         primaryValue = 5,
         modifier = Modifier.RANGE,
         modifierValue = 3,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Sunburst",
@@ -397,6 +422,7 @@ to your friendly unit.
         modifier = Modifier.RANGE,
         modifierValue = 0,
         modifierValueSign = Sign.PLUS,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Vampiric Touch",
@@ -411,6 +437,7 @@ to your friendly unit.
         variant = 2 to 2,
         primaryAction = Action.ATTACK,
         primaryValue = 5,
+        traits = setOf(Trait.HEALING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Spell(
         "Create Undead",
@@ -426,6 +453,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
         modifierValue = 3,
+        traits = setOf(Trait.RESPAWN, Trait.SPAWN_POINTS),
     ),
     Spell(
         "Energy Drain",
@@ -441,6 +469,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.RANGE,
         modifierValue = 3,
+        traits = setOf(Trait.DISCARD),
     ),
     Spell(
         "Shield",
@@ -454,6 +483,7 @@ to your friendly unit.
         school = School.ABJURATION,
         variant = 1 to 2,
         primaryAction = Action.SKILL,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_ROUND),
     ),
     Spell(
         "Banishment",
@@ -468,6 +498,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.PLACING_UNITS, Trait.USING_TOKENS),
     ),
     Spell(
         "Invulnerability",
@@ -480,6 +511,7 @@ to your friendly unit.
         school = School.ABJURATION,
         variant = 1 to 2,
         primaryAction = Action.SKILL,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_ROUND),
     ),
     Spell(
         "Dimension Door",
@@ -497,6 +529,7 @@ to your friendly unit.
         modifier = Modifier.AREA,
         modifierValue = 0,
         modifierValueSign = Sign.PLUS,
+        traits = setOf(Trait.PLACING_SELF, Trait.SCALING, Trait.STAT_CHANGING),
     ),
     Spell(
         "Find Familiar",
@@ -512,6 +545,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Spell(
         "Cloud Kill",
@@ -526,6 +560,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.DISCARD),
     ),
     Spell(
         "Suggestion",
@@ -540,6 +575,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.STRAIGHT_LINE),
     ),
     Spell(
         "Dominate Person",
@@ -555,6 +591,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.DEFEAT),
     ),
     Spell(
         "Power Word Kill",
@@ -569,6 +606,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.DEFEAT),
     ),
     Spell(
         "Midas' Touch",
@@ -581,6 +619,7 @@ to your friendly unit.
         school = School.TRANSMUTATION,
         variant = 2 to 2,
         primaryAction = Action.SKILL,
+        traits = setOf(Trait.FARMING_FOR_SELF),
     ),
     Spell(
         "Disintegrate",
@@ -593,6 +632,7 @@ to your friendly unit.
         school = School.TRANSMUTATION,
         variant = 2 to 2,
         primaryAction = Action.SKILL,
+        traits = setOf(Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Spell(
         "Polymorph",
@@ -608,6 +648,7 @@ to your friendly unit.
         primaryAction = Action.SKILL,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_ENEMY, Trait.SWAPPING_MINIONS, Trait.SWAPPING_TOKENS, Trait.USING_TOKENS),
     ),
     Spell(
         "Wish",
@@ -620,5 +661,6 @@ to your friendly unit.
         level = 4,
         school = School.WISH,
         primaryAction = Action.SKILL,
+        traits = emptySet(),
     ),
 )

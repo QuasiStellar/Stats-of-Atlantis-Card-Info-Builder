@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val xargatha = setOf(
     Card(
@@ -22,6 +23,7 @@ val xargatha = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Desperate Cleave",
@@ -37,6 +39,7 @@ val xargatha = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Siren's Call",
@@ -51,6 +54,7 @@ val xargatha = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_UNITS),
     ),
     Card(
         "Metamorphosis",
@@ -61,6 +65,7 @@ val xargatha = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STAT_CHANGING),
     ),
     Card(
         "Stone Gaze",
@@ -78,6 +83,7 @@ val xargatha = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 5,
+        traits = setOf(Trait.NEXT_TURN, Trait.TERRAIN, Trait.COUNTS_AS),
     ),
     Card(
         "Threatening Slash",
@@ -94,6 +100,7 @@ val xargatha = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 5,
         secondaryDefense = 6,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Charm",
@@ -110,6 +117,7 @@ val xargatha = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Petrifying Stare",
@@ -128,6 +136,7 @@ val xargatha = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.NEXT_TURN, Trait.TERRAIN, Trait.COUNTS_AS),
     ),
     Card(
         "Deadly Swipe",
@@ -145,6 +154,7 @@ val xargatha = setOf(
         secondaryMovement = 5,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Control",
@@ -163,6 +173,7 @@ val xargatha = setOf(
         modifierValue = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Fresh Converts",
@@ -178,6 +189,7 @@ val xargatha = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_SELF),
     ),
     Card(
         "Long Thrust",
@@ -197,6 +209,7 @@ val xargatha = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Constrict",
@@ -213,6 +226,7 @@ val xargatha = setOf(
         secondaryDefense = 3,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DEFEAT, Trait.END_OF_ROUND, Trait.MINION_BATTLE),
     ),
     Card(
         "Turn into Statues",
@@ -231,6 +245,7 @@ val xargatha = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.NEXT_TURN, Trait.TERRAIN, Trait.COUNTS_AS),
     ),
     Card(
         "Lethal Spin",
@@ -248,6 +263,7 @@ val xargatha = setOf(
         secondaryMovement = 5,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Dominate",
@@ -266,6 +282,7 @@ val xargatha = setOf(
         modifierValue = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Devoted Followers",
@@ -281,6 +298,7 @@ val xargatha = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.HEALING_SELF),
     ),
     Card(
         "Rapid Thrusts",
@@ -301,6 +319,7 @@ val xargatha = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Final Embrace",
@@ -316,5 +335,6 @@ val xargatha = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DEFEAT, Trait.END_OF_ROUND),
     ),
 )

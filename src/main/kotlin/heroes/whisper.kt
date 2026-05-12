@@ -5,7 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
-import Sign
+import Trait
 
 val whisper = setOf(
     Card(
@@ -26,6 +26,7 @@ val whisper = setOf(
         modifierValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.AFTER_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Vile Accusation",
@@ -46,6 +47,7 @@ val whisper = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.STRAIGHT_LINE, Trait.ATTACK_HERO),
     ),
     Card(
         "Death Seeker",
@@ -61,6 +63,7 @@ val whisper = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 2,
+        traits = setOf(Trait.HEALING_SELF, Trait.IMMUNITY_GAIN, Trait.THIS_TURN, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Grim Reaper",
@@ -70,6 +73,7 @@ val whisper = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Seeds of Fear",
@@ -85,6 +89,7 @@ val whisper = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 5,
+        traits = setOf(Trait.MOVING_UNITS, Trait.SPAWN_POINTS),
     ),
     Card(
         "Crimson Trail",
@@ -103,6 +108,7 @@ val whisper = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 4,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SPAWN_POINTS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Shadow Step",
@@ -118,6 +124,7 @@ val whisper = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Sprouts of Panic",
@@ -135,6 +142,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_UNITS, Trait.SPAWN_POINTS),
     ),
     Card(
         "Sanguine Path",
@@ -155,6 +163,7 @@ val whisper = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SPAWN_POINTS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Shadow Walk",
@@ -172,6 +181,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Lesser Evil",
@@ -191,6 +201,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD),
     ),
     Card(
         "Blood Fury",
@@ -210,6 +221,7 @@ val whisper = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Cruel Twist",
@@ -228,6 +240,7 @@ val whisper = setOf(
         secondaryDefense = 3,
         secondaryMovement = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS),
     ),
     Card(
         "Blooming Nightmare",
@@ -245,6 +258,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_UNITS, Trait.SPAWN_POINTS),
     ),
     Card(
         "Blood Pilgrimage",
@@ -265,6 +279,7 @@ val whisper = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SPAWN_POINTS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Creeping Shadow",
@@ -283,6 +298,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.AREA,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Greater Good",
@@ -301,6 +317,7 @@ val whisper = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD_OR_KILL),
     ),
     Card(
         "Blood Frenzy",
@@ -321,6 +338,7 @@ val whisper = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.RANGE,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Sealed Fate",
@@ -339,5 +357,6 @@ val whisper = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS),
     ),
 )

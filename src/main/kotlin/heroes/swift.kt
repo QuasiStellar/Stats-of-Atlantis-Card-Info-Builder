@@ -5,7 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
-import Sign
+import Trait
 
 val swift = setOf(
     Card(
@@ -21,6 +21,7 @@ val swift = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.DEFEAT, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Backup",
@@ -35,6 +36,7 @@ val swift = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = emptySet(),
     ),
     Card(
         "Bounce",
@@ -47,6 +49,7 @@ val swift = setOf(
         initiative = 12,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Bullet Time",
@@ -58,6 +61,7 @@ val swift = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Steam Jump",
@@ -74,6 +78,7 @@ val swift = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PLACING_SELF, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Snipe",
@@ -90,6 +95,7 @@ val swift = setOf(
         modifierValue = 4,
         secondaryMovement = 4,
         secondaryDefense = 4,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Suppress",
@@ -105,6 +111,7 @@ val swift = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.DISCARD, Trait.TERRAIN),
     ),
     Card(
         "Assault Jump",
@@ -123,6 +130,7 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PLACING_SELF, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Prepared Shot",
@@ -141,6 +149,7 @@ val swift = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Pin Down",
@@ -158,6 +167,7 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.TERRAIN),
     ),
     Card(
         "Delayed Jump",
@@ -175,6 +185,7 @@ val swift = setOf(
         secondaryMovement = 1,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.PLACING_SELF, Trait.END_OF_TURN, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE),
     ),
     Card(
         "Shotgun",
@@ -194,6 +205,7 @@ val swift = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Mark for Death",
@@ -213,6 +225,7 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.MOVING_ENEMY, Trait.NEXT_TURN),
     ),
     Card(
         "Drop Trooper",
@@ -231,6 +244,7 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PLACING_SELF, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Killshot",
@@ -249,6 +263,7 @@ val swift = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Killing Ground",
@@ -266,6 +281,7 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.TERRAIN),
     ),
     Card(
         "Mobile Scout",
@@ -284,6 +300,7 @@ val swift = setOf(
         secondaryMovement = 1,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.PLACING_SELF, Trait.END_OF_TURN, Trait.FAST_TRAVEL, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE),
     ),
     Card(
         "Super-Shotgun",
@@ -303,6 +320,7 @@ val swift = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.AREA,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Hunting Season",
@@ -322,5 +340,6 @@ val swift = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.NEXT_TURN),
     ),
 )

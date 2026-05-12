@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val rowenna = setOf(
     Card(
@@ -21,6 +22,7 @@ val rowenna = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.HEALING_TEAM, Trait.HEALING_ENEMY, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Earn the Spurs",
@@ -36,6 +38,7 @@ val rowenna = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.BEFORE_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Throw the Gauntlet",
@@ -50,6 +53,7 @@ val rowenna = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryDefense = 3,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.MOVING_SELF, Trait.PLACING_SELF),
     ),
     Card(
         "Fabled Lance",
@@ -62,6 +66,7 @@ val rowenna = setOf(
         level = 4 ,
         modifier = Modifier.RANGE,
         modifierValue = 2,
+        traits = setOf(Trait.COUNTS_AS),
     ),
     Card(
         "Stand Guard",
@@ -78,6 +83,7 @@ val rowenna = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 6,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Token of Gratitude",
@@ -94,6 +100,7 @@ val rowenna = setOf(
         modifierValue = 1,
         secondaryMovement = 4,
         secondaryDefense = 6,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Close Quarters",
@@ -113,6 +120,7 @@ val rowenna = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.PLACING_TEAM, Trait.PLACING_ENEMY, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Fair Share",
@@ -131,6 +139,7 @@ val rowenna = setOf(
         modifierValue = 3,
         item = Item.INITIATIVE,
         variant = 1 to 2,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Feat of Bravery",
@@ -150,6 +159,7 @@ val rowenna = setOf(
         secondaryDefense = 7,
         variant = 2 to 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HEALING_TEAM, Trait.DISCARD_TEAM, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Melee",
@@ -171,6 +181,7 @@ val rowenna = setOf(
         modifierValue = 3,
         variant = 1 to 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_TEAM, Trait.PLACING_ENEMY, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Opening Shots",
@@ -189,6 +200,7 @@ val rowenna = setOf(
         modifierValue = 3,
         variant = 2 to 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Protect the Weak",
@@ -207,6 +219,7 @@ val rowenna = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Accept Surrender",
@@ -222,6 +235,7 @@ val rowenna = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DEFEAT),
     ),
     Card(
         "Grand Melee",
@@ -243,6 +257,7 @@ val rowenna = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_TEAM, Trait.PLACING_ENEMY, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Opening Volley",
@@ -261,6 +276,7 @@ val rowenna = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Defend the Innocent",
@@ -280,6 +296,7 @@ val rowenna = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         item = Item.AREA,
+        traits = setOf(Trait.HEALING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Glorious Triumph",
@@ -296,6 +313,7 @@ val rowenna = setOf(
         secondaryDefense = 7,
         secondaryMovement = 2,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.DEFEAT),
     ),
     Card(
         "Paragon of Grace",
@@ -315,6 +333,7 @@ val rowenna = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.RANGE,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Paragon of Valor",
@@ -335,5 +354,6 @@ val rowenna = setOf(
         secondaryMovement = 4,
         secondaryDefense = 8,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HEALING_TEAM, Trait.DISCARD_TEAM, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
 )

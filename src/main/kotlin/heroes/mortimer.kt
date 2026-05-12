@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val mortimer = setOf(
     Card(
@@ -25,6 +26,7 @@ val mortimer = setOf(
         modifierValue = 4,
         secondaryDefense = 3,
         secondaryMovement = 1,
+        traits = setOf(Trait.BEFORE_THE_ATTACK, Trait.SCALING, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Shallow Graves",
@@ -45,6 +47,7 @@ val mortimer = setOf(
         modifierValue = 4,
         secondaryDefense = 1,
         secondaryMovement = 1,
+        traits = setOf(Trait.BEFORE_THE_ATTACK, Trait.SCALING, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.STAT_CHANGING, Trait.ATTACK_HERO),
     ),
     Card(
         "Awaken!",
@@ -60,6 +63,7 @@ val mortimer = setOf(
         primaryValue = 3,
         modifier = Modifier.AREA,
         modifierValue = 4,
+        traits = setOf(Trait.END_OF_ROUND, Trait.USING_TOKENS, Trait.SPAWN_POINTS),
     ),
     Card(
         "Crawling Dead",
@@ -79,6 +83,7 @@ val mortimer = setOf(
         modifierValue = 4,
         secondaryDefense = 7,
         secondaryMovement = 3,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_HEROES, Trait.AFTER_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Corpse Slam",
@@ -97,6 +102,7 @@ val mortimer = setOf(
         modifierValue = 4,
         secondaryDefense = 6,
         secondaryMovement = 3,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Stage Dive",
@@ -113,6 +119,7 @@ val mortimer = setOf(
         modifierValue = 4,
         secondaryDefense = 3,
         secondaryMovement = 2,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Walking Dead",
@@ -135,6 +142,7 @@ val mortimer = setOf(
         secondaryDefense = 7,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_HEROES, Trait.AFTER_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Braains...!",
@@ -156,6 +164,7 @@ val mortimer = setOf(
         secondaryDefense = 7,
         secondaryMovement = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_HEROES, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Racing Dead",
@@ -178,6 +187,7 @@ val mortimer = setOf(
         secondaryDefense = 8,
         secondaryMovement = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_HEROES, Trait.AFTER_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Braaaaaaaains...!",
@@ -199,6 +209,7 @@ val mortimer = setOf(
         secondaryDefense = 8,
         secondaryMovement = 3,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_HEROES, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Morbid Mosh",
@@ -219,6 +230,7 @@ val mortimer = setOf(
         secondaryDefense = 6,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Robbing Zombies",
@@ -238,6 +250,7 @@ val mortimer = setOf(
         secondaryDefense = 6,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Macabre Mayhem",
@@ -258,6 +271,7 @@ val mortimer = setOf(
         secondaryDefense = 7,
         secondaryMovement = 3,
         item = Item.AREA,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Stalking Scalpers",
@@ -277,6 +291,7 @@ val mortimer = setOf(
         secondaryDefense = 7,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
 
 
@@ -297,6 +312,7 @@ val mortimer = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Gathering Horde",
@@ -317,6 +333,7 @@ val mortimer = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PLACING_ENEMY, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Crowd Surf",
@@ -335,6 +352,7 @@ val mortimer = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Army of Darkness",
@@ -355,6 +373,7 @@ val mortimer = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PLACING_ENEMY, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Master of Puppets",
@@ -365,5 +384,6 @@ val mortimer = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
 )

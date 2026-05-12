@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val trinkets = setOf(
     Card(
@@ -22,6 +23,7 @@ val trinkets = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 4,
         secondaryDefense = 1,
+        traits = setOf(Trait.DEFEAT, Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Ramshackle Turret",
@@ -37,6 +39,7 @@ val trinkets = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 4,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Salvage Parts",
@@ -52,6 +55,7 @@ val trinkets = setOf(
         initiative = 5,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_SELF, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Unlimited Firepower",
@@ -60,6 +64,7 @@ val trinkets = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.STAT_CHANGING),
     ),
     Card(
         "Disruptor Jolt",
@@ -77,6 +82,7 @@ val trinkets = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.DISCARD, Trait.THIS_TURN),
     ),
     Card(
         "Makeshift Minigun",
@@ -96,6 +102,7 @@ val trinkets = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 5,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Early Prototype",
@@ -112,6 +119,7 @@ val trinkets = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Card(
         "Disruptor Pulse",
@@ -131,6 +139,7 @@ val trinkets = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.THIS_TURN),
     ),
     Card(
         "Gatling Gun",
@@ -152,6 +161,7 @@ val trinkets = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.SCALING, Trait.STAT_CHANGING, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Updated Design",
@@ -169,6 +179,7 @@ val trinkets = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.USING_TOKENS),
     ),
     Card(
         "Deployable Barrier",
@@ -188,6 +199,7 @@ val trinkets = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.USING_TOKENS, Trait.STAT_CHANGING),
     ),
     Card(
         "Steam Discharge",
@@ -206,6 +218,7 @@ val trinkets = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Self-Destruct",
@@ -223,6 +236,7 @@ val trinkets = setOf(
         secondaryMovement = 3,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.REMOVING),
     ),
     Card(
         "Disruptor Grid",
@@ -242,6 +256,7 @@ val trinkets = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.THIS_TURN),
     ),
     Card(
         "Supercharged Cannon",
@@ -263,6 +278,7 @@ val trinkets = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.SCALING, Trait.STAT_CHANGING, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Perfected Design",
@@ -284,6 +300,7 @@ val trinkets = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Deployable Bastion",
@@ -303,6 +320,7 @@ val trinkets = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.USING_TOKENS, Trait.STAT_CHANGING),
     ),
     Card(
         "Flame Belcher",
@@ -322,6 +340,7 @@ val trinkets = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.AREA,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Emergency Protocol",
@@ -340,5 +359,6 @@ val trinkets = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.REMOVING),
     ),
 )

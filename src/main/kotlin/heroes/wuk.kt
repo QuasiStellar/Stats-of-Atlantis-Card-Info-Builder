@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val wuk = setOf(
     Card(
@@ -23,6 +24,7 @@ val wuk = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 3,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_MINION),
     ),
     Card(
         "Makeshift Weapon",
@@ -41,6 +43,7 @@ val wuk = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_HERO),
     ),
     Card(
         "Mystic Saplings",
@@ -54,6 +57,7 @@ val wuk = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 4,
+        traits = setOf(Trait.END_OF_ROUND, Trait.USING_TOKENS),
     ),
     Card(
         "March of Nature",
@@ -65,6 +69,7 @@ val wuk = setOf(
         level = 4,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.USING_TOKENS),
     ),
     Card(
         "Gifts of Nature",
@@ -80,6 +85,7 @@ val wuk = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 5,
+        traits = setOf(Trait.HEALING_SELF, Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Card(
         "Nature's Protector",
@@ -87,7 +93,7 @@ val wuk = setOf(
             **Choose one —**
             >>Target a hero adjacent to you.
             >>Target a unit in range adjacent
-            to a ::token_tree:: Tree token.
+            >to a ::token_tree:: Tree token.
         """.trimIndent(),
         Color.RED,
         level = 1,
@@ -98,6 +104,7 @@ val wuk = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 7,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Toss Away",
@@ -113,6 +120,7 @@ val wuk = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
+        traits = setOf(Trait.PLACING_TOKENS, Trait.USING_TOKENS),
     ),
     Card(
         "Tree of Plenty",
@@ -133,6 +141,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_SELF, Trait.DISCARD_TEAM, Trait.REMOVING, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Nature's Guardian",
@@ -140,7 +149,7 @@ val wuk = setOf(
             **Choose one —**
             >>Target a hero adjacent to you.
             >>Target a unit in range adjacent
-            to a ::token_tree:: Tree token.
+            >to a ::token_tree:: Tree token.
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -153,6 +162,7 @@ val wuk = setOf(
         secondaryMovement = 4,
         secondaryDefense = 8,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Mighty Throw",
@@ -170,6 +180,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_TOKENS, Trait.USING_TOKENS),
     ),
     Card(
         "Claim Dominance",
@@ -186,6 +197,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.THIS_ROUND, Trait.MINION_BATTLE),
     ),
     Card(
         "Trample",
@@ -203,6 +215,7 @@ val wuk = setOf(
         primaryValue = 4,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD_OR_KILL, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Into the Canopy",
@@ -222,6 +235,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Abundance",
@@ -242,6 +256,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.HEALING_SELF, Trait.DISCARD_TEAM, Trait.REMOVING, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Nature's Champion",
@@ -262,6 +277,7 @@ val wuk = setOf(
         secondaryMovement = 4,
         secondaryDefense = 8,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Monstrous Throw",
@@ -280,6 +296,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_TOKENS, Trait.USING_TOKENS),
     ),
     Card(
         "Assert Dominance",
@@ -296,6 +313,7 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.THIS_ROUND, Trait.MINION_BATTLE),
     ),
     Card(
         "Angry Stampede",
@@ -313,6 +331,7 @@ val wuk = setOf(
         primaryValue = 4,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD_OR_KILL, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Treetop Ride",
@@ -332,5 +351,6 @@ val wuk = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
 )

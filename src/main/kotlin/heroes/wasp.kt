@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val wasp = setOf(
     Card(
@@ -24,6 +25,7 @@ val wasp = setOf(
         secondaryDefense = 2,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.THIS_TURN, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Crackling Dagger",
@@ -42,6 +44,7 @@ val wasp = setOf(
         secondaryDefense = 1,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.THIS_TURN, Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Static Barrier",
@@ -58,6 +61,7 @@ val wasp = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.THIS_TURN, Trait.COUNTS_AS),
     ),
     Card(
         "High Voltage",
@@ -71,6 +75,7 @@ val wasp = setOf(
         level = 4,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD),
     ),
     Card(
         "Lift Up",
@@ -87,6 +92,7 @@ val wasp = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 5,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS),
     ),
     Card(
         "Shock",
@@ -104,6 +110,7 @@ val wasp = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 6,
+        traits = setOf(Trait.DISCARD, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Stop Projectiles",
@@ -116,6 +123,7 @@ val wasp = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
+        traits = emptySet(),
     ),
     Card(
         "Control Gravity",
@@ -134,6 +142,7 @@ val wasp = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS),
     ),
     Card(
         "Electrocute",
@@ -153,6 +162,7 @@ val wasp = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Deflect Projectiles",
@@ -171,6 +181,7 @@ val wasp = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Kinetic Repulse",
@@ -187,6 +198,7 @@ val wasp = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.PUSHING_UNITS, Trait.PUSHING_HEROES),
     ),
     Card(
         "Charged Boomerang",
@@ -205,6 +217,7 @@ val wasp = setOf(
         secondaryMovement = 4,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Telekinesis",
@@ -222,6 +235,7 @@ val wasp = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_UNITS, Trait.USING_TOKENS, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE),
     ),
     Card(
         "Center of Mass",
@@ -241,6 +255,7 @@ val wasp = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS),
     ),
     Card(
         "Electroblast",
@@ -260,6 +275,7 @@ val wasp = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Reflect Projectiles",
@@ -277,6 +293,7 @@ val wasp = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         item = Item.AREA,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Kinetic Blast",
@@ -293,6 +310,7 @@ val wasp = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD, Trait.PUSHING_UNITS, Trait.PUSHING_HEROES),
     ),
     Card(
         "Thunder Boomerang",
@@ -312,6 +330,7 @@ val wasp = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.AFTER_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Mass Telekinesis",
@@ -330,5 +349,6 @@ val wasp = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_UNITS, Trait.USING_TOKENS, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE),
     ),
 )

@@ -20,4 +20,5 @@ data class Card(
     val secondaryDefense: Int? = null,
     val secondaryAttack: Int? = null,
     val item: Item? = null,
+    val traits: Set<Trait> = emptySet(),
 )

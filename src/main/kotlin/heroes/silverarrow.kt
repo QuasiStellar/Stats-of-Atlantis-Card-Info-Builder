@@ -5,7 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
-import Sign
+import Trait
 
 val silverarrow = setOf(
     Card(
@@ -23,6 +23,7 @@ val silverarrow = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.FAST_TRAVEL, Trait.ATTACK_UNIT),
     ),
     Card(
         "Keep the Distance",
@@ -40,6 +41,7 @@ val silverarrow = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.FAST_TRAVEL, Trait.ATTACK_HERO),
     ),
     Card(
         "Trailblazer",
@@ -55,6 +57,7 @@ val silverarrow = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryDefense = 1,
+        traits = setOf(Trait.THIS_ROUND, Trait.FAST_TRAVEL, Trait.IGNORING_OBSTACLES),
     ),
     Card(
         "Wild Hunt",
@@ -64,6 +67,7 @@ val silverarrow = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.MOVING_SELF, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Grasping Roots",
@@ -80,6 +84,7 @@ val silverarrow = setOf(
         modifierValue = 2,
         secondaryDefense = 3,
         secondaryMovement = 3,
+        traits = setOf(Trait.THIS_TURN, Trait.FAST_TRAVEL, Trait.STAT_CHANGING),
     ),
     Card(
         "Snap Shot",
@@ -98,6 +103,7 @@ val silverarrow = setOf(
         modifierValue = 2,
         secondaryMovement = 5,
         secondaryDefense = 5,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Disorient",
@@ -111,6 +117,7 @@ val silverarrow = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.MOVING_ENEMY),
     ),
     Card(
         "Entangling Vines",
@@ -129,6 +136,7 @@ val silverarrow = setOf(
         secondaryDefense = 3,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_TURN, Trait.FAST_TRAVEL, Trait.STAT_CHANGING),
     ),
     Card(
         "Opportunity Shot",
@@ -149,6 +157,7 @@ val silverarrow = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Divert Attention",
@@ -165,6 +174,7 @@ val silverarrow = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Warning Shot",
@@ -182,6 +192,7 @@ val silverarrow = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.END_OF_TURN),
     ),
     Card(
         "Long Shot",
@@ -199,6 +210,7 @@ val silverarrow = setOf(
         secondaryMovement = 5,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Fae Healing",
@@ -216,6 +228,7 @@ val silverarrow = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_TEAM, Trait.HEALING_ENEMY),
     ),
     Card(
         "Grappling Branches",
@@ -234,6 +247,7 @@ val silverarrow = setOf(
         secondaryDefense = 4,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_TURN, Trait.FAST_TRAVEL, Trait.STAT_CHANGING),
     ),
     Card(
         "Clear Shot",
@@ -254,6 +268,7 @@ val silverarrow = setOf(
         secondaryDefense = 6,
         secondaryMovement = 5,
         item = Item.AREA,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Lead Astray",
@@ -270,6 +285,7 @@ val silverarrow = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Treetop Sentinel",
@@ -287,6 +303,7 @@ val silverarrow = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.END_OF_TURN),
     ),
     Card(
         "Rain of Arrows",
@@ -306,6 +323,7 @@ val silverarrow = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Nature's Blessing",
@@ -323,5 +341,6 @@ val silverarrow = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_TEAM, Trait.HEALING_ENEMY),
     ),
 )

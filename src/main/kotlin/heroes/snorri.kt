@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val snorri = setOf(
     Card(
@@ -26,6 +27,7 @@ val snorri = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT, Trait.ATTACK_HERO, Trait.ATTACK_MINION),
     ),
     Card(
         "Rune Shards",
@@ -46,6 +48,7 @@ val snorri = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_HERO),
     ),
     Card(
         "Inscribe the Runes",
@@ -61,6 +64,7 @@ val snorri = setOf(
         initiative = 1,
         primaryAction = Action.SKILL,
         secondaryDefense = 3,
+        traits = setOf(Trait.END_OF_ROUND, Trait.USING_MARKERS),
     ),
     Card(
         "Rune Mastery",
@@ -71,6 +75,7 @@ val snorri = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Safe Passage",
@@ -84,6 +89,7 @@ val snorri = setOf(
         primaryAction = Action.MOVEMENT,
         primaryValue = 3,
         secondaryDefense = 5,
+        traits = setOf(Trait.THIS_TURN, Trait.IGNORING_OBSTACLES),
     ),
     Card(
         "Runic Dagger",
@@ -99,6 +105,7 @@ val snorri = setOf(
         primaryValue = 5,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = setOf(Trait.HEALING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Oath of Endurance",
@@ -114,6 +121,7 @@ val snorri = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN),
     ),
     Card(
         "Hidden Passage",
@@ -131,6 +139,7 @@ val snorri = setOf(
         primaryValue = 3,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN, Trait.IGNORING_OBSTACLES),
     ),
     Card(
         "Ancestral Boon",
@@ -150,6 +159,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD_TEAM),
     ),
     Card(
         "Runic Hammer",
@@ -169,6 +179,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Runecaster",
@@ -190,6 +201,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.HIGH_RANGE_ATTACK, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Oath of Fortitude",
@@ -208,6 +220,7 @@ val snorri = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN),
     ),
     Card(
         "Runetrap",
@@ -227,6 +240,7 @@ val snorri = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Deep Passage",
@@ -245,6 +259,7 @@ val snorri = setOf(
         primaryValue = 3,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN, Trait.IGNORING_OBSTACLES, Trait.STAT_CHANGING),
     ),
     Card(
         "Ancestral Grace",
@@ -266,6 +281,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD_TEAM),
     ),
     Card(
         "Runic Battleaxe",
@@ -286,6 +302,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Runeblaster",
@@ -308,6 +325,7 @@ val snorri = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.HIGH_RANGE_ATTACK, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Oath of Perseverance",
@@ -327,6 +345,7 @@ val snorri = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN),
     ),
     Card(
         "Runebomb",
@@ -348,5 +367,6 @@ val snorri = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD),
     ),
 )

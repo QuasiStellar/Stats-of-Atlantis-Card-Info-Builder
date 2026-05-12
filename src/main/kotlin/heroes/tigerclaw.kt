@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val tigerclaw = setOf(
     Card(
@@ -21,6 +22,7 @@ val tigerclaw = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Nimble Strike",
@@ -35,6 +37,7 @@ val tigerclaw = setOf(
         primaryValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_HERO),
     ),
     Card(
         "Blend Into Shadows",
@@ -49,6 +52,7 @@ val tigerclaw = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.PLACING_SELF, Trait.NEXT_TURN, Trait.TERRAIN),
     ),
     Card(
         "Cloak and Daggers",
@@ -59,6 +63,7 @@ val tigerclaw = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Dodge",
@@ -71,6 +76,7 @@ val tigerclaw = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
+        traits = emptySet(),
     ),
     Card(
         "Hit and Run",
@@ -85,6 +91,7 @@ val tigerclaw = setOf(
         primaryValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Light-Fingered",
@@ -99,6 +106,7 @@ val tigerclaw = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 3,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Sidestep",
@@ -114,6 +122,7 @@ val tigerclaw = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Combat Reflexes",
@@ -132,6 +141,7 @@ val tigerclaw = setOf(
         secondaryMovement = 4,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Pick Pocket",
@@ -148,6 +158,7 @@ val tigerclaw = setOf(
         secondaryMovement = 3,
         secondaryDefense = 1,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Parry",
@@ -163,6 +174,7 @@ val tigerclaw = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = emptySet(),
     ),
     Card(
         "Backstab",
@@ -181,6 +193,7 @@ val tigerclaw = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Poisoned Dagger",
@@ -199,6 +212,7 @@ val tigerclaw = setOf(
         secondaryMovement = 3,
         secondaryDefense = 1,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.GIVING_MARKERS, Trait.USING_MARKERS, Trait.STAT_CHANGING),
     ),
     Card(
         "Evade",
@@ -215,6 +229,7 @@ val tigerclaw = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Leaping Strike",
@@ -232,6 +247,7 @@ val tigerclaw = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.AREA,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Master Thief",
@@ -248,6 +264,7 @@ val tigerclaw = setOf(
         secondaryMovement = 3,
         secondaryDefense = 2,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Riposte",
@@ -263,6 +280,7 @@ val tigerclaw = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD_OR_KILL),
     ),
     Card(
         "Backstab with a Ballista",
@@ -284,6 +302,7 @@ val tigerclaw = setOf(
         secondaryMovement = 5,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Poisoned Dart",
@@ -302,5 +321,6 @@ val tigerclaw = setOf(
         secondaryMovement = 3,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.GIVING_MARKERS, Trait.USING_MARKERS, Trait.STAT_CHANGING),
     ),
 )

@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val ignatia = setOf(
     Card(
@@ -23,6 +24,7 @@ val ignatia = setOf(
         modifierValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_HERO, Trait.ATTACK_MINION),
     ),
     Card(
         "Unreliable Jolt",
@@ -40,6 +42,7 @@ val ignatia = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.ATTACK_HERO),
     ),
     Card(
         "Equilibrium",
@@ -52,6 +55,7 @@ val ignatia = setOf(
         initiative = 1,
         primaryAction = Action.SKILL,
         secondaryDefense = 7,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Chaos Incarnate",
@@ -63,6 +67,7 @@ val ignatia = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Abrupt Combustion",
@@ -81,6 +86,7 @@ val ignatia = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.DISCARD, Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Card(
         "Playing with Fire",
@@ -98,6 +104,7 @@ val ignatia = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 4,
+        traits = setOf(Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Path of Ashes",
@@ -116,6 +123,7 @@ val ignatia = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_SELF, Trait.USING_TOKENS, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Spontaneous Immolation",
@@ -136,6 +144,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Card(
         "Erratic Fireblast",
@@ -155,6 +164,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Path of Cinders",
@@ -175,6 +185,7 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.USING_TOKENS, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Searing Heat",
@@ -195,6 +206,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_TEAM, Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Crack of Doom",
@@ -214,6 +226,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Unstable Portal",
@@ -232,6 +245,7 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM, Trait.SWAPPING_ENEMY),
     ),
     Card(
         "Violent Conflagration",
@@ -252,6 +266,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD_OR_KILL, Trait.USING_TOKENS),
     ),
     Card(
         "Loosely-Aimed Firebolts",
@@ -272,6 +287,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.AREA,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.NOT_STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Path of Flames",
@@ -292,6 +308,7 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.USING_TOKENS, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Scorching Blaze",
@@ -312,6 +329,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_TEAM, Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Imminent Eruption",
@@ -332,6 +350,7 @@ val ignatia = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Chaos Gate",
@@ -352,5 +371,6 @@ val ignatia = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_SELF, Trait.MOVING_UNITS, Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM, Trait.SWAPPING_ENEMY),
     ),
 )

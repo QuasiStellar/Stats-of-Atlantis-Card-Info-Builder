@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val emmitt = setOf(
     Card(
@@ -22,6 +23,7 @@ val emmitt = setOf(
         primaryValue = 4,
         secondaryDefense = 2,
         secondaryMovement = 1,
+        traits = setOf(Trait.NEXT_TURN, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Tear in Time",
@@ -38,6 +40,7 @@ val emmitt = setOf(
         primaryValue = 3,
         secondaryDefense = 1,
         secondaryMovement = 1,
+        traits = setOf(Trait.NEXT_TURN, Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Unstable Timeline",
@@ -55,6 +58,7 @@ val emmitt = setOf(
         primaryValue = 6,
         modifier = Modifier.AREA,
         modifierValue = 4,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.REMOVING, Trait.END_OF_TURN, Trait.USING_TOKENS),
     ),
     Card(
         "Alternative Timelines",
@@ -65,6 +69,7 @@ val emmitt = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Time Snare",
@@ -81,6 +86,7 @@ val emmitt = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.DISCARD, Trait.THIS_TURN),
     ),
     Card(
         "Temporal Punch",
@@ -98,6 +104,7 @@ val emmitt = setOf(
         primaryValue = 9,
         secondaryMovement = 3,
         secondaryDefense = 7,
+        traits = setOf(Trait.ATTACK_UNIT),
     ),
     Card(
         "Time Walk",
@@ -114,6 +121,7 @@ val emmitt = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Time Trap",
@@ -132,6 +140,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD, Trait.THIS_TURN),
     ),
     Card(
         "Time Loop",
@@ -149,6 +158,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.THIS_TURN),
     ),
     Card(
         "Temporal Slam",
@@ -167,6 +177,7 @@ val emmitt = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.ATTACK_UNIT),
     ),
     Card(
         "Flashback",
@@ -189,6 +200,7 @@ val emmitt = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.REMOVING, Trait.END_OF_TURN, Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Fast Forward",
@@ -207,6 +219,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_ENEMY, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Time Capsule",
@@ -224,6 +237,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_TEAM, Trait.THIS_TURN),
     ),
     Card(
         "Time Bomb",
@@ -242,6 +256,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.THIS_TURN),
     ),
     Card(
         "Time Warp",
@@ -263,6 +278,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.AREA,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.THIS_TURN, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Temporal Judgment",
@@ -281,6 +297,7 @@ val emmitt = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.RANGE,
+        traits = setOf(Trait.ATTACK_UNIT),
     ),
     Card(
         "Déjà Vu",
@@ -303,13 +320,14 @@ val emmitt = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.REMOVING, Trait.END_OF_TURN, Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Back to the Future",
         """
             **Choose one —**
             >>Place a unit in range into the space where
-            that unit was at the start of this turn.
+            >that unit was at the start of this turn.
             >>Move an enemy hero in range, who
             >remained in the same space since
             >the last turn, 2 spaces in a straight line.
@@ -324,6 +342,7 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_ENEMY, Trait.PLACING_UNITS, Trait.THIS_TURN, Trait.MULTIPLE_CHOICE, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Future Proof",
@@ -332,7 +351,7 @@ val emmitt = setOf(
             >>You, and friendly heroes in radius, may
             >retrieve all cards discarded this turn.
             >>**This turn:** Friendly heroes in radius
-            are immune to enemy actions.
+            >are immune to enemy actions.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -344,5 +363,6 @@ val emmitt = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_TEAM, Trait.THIS_TURN, Trait.MULTIPLE_CHOICE),
     ),
 )

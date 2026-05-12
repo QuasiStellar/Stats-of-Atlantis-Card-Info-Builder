@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val cutter = setOf(
     Card(
@@ -23,6 +24,7 @@ val cutter = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD_OR_KILL, Trait.PUSHING_HEROES, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Few More Steps",
@@ -38,6 +40,7 @@ val cutter = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.PUSHING_HEROES),
     ),
     Card(
         "Grappling Bolt",
@@ -53,6 +56,7 @@ val cutter = setOf(
         secondaryDefense = 2,
         modifier = Modifier.RANGE,
         modifierValue = 5,
+        traits = setOf(Trait.IMMUNITY_IGNORE, Trait.MOVING_SELF, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Legend of the Skies",
@@ -63,6 +67,7 @@ val cutter = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.NEXT_TURN),
     ),
     Card(
         "Bombardment",
@@ -79,14 +84,15 @@ val cutter = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 5,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Daring Strike",
         """
             **Choose one —**
             >>Before the attack: Move 1 space.
-            Target a hero adjacent to you in the
-            direction of the move; +2 ::attack_red:: Attack.
+            >Target a hero adjacent to you in the
+            >direction of the move; +2 ::attack_red:: Attack.
             >>Target a unit adjacent to you.
         """.trimIndent(),
         Color.RED,
@@ -97,6 +103,7 @@ val cutter = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SCALING, Trait.MULTIPLE_CHOICE, Trait.STAT_CHANGING, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Brace for Impact",
@@ -111,6 +118,7 @@ val cutter = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Barrage",
@@ -129,6 +137,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Bold Thrust",
@@ -149,6 +158,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SCALING, Trait.MULTIPLE_CHOICE, Trait.STAT_CHANGING, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Ramming Speed",
@@ -165,6 +175,7 @@ val cutter = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "X Marks the Spot",
@@ -183,6 +194,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.PLACING_HEROES, Trait.PLACING_ENEMY),
     ),
     Card(
         "Evasive Shot",
@@ -202,6 +214,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Outmaneuver",
@@ -219,6 +232,7 @@ val cutter = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.MOVING_MINIONS, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.SWAPPING_MINIONS),
     ),
     Card(
         "Broadside",
@@ -238,6 +252,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Fearless Lunge",
@@ -258,6 +273,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.SCALING, Trait.MULTIPLE_CHOICE, Trait.STAT_CHANGING, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Crashland",
@@ -274,6 +290,7 @@ val cutter = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "A Fistful of Coins",
@@ -293,6 +310,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.PLACING_HEROES, Trait.PLACING_ENEMY),
     ),
     Card(
         "Tumble Shot",
@@ -312,6 +330,7 @@ val cutter = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.AREA,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Outsmart",
@@ -329,5 +348,6 @@ val cutter = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.MOVING_MINIONS, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.SWAPPING_MINIONS),
     ),
 )

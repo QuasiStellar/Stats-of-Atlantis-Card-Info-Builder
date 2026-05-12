@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val ursafar = setOf(
     Card(
@@ -21,6 +22,7 @@ val ursafar = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_SELF, Trait.THIS_ROUND, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Jaws That Bite",
@@ -37,6 +39,7 @@ val ursafar = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.THIS_ROUND, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Angry Roar",
@@ -49,6 +52,7 @@ val ursafar = setOf(
         initiative = 7,
         primaryAction = Action.SKILL,
         secondaryDefense = 4,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Unbound Fury",
@@ -58,6 +62,7 @@ val ursafar = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.COUNTS_AS),
     ),
     Card(
         "Prowling Brute",
@@ -72,6 +77,7 @@ val ursafar = setOf(
         primaryAction = Action.MOVEMENT,
         primaryValue = 1,
         secondaryDefense = 5,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.THIS_ROUND, Trait.USING_TOKENS),
     ),
     Card(
         "Prey Drive",
@@ -90,6 +96,7 @@ val ursafar = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 7,
+        traits = setOf(Trait.THIS_ROUND, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Sniff Out",
@@ -105,6 +112,7 @@ val ursafar = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Rampaging Beast",
@@ -122,6 +130,7 @@ val ursafar = setOf(
         primaryValue = 1,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.THIS_ROUND, Trait.USING_TOKENS),
     ),
     Card(
         "Prey Abundance",
@@ -142,6 +151,7 @@ val ursafar = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_ROUND, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Eyes on the Prey",
@@ -159,6 +169,7 @@ val ursafar = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Cold Ire",
@@ -175,6 +186,7 @@ val ursafar = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND, Trait.SCALING, Trait.STAT_CHANGING),
     ),
     Card(
         "Rip",
@@ -192,6 +204,7 @@ val ursafar = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.THIS_ROUND, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Instinctive Reaction",
@@ -209,6 +222,7 @@ val ursafar = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HEALING_SELF, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Unstoppable Force",
@@ -226,6 +240,7 @@ val ursafar = setOf(
         primaryValue = 1,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS, Trait.THIS_ROUND, Trait.USING_TOKENS),
     ),
     Card(
         "Feeding Frenzy",
@@ -246,6 +261,7 @@ val ursafar = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_ROUND, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Apex Predator",
@@ -263,6 +279,7 @@ val ursafar = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD_OR_KILL),
     ),
     Card(
         "Eyes of Flame",
@@ -279,6 +296,7 @@ val ursafar = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryDefense = 6,
         item = Item.AREA,
+        traits = setOf(Trait.THIS_ROUND, Trait.SCALING, Trait.STAT_CHANGING),
     ),
     Card(
         "Tear",
@@ -298,6 +316,7 @@ val ursafar = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.THIS_ROUND, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Evolutionary Response",
@@ -315,5 +334,6 @@ val ursafar = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HEALING_SELF, Trait.MULTIPLE_CHOICE),
     ),
 )

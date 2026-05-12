@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val sabina = setOf(
     Card(
@@ -22,6 +23,7 @@ val sabina = setOf(
         modifierValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Bang",
@@ -36,6 +38,7 @@ val sabina = setOf(
         primaryValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Back to Back",
@@ -48,6 +51,7 @@ val sabina = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Big Sodding Gun",
@@ -58,6 +62,7 @@ val sabina = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.PUSHING_HEROES, Trait.STAT_CHANGING),
     ),
     Card(
         "Listen Up",
@@ -72,6 +77,7 @@ val sabina = setOf(
         modifierValue = 1,
         secondaryDefense = 3,
         secondaryMovement = 3,
+        traits = emptySet(),
     ),
     Card(
         "Quickdraw",
@@ -89,6 +95,7 @@ val sabina = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 6,
+        traits = setOf(Trait.THIS_TURN, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Troop Movement",
@@ -104,6 +111,7 @@ val sabina = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_TEAM),
     ),
     Card(
         "Roger Roger",
@@ -120,6 +128,7 @@ val sabina = setOf(
         secondaryDefense = 4,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = emptySet(),
     ),
     Card(
         "Gunslinger",
@@ -139,6 +148,7 @@ val sabina = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.THIS_TURN, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Marching Orders",
@@ -156,6 +166,7 @@ val sabina = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_TEAM),
     ),
     Card(
         "Steady Advance",
@@ -174,6 +185,7 @@ val sabina = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_SELF),
     ),
     Card(
         "Shootout",
@@ -194,6 +206,7 @@ val sabina = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Close Support",
@@ -211,6 +224,7 @@ val sabina = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD),
     ),
     Card(
         "Ready and Waiting",
@@ -228,6 +242,7 @@ val sabina = setOf(
         secondaryDefense = 4,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = emptySet(),
     ),
     Card(
         "Dead Shot",
@@ -247,6 +262,7 @@ val sabina = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.THIS_TURN, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Path to Victory",
@@ -264,6 +280,7 @@ val sabina = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.MOVING_TEAM),
     ),
     Card(
         "Unwavering Resolve",
@@ -282,6 +299,7 @@ val sabina = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_SELF),
     ),
     Card(
         "Bullet Hell",
@@ -301,6 +319,7 @@ val sabina = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Covering Fire",
@@ -318,5 +337,6 @@ val sabina = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL),
     ),
 )

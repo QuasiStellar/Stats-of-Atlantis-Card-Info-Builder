@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val garrus = setOf(
     Card(
@@ -20,6 +21,7 @@ val garrus = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 1,
         secondaryDefense = 3,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Angry Swipe",
@@ -35,6 +37,7 @@ val garrus = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_HERO),
     ),
     Card(
         "Chilling Howl",
@@ -50,6 +53,7 @@ val garrus = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.THIS_ROUND, Trait.FAST_TRAVEL),
     ),
     Card(
         "Battle Fury",
@@ -59,6 +63,7 @@ val garrus = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Menace",
@@ -74,13 +79,14 @@ val garrus = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Trace",
         """
             **Choose one —**
             >>Before the attack: If you have one or more
-            cards in the discard, you may move 1 space.
+            >cards in the discard, you may move 1 space.
             >Target a hero adjacent to you.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -91,6 +97,7 @@ val garrus = setOf(
         primaryValue = 3,
         secondaryMovement = 4,
         secondaryDefense = 5,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Hold Ground",
@@ -106,6 +113,7 @@ val garrus = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.HEALING_SELF),
     ),
     Card(
         "Threaten",
@@ -124,13 +132,14 @@ val garrus = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Chase",
         """
             **Choose one —**
             >>Before the attack: If you have one or more
-            cards in the discard, move up to 2 spaces.
+            >cards in the discard, move up to 2 spaces.
             >Target a hero adjacent to you.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -143,6 +152,7 @@ val garrus = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Make a Stand",
@@ -160,6 +170,7 @@ val garrus = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HEALING_SELF),
     ),
     Card(
         "Form Up!",
@@ -178,6 +189,7 @@ val garrus = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_TEAM),
     ),
     Card(
         "Blunt Force",
@@ -196,6 +208,7 @@ val garrus = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PUSHING_HEROES, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.IGNORING_OBSTACLES, Trait.ATTACK_UNIT),
     ),
     Card(
         "Light Pilum",
@@ -213,6 +226,7 @@ val garrus = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF),
     ),
     Card(
         "Terrify",
@@ -231,13 +245,14 @@ val garrus = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_ENEMY),
     ),
     Card(
         "Hunt Down",
         """
             **Choose one —**
             >>Before the attack: If you have one or more
-            cards in the discard, move up to 3 spaces.
+            >cards in the discard, move up to 3 spaces.
             >Target a hero adjacent to you.
             >>Target a unit adjacent to you.
         """.trimIndent(),
@@ -250,6 +265,7 @@ val garrus = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Battle Ready",
@@ -268,6 +284,7 @@ val garrus = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = emptySet(),
     ),
     Card(
         "Testudo!",
@@ -286,6 +303,7 @@ val garrus = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_TEAM),
     ),
     Card(
         "Send Flying",
@@ -304,6 +322,7 @@ val garrus = setOf(
         secondaryMovement = 4,
         secondaryDefense = 8,
         item = Item.AREA,
+        traits = setOf(Trait.PUSHING_HEROES, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.IGNORING_OBSTACLES, Trait.ATTACK_UNIT),
     ),
     Card(
         "Heavy Pilum",
@@ -321,5 +340,6 @@ val garrus = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.MOVING_SELF),
     ),
 )

@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val dodger = setOf(
     Card(
@@ -24,6 +25,7 @@ val dodger = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.SPAWN_POINTS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Rusty Razor",
@@ -42,6 +44,7 @@ val dodger = setOf(
         modifierValue = 2,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.SPAWN_POINTS, Trait.ATTACK_HERO),
     ),
     Card(
         "Death Trap",
@@ -56,6 +59,7 @@ val dodger = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryDefense = 1,
+        traits = setOf(Trait.DISCARD, Trait.SPAWN_POINTS),
     ),
     Card(
         "Tide of Darkness",
@@ -66,6 +70,7 @@ val dodger = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.SPAWN_POINTS, Trait.COUNTS_AS),
     ),
     Card(
         "Shield of Decay",
@@ -82,6 +87,7 @@ val dodger = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryMovement = 3,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.SPAWN_POINTS),
     ),
     Card(
         "Littlefinger of Death",
@@ -100,6 +106,7 @@ val dodger = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 5,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Dark Ritual",
@@ -115,6 +122,7 @@ val dodger = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 2,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Vampiric Shield",
@@ -133,6 +141,7 @@ val dodger = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.SPAWN_POINTS),
     ),
     Card(
         "Finger of Death",
@@ -153,6 +162,7 @@ val dodger = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Darker Ritual",
@@ -170,6 +180,7 @@ val dodger = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Weakness",
@@ -188,6 +199,7 @@ val dodger = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_TURN, Trait.STAT_CHANGING),
     ),
     Card(
         "Burning Skull",
@@ -207,6 +219,7 @@ val dodger = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_MINIONS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Necromancy",
@@ -222,6 +235,7 @@ val dodger = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.RESPAWN, Trait.SPAWN_POINTS),
     ),
     Card(
         "Aegis of Doom",
@@ -240,6 +254,7 @@ val dodger = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.SPAWN_POINTS),
     ),
     Card(
         "Middlefinger of Death",
@@ -260,6 +275,7 @@ val dodger = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Darkest Ritual",
@@ -279,6 +295,7 @@ val dodger = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Enfeeblement",
@@ -296,6 +313,7 @@ val dodger = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_TURN, Trait.STAT_CHANGING),
     ),
     Card(
         "Blazing Skull",
@@ -315,6 +333,7 @@ val dodger = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.AREA,
+        traits = setOf(Trait.MOVING_MINIONS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Necromastery",
@@ -332,5 +351,6 @@ val dodger = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.RESPAWN, Trait.SPAWN_POINTS),
     ),
 )

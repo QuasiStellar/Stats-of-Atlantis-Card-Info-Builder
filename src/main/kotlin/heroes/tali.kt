@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val tali = setOf(
     Card(
@@ -23,6 +24,7 @@ val tali = setOf(
         modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.DISCARD, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Ice Shard",
@@ -41,6 +43,7 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.DISCARD, Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Commune with Spirits",
@@ -54,6 +57,7 @@ val tali = setOf(
         initiative = 13,
         primaryAction = Action.SKILL,
         secondaryDefense = 2,
+        traits = setOf(Trait.DISCARD_TEAM),
     ),
     Card(
         "Reign of Winter",
@@ -66,6 +70,7 @@ val tali = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         level = 4,
+        traits = setOf(Trait.DEFEAT, Trait.DISCARD),
     ),
     Card(
         "Cold Snap",
@@ -81,6 +86,7 @@ val tali = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 5,
+        traits = emptySet(),
     ),
     Card(
         "Winter Dagger",
@@ -96,6 +102,7 @@ val tali = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryMovement = 4,
         secondaryDefense = 6,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Glacial Barrier",
@@ -112,6 +119,7 @@ val tali = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.USING_TOKENS, Trait.STAT_CHANGING),
     ),
     Card(
         "Snowstorm",
@@ -129,6 +137,7 @@ val tali = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = emptySet(),
     ),
     Card(
         "Winter Spear",
@@ -146,6 +155,7 @@ val tali = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Wall of Frost",
@@ -164,6 +174,7 @@ val tali = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.USING_TOKENS, Trait.STAT_CHANGING),
     ),
     Card(
         "Guardian Spirit",
@@ -182,6 +193,7 @@ val tali = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_TEAM, Trait.DISCARD_TEAM),
     ),
     Card(
         "Spirit Wolf",
@@ -202,6 +214,7 @@ val tali = setOf(
         secondaryMovement = 4,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Ancestral Totem",
@@ -220,6 +233,7 @@ val tali = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.REMOVING, Trait.USING_TOKENS),
     ),
     Card(
         "Blizzard",
@@ -239,6 +253,7 @@ val tali = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.END_OF_TURN),
     ),
     Card(
         "Winter Scepter",
@@ -256,6 +271,7 @@ val tali = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Pack Ice",
@@ -274,6 +290,7 @@ val tali = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.USING_TOKENS, Trait.STAT_CHANGING),
     ),
     Card(
         "Warrior Spirit",
@@ -292,6 +309,7 @@ val tali = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.HEALING_SELF, Trait.HEALING_TEAM, Trait.DISCARD_TEAM),
     ),
     Card(
         "Spirit Bear",
@@ -312,6 +330,7 @@ val tali = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Venerated Totem",
@@ -331,5 +350,6 @@ val tali = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.REMOVING, Trait.USING_TOKENS),
     ),
 )

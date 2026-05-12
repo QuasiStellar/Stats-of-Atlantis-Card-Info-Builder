@@ -5,7 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
-import Sign
+import Trait
 
 val brogan = setOf(
     Card(
@@ -20,6 +20,7 @@ val brogan = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Leap Forward",
@@ -34,6 +35,7 @@ val brogan = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Bulwark",
@@ -49,6 +51,7 @@ val brogan = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryDefense = 4,
+        traits = setOf(Trait.HEALING_SELF, Trait.PUSHING_HEROES, Trait.IMMUNITY_GAIN, Trait.THIS_TURN),
     ),
     Card(
         "One Man Army",
@@ -59,6 +62,7 @@ val brogan = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.MINION_BATTLE, Trait.COUNTS_AS),
     ),
     Card(
         "Brutal Jab",
@@ -72,6 +76,7 @@ val brogan = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 5,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Mad Dash",
@@ -88,6 +93,7 @@ val brogan = setOf(
         primaryValue = 6,
         secondaryMovement = 3,
         secondaryDefense = 7,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Shield",
@@ -105,6 +111,7 @@ val brogan = setOf(
         modifierValue = 1,
         secondaryMovement = 2,
         secondaryDefense = 4,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Mighty Punch",
@@ -120,6 +127,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Bullrush",
@@ -137,6 +145,7 @@ val brogan = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_SELF, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Bolster",
@@ -155,6 +164,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Shield Bash",
@@ -171,6 +181,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.THIS_TURN),
     ),
     Card(
         "Throwing Axe",
@@ -191,6 +202,7 @@ val brogan = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT),
     ),
     Card(
         "War Drummer",
@@ -209,6 +221,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.THIS_ROUND),
     ),
     Card(
         "Savage Kick",
@@ -224,6 +237,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Furious Charge",
@@ -241,6 +255,7 @@ val brogan = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Fortify",
@@ -259,6 +274,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Counterattack",
@@ -275,6 +291,7 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.THIS_TURN),
     ),
     Card(
         "Throwing Spear",
@@ -295,6 +312,7 @@ val brogan = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Master Skald",
@@ -313,5 +331,6 @@ val brogan = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_TEAM, Trait.THIS_ROUND),
     ),
 )

@@ -5,7 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
-import Sign
+import Trait
 
 val hanu = setOf(
     Card(
@@ -21,6 +21,7 @@ val hanu = setOf(
         primaryValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Fight or Flight",
@@ -36,6 +37,7 @@ val hanu = setOf(
         primaryValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_HERO),
     ),
     Card(
         "Hurry up!",
@@ -51,6 +53,7 @@ val hanu = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryDefense = 1,
+        traits = emptySet(),
     ),
     Card(
         "The Ultimate Trick",
@@ -61,6 +64,7 @@ val hanu = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Unexpected Journey",
@@ -78,6 +82,7 @@ val hanu = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 4,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.THIS_TURN, Trait.END_OF_TURN),
     ),
     Card(
         "Helping Hand",
@@ -96,6 +101,7 @@ val hanu = setOf(
         modifierValue = 3,
         secondaryMovement = 5,
         secondaryDefense = 4,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Monkey Trick",
@@ -110,6 +116,7 @@ val hanu = setOf(
         modifierValue = 1,
         secondaryMovement = 2,
         secondaryDefense = 1,
+        traits = emptySet(),
     ),
     Card(
         "There and Back Again",
@@ -129,6 +136,7 @@ val hanu = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.THIS_TURN, Trait.END_OF_TURN),
     ),
     Card(
         "Even the Odds",
@@ -149,6 +157,7 @@ val hanu = setOf(
         secondaryMovement = 5,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Monkey Twist",
@@ -165,6 +174,7 @@ val hanu = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+        traits = emptySet(),
     ),
     Card(
         "This Way!",
@@ -184,6 +194,7 @@ val hanu = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = emptySet(),
     ),
     Card(
         "Outnumber",
@@ -204,6 +215,7 @@ val hanu = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_MINION),
     ),
     Card(
         "Hear Nothing",
@@ -220,6 +232,7 @@ val hanu = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY),
     ),
     Card(
         "Safe Travels",
@@ -239,6 +252,7 @@ val hanu = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_SELF, Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.THIS_TURN, Trait.END_OF_TURN),
     ),
     Card(
         "Trusted Sidekick",
@@ -259,6 +273,7 @@ val hanu = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Monkey Business",
@@ -276,6 +291,7 @@ val hanu = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "That Way!",
@@ -294,6 +310,7 @@ val hanu = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = emptySet(),
     ),
     Card(
         "Pile On",
@@ -314,6 +331,7 @@ val hanu = setOf(
         secondaryMovement = 5,
         secondaryDefense = 6,
         item = Item.AREA,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.ATTACK_UNIT, Trait.ATTACK_MINION),
     ),
     Card(
         "See Nothing",
@@ -331,5 +349,6 @@ val hanu = setOf(
         secondaryMovement = 2,
         secondaryDefense = 2,
         item = Item.RANGE,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_SELF, Trait.SWAPPING_HEROES, Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY),
     ),
 )

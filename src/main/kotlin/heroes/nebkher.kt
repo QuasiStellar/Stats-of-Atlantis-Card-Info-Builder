@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val nebkher = setOf(
     Card(
@@ -24,6 +25,7 @@ val nebkher = setOf(
         modifierValue = 5,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.DEFEAT, Trait.MULTIPLE_CHOICE, Trait.USING_MARKERS, Trait.USING_TOKENS),
     ),
     Card(
         "Mind Probe",
@@ -41,6 +43,7 @@ val nebkher = setOf(
         modifierValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.NEXT_TURN, Trait.USING_MARKERS, Trait.USING_TOKENS),
     ),
     Card(
         "Diabolical Laughter",
@@ -58,6 +61,7 @@ val nebkher = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryDefense = 3,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "What the Hell Are You?",
@@ -70,6 +74,7 @@ val nebkher = setOf(
         modifier = Modifier.AREA,
         modifierValue = 5,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Imbue Doubt",
@@ -86,6 +91,7 @@ val nebkher = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
+        traits = setOf(Trait.DISCARD, Trait.NEXT_TURN),
     ),
     Card(
         "Phantasmal Sentry",
@@ -104,6 +110,7 @@ val nebkher = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Fleeting Image",
@@ -119,6 +126,7 @@ val nebkher = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Time to Reconsider",
@@ -137,6 +145,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.NEXT_TURN),
     ),
     Card(
         "Crack in Reality",
@@ -156,6 +165,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_TURN, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Phantasmal Warrior",
@@ -177,6 +187,7 @@ val nebkher = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Twist Fate",
@@ -196,6 +207,7 @@ val nebkher = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_ENEMY, Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Multiple Projections",
@@ -213,6 +225,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Illusionary Force",
@@ -232,6 +245,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND, Trait.USING_TOKENS, Trait.COUNTS_AS),
     ),
     Card(
         "An Illusion of Choice",
@@ -250,6 +264,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.NEXT_TURN),
     ),
     Card(
         "Shift Reality",
@@ -269,6 +284,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.RANGE,
+        traits = setOf(Trait.THIS_TURN, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Phantasmal Champion",
@@ -290,6 +306,7 @@ val nebkher = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.AREA,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Devious Scheme",
@@ -309,6 +326,7 @@ val nebkher = setOf(
         secondaryMovement = 3,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_ENEMY, Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Master of Illusions",
@@ -326,6 +344,7 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Illusionary Army",
@@ -345,5 +364,6 @@ val nebkher = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND, Trait.USING_TOKENS, Trait.COUNTS_AS),
     ),
 )

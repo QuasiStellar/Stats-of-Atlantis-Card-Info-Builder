@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val widget = setOf(
     Card(
@@ -21,6 +22,7 @@ val widget = setOf(
         primaryValue = 4,
         secondaryDefense = 2,
         secondaryMovement = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Follow Along",
@@ -37,6 +39,7 @@ val widget = setOf(
         primaryValue = 3,
         secondaryDefense = 1,
         secondaryMovement = 2,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Dragon Bond",
@@ -54,6 +57,7 @@ val widget = setOf(
         modifier = Modifier.AREA,
         modifierValue = 2,
         secondaryDefense = 6,
+        traits = setOf(Trait.END_OF_ROUND, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS),
     ),
     Card(
         "Diversionary Strike",
@@ -68,6 +72,7 @@ val widget = setOf(
         primaryValue = 5,
         secondaryDefense = 6,
         secondaryMovement = 4,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "All Aboard",
@@ -83,6 +88,7 @@ val widget = setOf(
         modifierValue = 2,
         secondaryDefense = 3,
         secondaryMovement = 3,
+        traits = emptySet(),
     ),
     Card(
         "Fiery Breath",
@@ -98,6 +104,7 @@ val widget = setOf(
         modifierValue = 2,
         secondaryDefense = 1,
         secondaryMovement = 2,
+        traits = setOf(Trait.DISCARD, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Diversionary Attack",
@@ -114,6 +121,7 @@ val widget = setOf(
         secondaryDefense = 6,
         secondaryMovement = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Airborne Attack",
@@ -132,6 +140,7 @@ val widget = setOf(
         secondaryDefense = 4,
         secondaryMovement = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Diversionary Assault",
@@ -148,6 +157,7 @@ val widget = setOf(
         secondaryDefense = 7,
         secondaryMovement = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Airborne Assault",
@@ -168,6 +178,7 @@ val widget = setOf(
         secondaryDefense = 5,
         secondaryMovement = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.AFTER_THE_ATTACK, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Take-Off",
@@ -185,6 +196,7 @@ val widget = setOf(
         secondaryDefense = 3,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = emptySet(),
     ),
     Card(
         "Drag Off",
@@ -201,6 +213,7 @@ val widget = setOf(
         secondaryDefense = 3,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = emptySet(),
     ),
     Card(
         "Safe Landing",
@@ -219,6 +232,7 @@ val widget = setOf(
         secondaryDefense = 4,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Carry Away",
@@ -235,6 +249,7 @@ val widget = setOf(
         secondaryDefense = 4,
         secondaryMovement = 3,
         item = Item.AREA,
+        traits = setOf(Trait.IGNORING_OBSTACLES),
     ),
     Card(
         "Flaming Breath",
@@ -252,6 +267,7 @@ val widget = setOf(
         secondaryDefense = 2,
         secondaryMovement = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Nibble",
@@ -269,6 +285,7 @@ val widget = setOf(
         secondaryDefense = 2,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.REMOVING),
     ),
     Card(
         "Scorching Breath",
@@ -287,6 +304,7 @@ val widget = setOf(
         secondaryDefense = 2,
         secondaryMovement = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Gnaw",
@@ -304,6 +322,7 @@ val widget = setOf(
         secondaryDefense = 2,
         secondaryMovement = 2,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.DEFEAT, Trait.REMOVING),
     ),
     Card(
         "Dragon Knight",
@@ -314,5 +333,6 @@ val widget = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
 )

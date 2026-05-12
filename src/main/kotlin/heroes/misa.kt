@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val misa = setOf(
     Card(
@@ -22,6 +23,7 @@ val misa = setOf(
         modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.DEFEAT, Trait.PLACING_SELF, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Leaf on the Wind",
@@ -36,6 +38,7 @@ val misa = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryDefense = 1,
+        traits = setOf(Trait.PLACING_SELF),
     ),
     Card(
         "Swoop In",
@@ -50,6 +53,7 @@ val misa = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.HEALING_SELF, Trait.PLACING_SELF),
     ),
     Card(
         "Power Overwhelming",
@@ -61,6 +65,7 @@ val misa = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.DISCARD, Trait.PLACING_SELF),
     ),
     Card(
         "Sudden Breeze",
@@ -75,6 +80,7 @@ val misa = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 1,
         secondaryDefense = 5,
+        traits = setOf(Trait.MOVING_SELF, Trait.PLACING_ENEMY, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Challenge Accepted",
@@ -89,6 +95,7 @@ val misa = setOf(
         primaryValue = 5,
         secondaryMovement = 3,
         secondaryDefense = 6,
+        traits = setOf(Trait.THIS_TURN, Trait.AFTER_THE_ATTACK, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Focus",
@@ -102,6 +109,7 @@ val misa = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.MOVING_SELF, Trait.NEXT_TURN),
     ),
     Card(
         "Gust of Wind",
@@ -118,6 +126,7 @@ val misa = setOf(
         secondaryMovement = 1,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_SELF, Trait.PLACING_ENEMY, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Matter of Honor",
@@ -134,6 +143,7 @@ val misa = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.THIS_TURN, Trait.AFTER_THE_ATTACK, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Discipline",
@@ -149,6 +159,7 @@ val misa = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_SELF, Trait.NEXT_TURN),
     ),
     Card(
         "Living Tornado",
@@ -165,6 +176,7 @@ val misa = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = emptySet(),
     ),
     Card(
         "Power Shot",
@@ -184,6 +196,7 @@ val misa = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Dash and Slash",
@@ -200,6 +213,7 @@ val misa = setOf(
         secondaryMovement = 1,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Crushing Squall",
@@ -216,6 +230,7 @@ val misa = setOf(
         secondaryMovement = 1,
         secondaryDefense = 6,
         item = Item.AREA,
+        traits = setOf(Trait.MOVING_SELF, Trait.PLACING_ENEMY, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Worthy Opponent",
@@ -233,6 +248,7 @@ val misa = setOf(
         secondaryMovement = 3,
         secondaryDefense = 7,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.THIS_TURN, Trait.AFTER_THE_ATTACK, Trait.STAT_CHANGING, Trait.ATTACK_UNIT),
     ),
     Card(
         "Mastery",
@@ -248,6 +264,7 @@ val misa = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.MOVING_SELF, Trait.NEXT_TURN),
     ),
     Card(
         "Storm Spirit",
@@ -265,6 +282,7 @@ val misa = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = emptySet(),
     ),
     Card(
         "Thunder Shot",
@@ -284,6 +302,7 @@ val misa = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Death from Above",
@@ -300,5 +319,6 @@ val misa = setOf(
         secondaryMovement = 1,
         secondaryDefense = 6,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
 )

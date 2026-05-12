@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val razzle = setOf(
     Card(
@@ -23,6 +24,7 @@ val razzle = setOf(
         modifierValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Stunted Doubles",
@@ -41,6 +43,7 @@ val razzle = setOf(
         modifierValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Crowd Control",
@@ -57,6 +60,7 @@ val razzle = setOf(
         primaryValueSign = Sign.PLUS,
         modifier = Modifier.AREA,
         modifierValue = 3,
+        traits = setOf(Trait.REMOVING, Trait.SCALING, Trait.STAT_CHANGING),
     ),
     Card(
         "Twin Strike",
@@ -67,6 +71,7 @@ val razzle = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Alleyoop",
@@ -82,6 +87,7 @@ val razzle = setOf(
         modifierValue = 3,
         secondaryMovement = 3,
         secondaryDefense = 2,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Phantom Strike",
@@ -97,6 +103,7 @@ val razzle = setOf(
         primaryValue = 4,
         secondaryMovement = 4,
         secondaryDefense = 3,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Tightrope",
@@ -110,6 +117,7 @@ val razzle = setOf(
         primaryAction = Action.MOVEMENT,
         primaryValue = 2,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Group Performance",
@@ -127,6 +135,7 @@ val razzle = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Hit and Gone",
@@ -144,6 +153,7 @@ val razzle = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "High Wire",
@@ -159,6 +169,7 @@ val razzle = setOf(
         primaryValue = 2,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = emptySet(),
     ),
     Card(
         "Magic Trick",
@@ -175,6 +186,7 @@ val razzle = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.PUSHING_UNITS),
     ),
     Card(
         "Rummage",
@@ -195,6 +207,7 @@ val razzle = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HEALING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Theatrics",
@@ -211,6 +224,7 @@ val razzle = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_MINIONS),
     ),
     Card(
         "Team Spirit",
@@ -228,6 +242,7 @@ val razzle = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.AREA,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_TEAM),
     ),
     Card(
         "Into Thin Air",
@@ -246,6 +261,7 @@ val razzle = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.RANGE,
+        traits = setOf(Trait.REMOVING, Trait.AFTER_THE_ATTACK, Trait.RESPAWN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Wire Dancers",
@@ -261,6 +277,7 @@ val razzle = setOf(
         primaryValue = 2,
         secondaryDefense = 2,
         item = Item.INITIATIVE,
+        traits = emptySet(),
     ),
     Card(
         "Aaaand it's gone!",
@@ -277,6 +294,7 @@ val razzle = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.PUSHING_UNITS),
     ),
     Card(
         "Ransack",
@@ -296,6 +314,7 @@ val razzle = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HEALING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Spectacle",
@@ -314,5 +333,6 @@ val razzle = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_MINIONS),
     ),
 )

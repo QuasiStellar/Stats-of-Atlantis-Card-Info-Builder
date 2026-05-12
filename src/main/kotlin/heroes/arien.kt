@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val arien = setOf(
     Card(
@@ -21,6 +22,7 @@ val arien = setOf(
         secondaryMovement = 1,
         primaryAction = Action.ATTACK,
         primaryValue = 4,
+        traits = setOf(Trait.MOVING_UNITS, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Ceremonial Blade",
@@ -36,6 +38,7 @@ val arien = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.MOVING_MINIONS, Trait.BEFORE_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Spell Break",
@@ -50,6 +53,7 @@ val arien = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 3,
+        traits = setOf(Trait.THIS_TURN),
     ),
     Card(
         "Living Tsunami",
@@ -59,6 +63,7 @@ val arien = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.MOVING_SELF),
     ),
     Card(
         "Aspiring Duelist",
@@ -72,6 +77,7 @@ val arien = setOf(
         primaryAction = Action.DEFENSE,
         primaryValue = 5,
         secondaryMovement = 3,
+        traits = emptySet(),
     ),
     Card(
         "Dangerous Current",
@@ -88,6 +94,7 @@ val arien = setOf(
         primaryValue = 6,
         secondaryMovement = 4,
         secondaryDefense = 6,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Liquid Leap",
@@ -104,6 +111,7 @@ val arien = setOf(
         modifierValue = 2,
         secondaryMovement = 2,
         secondaryDefense = 3,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Expert Duelist",
@@ -120,6 +128,7 @@ val arien = setOf(
         primaryValue = 6,
         secondaryMovement = 3,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_TURN),
     ),
     Card(
         "Rogue Wave",
@@ -139,6 +148,7 @@ val arien = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Magical Current",
@@ -157,6 +167,7 @@ val arien = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Slippery Ground",
@@ -173,6 +184,7 @@ val arien = setOf(
         primaryValue = 3,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_TURN, Trait.FAST_TRAVEL, Trait.STAT_CHANGING),
     ),
     Card(
         "Raging Stream",
@@ -191,6 +203,7 @@ val arien = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Arcane Whirlpool",
@@ -208,6 +221,7 @@ val arien = setOf(
         secondaryMovement = 2,
         secondaryDefense = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.SWAPPING_MINIONS),
     ),
     Card(
         "Master Duelist",
@@ -224,6 +238,7 @@ val arien = setOf(
         primaryValue = 6,
         secondaryMovement = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.IMMUNITY_GAIN, Trait.THIS_ROUND),
     ),
     Card(
         "Violent Torrent",
@@ -243,6 +258,7 @@ val arien = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.BEFORE_THE_ATTACK, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Stranger Tide",
@@ -260,6 +276,7 @@ val arien = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.AREA,
+        traits = setOf(Trait.PLACING_SELF, Trait.SPAWN_POINTS),
     ),
     Card(
         "Deluge",
@@ -278,6 +295,7 @@ val arien = setOf(
         modifierValue = 1,
         secondaryDefense = 6,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_TURN, Trait.FAST_TRAVEL, Trait.STAT_CHANGING),
     ),
     Card(
         "Tidal Blast",
@@ -297,6 +315,7 @@ val arien = setOf(
         secondaryMovement = 4,
         secondaryDefense = 4,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Ebb and Flow",
@@ -314,5 +333,6 @@ val arien = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_ENEMY, Trait.SWAPPING_MINIONS),
     ),
 )

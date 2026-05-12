@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val min = setOf(
     Card(
@@ -24,6 +25,7 @@ val min = setOf(
         modifierValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Chop Down",
@@ -41,6 +43,7 @@ val min = setOf(
         modifierValue = 1,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.ATTACK_HERO),
     ),
     Card(
         "Smoke Bomb",
@@ -56,6 +59,7 @@ val min = setOf(
         modifier = Modifier.AREA,
         modifierValue = 3,
         secondaryDefense = 1,
+        traits = setOf(Trait.USING_TOKENS, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Flurry of blows",
@@ -65,6 +69,7 @@ val min = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = emptySet(),
     ),
     Card(
         "Trip Mine",
@@ -83,6 +88,7 @@ val min = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
+        traits = setOf(Trait.DISCARD, Trait.REMOVING, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Crane Stance",
@@ -98,6 +104,7 @@ val min = setOf(
         primaryValue = 3,
         secondaryMovement = 5,
         secondaryDefense = 5,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Poof!",
@@ -113,6 +120,7 @@ val min = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryMovement = 3,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Cluster Mine",
@@ -133,6 +141,7 @@ val min = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.REMOVING, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Tiger Stance",
@@ -151,6 +160,7 @@ val min = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Vanish",
@@ -168,6 +178,7 @@ val min = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.USING_TOKENS),
     ),
     Card(
         "Death Grenade",
@@ -187,6 +198,7 @@ val min = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.REMOVING, Trait.END_OF_TURN, Trait.USING_TOKENS),
     ),
     Card(
         "Viper Stance",
@@ -206,6 +218,7 @@ val min = setOf(
         secondaryMovement = 5,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Inner Strength",
@@ -220,6 +233,7 @@ val min = setOf(
         secondaryMovement = 3,
         secondaryDefense = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.THIS_ROUND),
     ),
     Card(
         "Minefield",
@@ -240,6 +254,7 @@ val min = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.DISCARD, Trait.REMOVING, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Dragon Stance",
@@ -258,6 +273,7 @@ val min = setOf(
         secondaryMovement = 5,
         secondaryDefense = 6,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.MOVING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Ruse",
@@ -276,6 +292,7 @@ val min = setOf(
         modifierValue = 4,
         secondaryMovement = 3,
         item = Item.AREA,
+        traits = setOf(Trait.SWAPPING_SELF),
     ),
     Card(
         "Holy Death Grenade",
@@ -295,6 +312,7 @@ val min = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.REMOVING, Trait.END_OF_TURN, Trait.USING_TOKENS),
     ),
     Card(
         "Cobra Stance",
@@ -315,6 +333,7 @@ val min = setOf(
         secondaryMovement = 5,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.AFTER_THE_ATTACK, Trait.ATTACK_UNIT),
     ),
     Card(
         "Perfect Self",
@@ -322,7 +341,7 @@ val min = setOf(
             **Choose one, or both —**
             >>**This round:** Double your item bonuses.
             >>Take a Tier II card from your deck and add
-            it to your dashboard as a permanent item.
+            >it to your dashboard as a permanent item.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -332,5 +351,6 @@ val min = setOf(
         secondaryMovement = 3,
         secondaryDefense = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.THIS_ROUND, Trait.MULTIPLE_CHOICE),
     ),
 )

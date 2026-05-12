@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val mrak = setOf(
     Card(
@@ -21,6 +22,7 @@ val mrak = setOf(
         primaryValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 3,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.STRAIGHT_LINE, Trait.ATTACK_UNIT),
     ),
     Card(
         "Lesser Fissure",
@@ -37,6 +39,7 @@ val mrak = setOf(
         primaryValue = 3,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.USING_TOKENS, Trait.STRAIGHT_LINE, Trait.ATTACK_HERO),
     ),
     Card(
         "Stone Grip",
@@ -51,6 +54,7 @@ val mrak = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 3,
         secondaryDefense = 4,
+        traits = setOf(Trait.USING_TOKENS),
     ),
     Card(
         "Seismic Slam",
@@ -69,6 +73,7 @@ val mrak = setOf(
         secondaryAttack = 6,
         secondaryMovement = 3,
         secondaryDefense = 7,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.USING_TOKENS, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Boulder Rush",
@@ -84,6 +89,7 @@ val mrak = setOf(
         primaryAction = Action.SKILL,
         secondaryMovement = 2,
         secondaryDefense = 6,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Treacherous Ground",
@@ -99,6 +105,7 @@ val mrak = setOf(
         modifierValue = 3,
         secondaryMovement = 2,
         secondaryDefense = 4,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.TERRAIN),
     ),
     Card(
         "Seismic Assault",
@@ -118,6 +125,7 @@ val mrak = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.USING_TOKENS, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Stone Carapace",
@@ -136,6 +144,7 @@ val mrak = setOf(
         secondaryAttack = 7,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.THIS_ROUND, Trait.ATTACK_UNIT),
     ),
     Card(
         "Rockslide",
@@ -153,6 +162,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.TERRAIN),
     ),
     Card(
         "Rolling Stone",
@@ -170,6 +180,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Boulder Blitz",
@@ -187,6 +198,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 7,
         item = Item.DEFENSE,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Stomping Step",
@@ -205,6 +217,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 7,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.TERRAIN),
     ),
     Card(
         "Avalanche",
@@ -223,6 +236,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.AREA,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.TERRAIN),
     ),
     Card(
         "Strolling Stone",
@@ -239,6 +253,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 5,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.IGNORING_OBSTACLES, Trait.STRAIGHT_LINE),
     ),
     Card(
         "Boulderdozer",
@@ -256,6 +271,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 7,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.PUSHING_UNITS, Trait.PUSHING_TOKENS, Trait.MOVING_SELF, Trait.IGNORING_OBSTACLES, Trait.USING_TOKENS),
     ),
     Card(
         "Ground Shaker",
@@ -275,6 +291,7 @@ val mrak = setOf(
         secondaryMovement = 2,
         secondaryDefense = 7,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.TERRAIN),
     ),
     Card(
         "Epicenter",
@@ -294,6 +311,7 @@ val mrak = setOf(
         secondaryMovement = 3,
         secondaryDefense = 8,
         item = Item.RANGE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.USING_TOKENS, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Rock Solid",
@@ -313,6 +331,7 @@ val mrak = setOf(
         secondaryAttack = 7,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HEALING_SELF, Trait.THIS_ROUND, Trait.ATTACK_UNIT),
     ),
     Card(
         "Rock and a Hard Place",
@@ -324,5 +343,6 @@ val mrak = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.USING_TOKENS),
     ),
 )

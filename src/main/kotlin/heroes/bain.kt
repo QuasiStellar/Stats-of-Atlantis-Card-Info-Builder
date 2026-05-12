@@ -6,6 +6,7 @@ import Color
 import Item
 import Modifier
 import Sign
+import Trait
 
 val bain = setOf(
     Card(
@@ -25,6 +26,7 @@ val bain = setOf(
         modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 2,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.GIVING_MARKERS, Trait.USING_MARKERS, Trait.ATTACK_UNIT),
     ),
     Card(
         "Side Quest",
@@ -42,6 +44,7 @@ val bain = setOf(
         modifierValue = 4,
         secondaryMovement = 1,
         secondaryDefense = 1,
+        traits = setOf(Trait.GIVING_MARKERS, Trait.USING_MARKERS),
     ),
     Card(
         "Get over here!",
@@ -57,6 +60,7 @@ val bain = setOf(
         modifier = Modifier.RANGE,
         modifierValue = 4,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_TOKENS, Trait.MOVING_UNITS, Trait.USING_TOKENS, Trait.STRAIGHT_LINE),
     ),
     Card(
         "A Complicated Profession",
@@ -66,6 +70,7 @@ val bain = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.DISCARD, Trait.GIVING_MARKERS),
     ),
     Card(
         "A Game of Chance",
@@ -85,6 +90,7 @@ val bain = setOf(
         modifierValue = 2,
         secondaryMovement = 3,
         secondaryDefense = 4,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.DISCARD),
     ),
     Card(
         "Light Crossbow",
@@ -101,6 +107,7 @@ val bain = setOf(
         modifierValue = 2,
         secondaryMovement = 4,
         secondaryDefense = 5,
+        traits = setOf(Trait.STRAIGHT_LINE, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Close Call",
@@ -116,6 +123,7 @@ val bain = setOf(
         primaryAction = Action.DEFENSE,
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
+        traits = setOf(Trait.GIVING_MARKERS, Trait.USING_MARKERS),
     ),
     Card(
         "Dead Man's Hand",
@@ -136,6 +144,7 @@ val bain = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.DISCARD),
     ),
     Card(
         "Heavy Crossbow",
@@ -154,6 +163,7 @@ val bain = setOf(
         secondaryMovement = 4,
         secondaryDefense = 5,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Narrow Escape",
@@ -169,6 +179,7 @@ val bain = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.GIVING_MARKERS, Trait.USING_MARKERS),
     ),
     Card(
         "Drinking Buddies",
@@ -187,6 +198,7 @@ val bain = setOf(
         secondaryMovement = 3,
         secondaryDefense = 4,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_SELF, Trait.HEALING_TEAM, Trait.HEALING_ENEMY),
     ),
     Card(
         "Hand Crossbow",
@@ -207,6 +219,7 @@ val bain = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_MARKERS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Vantage Point",
@@ -223,6 +236,7 @@ val bain = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryDefense = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.SCALING, Trait.IGNORING_OBSTACLES, Trait.USING_MARKERS, Trait.STAT_CHANGING),
     ),
     Card(
         "We're Not Done Yet!",
@@ -243,6 +257,7 @@ val bain = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.RANGE,
+        traits = setOf(Trait.FARMING_FOR_SELF, Trait.DISCARD),
     ),
     Card(
         "Arbalest",
@@ -261,6 +276,7 @@ val bain = setOf(
         secondaryMovement = 4,
         secondaryDefense = 6,
         item = Item.DEFENSE,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.STRAIGHT_LINE, Trait.TERRAIN, Trait.ATTACK_UNIT),
     ),
     Card(
         "Perfect Getaway",
@@ -276,6 +292,7 @@ val bain = setOf(
         primaryValueSign = Sign.EXCLAMATION,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.USING_MARKERS),
     ),
     Card(
         "Another One!",
@@ -295,6 +312,7 @@ val bain = setOf(
         secondaryMovement = 3,
         secondaryDefense = 5,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_SELF, Trait.HEALING_TEAM, Trait.HEALING_ENEMY, Trait.END_OF_TURN),
     ),
     Card(
         "Hunter-Seeker",
@@ -315,6 +333,7 @@ val bain = setOf(
         secondaryMovement = 4,
         secondaryDefense = 7,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_MARKERS, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "High Ground",
@@ -331,5 +350,6 @@ val bain = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryDefense = 4,
         item = Item.AREA,
+        traits = setOf(Trait.SCALING, Trait.IGNORING_OBSTACLES, Trait.USING_MARKERS, Trait.STAT_CHANGING),
     ),
 )

@@ -14,4 +14,5 @@ data class Spell(
     val modifier: Modifier? = null,
     val modifierValue: Int? = null,
     val modifierValueSign: Sign? = null,
+    val traits: Set<Trait> = emptySet(),
 )

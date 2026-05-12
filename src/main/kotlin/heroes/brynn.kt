@@ -5,6 +5,7 @@ import Card
 import Color
 import Item
 import Modifier
+import Trait
 
 val brynn = setOf(
     Card(
@@ -24,6 +25,7 @@ val brynn = setOf(
         modifierValue = 3,
         secondaryDefense = 2,
         secondaryMovement = 1,
+        traits = setOf(Trait.HIGH_RANGE_ATTACK, Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.TERRAIN, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Home Turf",
@@ -43,6 +45,7 @@ val brynn = setOf(
         modifierValue = 2,
         secondaryDefense = 1,
         secondaryMovement = 1,
+        traits = setOf(Trait.MULTIPLE_CHOICE, Trait.USING_TOKENS, Trait.TERRAIN, Trait.ATTACK_HERO),
     ),
     Card(
         "Decoy",
@@ -50,7 +53,7 @@ val brynn = setOf(
             **Choose up to two times,** on different targets —
             >>Move an enemy minion in radius 1 space.
             >>Move an enemy hero in radius who is
-            adjacent to 3 or more obstacles 1 space.
+            >adjacent to 3 or more obstacles 1 space.
         """.trimIndent(),
         Color.SILVER,
         initiative = 1,
@@ -58,6 +61,7 @@ val brynn = setOf(
         modifier = Modifier.AREA,
         modifierValue = 4,
         secondaryDefense = 2,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_ENEMY, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "High Ground",
@@ -74,6 +78,7 @@ val brynn = setOf(
         primaryValueSign = Sign.PLUS,
         secondaryDefense = 6,
         secondaryMovement = 4,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Tread Lightly",
@@ -90,6 +95,7 @@ val brynn = setOf(
         modifierValue = 2,
         secondaryDefense = 5,
         secondaryMovement = 3,
+        traits = setOf(Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS),
     ),
     Card(
         "Bear Trap",
@@ -98,7 +104,7 @@ val brynn = setOf(
             >>An enemy hero adjacent to you discards
             >a card, if able.
             >>An enemy hero in radius who is adjacent to
-            3 or more obstacles discards a card, if able.
+            >3 or more obstacles discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 1,
@@ -108,6 +114,7 @@ val brynn = setOf(
         modifierValue = 3,
         secondaryDefense = 3,
         secondaryMovement = 2,
+        traits = setOf(Trait.DISCARD, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Elevated Ambush",
@@ -126,6 +133,7 @@ val brynn = setOf(
         secondaryDefense = 6,
         secondaryMovement = 4,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Split Attack",
@@ -133,7 +141,6 @@ val brynn = setOf(
             Target a unit in range. If you target a hero
             who is adjacent to 3 or more obstacles, may
             repeat once on a different unit adjacent to you.
-
         """.trimIndent(),
         Color.RED,
         level = 2,
@@ -146,6 +153,7 @@ val brynn = setOf(
         secondaryDefense = 3,
         secondaryMovement = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Log Trap",
@@ -154,7 +162,7 @@ val brynn = setOf(
             >>An enemy hero adjacent to you discards
             >a card, if able.
             >>An enemy hero in radius who is adjacent to
-            3 or more obstacles discards a card, if able.
+            >3 or more obstacles discards a card, if able.
         """.trimIndent(),
         Color.GREEN,
         level = 2,
@@ -166,6 +174,7 @@ val brynn = setOf(
         secondaryDefense = 3,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "True Grit",
@@ -184,6 +193,7 @@ val brynn = setOf(
         secondaryDefense = 3,
         secondaryMovement = 2,
         item = Item.ATTACK,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_HEROES, Trait.MOVING_SELF),
     ),
     Card(
         "Cover Tracks",
@@ -203,6 +213,7 @@ val brynn = setOf(
         secondaryDefense = 5,
         secondaryMovement = 3,
         item = Item.DEFENSE,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS),
     ),
     Card(
         "Mountain Guide",
@@ -222,6 +233,7 @@ val brynn = setOf(
         secondaryDefense = 5,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_TEAM),
     ),
     Card(
         "Deadfall Trap",
@@ -230,7 +242,7 @@ val brynn = setOf(
             >>An enemy hero adjacent to you discards
             >a card, or is defeated.
             >>An enemy hero in radius who is adjacent to
-            3 or more obstacles discards a card, or is defeated.
+            >3 or more obstacles discards a card, or is defeated.
         """.trimIndent(),
         Color.GREEN,
         level = 3,
@@ -242,6 +254,7 @@ val brynn = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.INITIATIVE,
+        traits = setOf(Trait.DISCARD_OR_KILL, Trait.MULTIPLE_CHOICE),
     ),
     Card(
         "Die Hard",
@@ -260,6 +273,7 @@ val brynn = setOf(
         secondaryDefense = 4,
         secondaryMovement = 2,
         item = Item.MOVEMENT,
+        traits = setOf(Trait.HEALING_SELF, Trait.MOVING_HEROES, Trait.MOVING_SELF),
     ),
     Card(
         "Hide Traces",
@@ -279,6 +293,7 @@ val brynn = setOf(
         secondaryDefense = 6,
         secondaryMovement = 3,
         item = Item.RANGE,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_SELF, Trait.SWAPPING_SELF, Trait.SWAPPING_UNITS),
     ),
     Card(
         "Expedition Leader",
@@ -298,6 +313,7 @@ val brynn = setOf(
         secondaryDefense = 6,
         secondaryMovement = 3,
         item = Item.ATTACK,
+        traits = setOf(Trait.MOVING_HEROES, Trait.MOVING_TEAM),
     ),
     Card(
         "Peak Precision",
@@ -317,6 +333,7 @@ val brynn = setOf(
         secondaryDefense = 7,
         secondaryMovement = 4,
         item = Item.AREA,
+        traits = setOf(Trait.AFTER_THE_ATTACK, Trait.SCALING, Trait.STAT_CHANGING, Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Split Throw",
@@ -336,6 +353,7 @@ val brynn = setOf(
         secondaryDefense = 4,
         secondaryMovement = 4,
         item = Item.DEFENSE,
+        traits = setOf(Trait.ATTACK_UNIT, Trait.ATTACK_HERO),
     ),
     Card(
         "Over the Top",
@@ -346,5 +364,6 @@ val brynn = setOf(
         """.trimIndent(),
         Color.PURPLE,
         level = 4,
+        traits = setOf(Trait.COUNTS_AS),
     ),
 )
