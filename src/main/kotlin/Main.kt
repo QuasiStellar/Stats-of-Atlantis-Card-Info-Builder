@@ -32,8 +32,13 @@ import heroes.widget
 import heroes.wuk
 import heroes.xargatha
 import kotlinx.serialization.json.Json
+import java.io.PrintStream
+import java.nio.charset.StandardCharsets
 
 fun main() {
+    System.setOut(PrintStream(System.out, true, StandardCharsets.UTF_8))
+    System.setErr(PrintStream(System.err, true, StandardCharsets.UTF_8))
+
     println(Json.encodeToString(
         mapOf(
             "arien" to arien,

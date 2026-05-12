@@ -22,3 +22,9 @@ kotlin {
 application {
     mainClass.set("MainKt")
 }
+
+tasks.withType<JavaExec>().configureEach {
+    systemProperty("file.encoding", "UTF-8")
+    systemProperty("sun.stdout.encoding", "UTF-8")
+    systemProperty("sun.stderr.encoding", "UTF-8")
+}

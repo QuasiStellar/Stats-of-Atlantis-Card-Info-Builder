@@ -23,8 +23,13 @@ import old.heroes.wasp
 import old.heroes.whisper
 import old.heroes.wuk
 import old.heroes.xargatha
+import java.io.PrintStream
+import java.nio.charset.StandardCharsets
 
 fun main() {
+    System.setOut(PrintStream(System.out, true, StandardCharsets.UTF_8))
+    System.setErr(PrintStream(System.err, true, StandardCharsets.UTF_8))
+
     print(Json.encodeToString(
         mapOf(
             "arien" to arien,

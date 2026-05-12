@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -481,7 +482,16 @@ def ensure_trait_import(content: str) -> str:
     return "\n".join(lines) + ("\n" if content.endswith("\n") else "")
 
 
+def configure_utf8_stdio() -> None:
+    """Force UTF-8 console output so Unicode text renders correctly on Windows."""
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if stream is not None and hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+
+
 def main() -> None:
+    configure_utf8_stdio()
     updated_files = 0
     for file_path in sorted(HEROES_DIR.glob("*.kt")):
         original = file_path.read_text(encoding="utf-8")

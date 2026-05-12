@@ -392,7 +392,7 @@ val spells = setOf(
         """
             Target a unit in range,
             not adjacent to you, or
-to your friendly unit.
+            to your friendly unit.
         """.trimIndent(),
         Color.RED,
         level = 2,
